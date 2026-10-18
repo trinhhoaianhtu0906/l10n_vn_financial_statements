@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_vn_a4" model="report.paperformat">
+        <field name="name">A4 - Báo cáo tài chính VN</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">15</field>
+        <field name="margin_right">10</field>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_vn_financial" model="ir.actions.report">
+        <field name="name">Báo cáo tài chính TT99</field>
+        <field name="model">vn.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">l10n_vn_tt99_reports.report_vn_financial</field>
+        <field name="report_file">l10n_vn_tt99_reports.report_vn_financial</field>
+        <field name="print_report_name">object._export_filename()</field>
+        <field name="paperformat_id" ref="paperformat_vn_a4"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_vn_financial">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="company" t-value="doc.company_id"/>
+                <t t-set="report" t-value="doc.report_id"/>
+                <t t-set="columns" t-value="doc.column_headers()"/>
+                <div class="article o_vn_financial" t-att-data-oe-model="doc._name" t-att-data-oe-id="doc.id"
+                     style="font-family: 'Times New Roman', serif; font-size: 12px;">
+                    <table style="width: 100%; border: none;">
+                        <tr>
+                            <td style="width: 55%; vertical-align: top;">
+                                <div><b>Đơn vị báo cáo:</b> <span t-field="company.name"/></div>
+                                <div><b>Địa chỉ:</b>
+                                    <span t-esc="', '.join(filter(None, [company.street, company.street2, company.city, company.state_id.name]))"/>
+                                </div>
+                                <div t-if="company.vat"><b>Mã số thuế:</b> <span t-field="company.vat"/></div>
+                            </td>
+                            <td style="width: 45%; text-align: center; vertical-align: top;">
+                                <div><b t-esc="report.form_code"/></div>
+                                <div style="font-style: italic;" t-esc="report.form_note"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="text-align: center; margin-top: 16px;">
+                        <div style="font-size: 16px; font-weight: bold;" t-esc="report.title"/>
+                        <div t-if="report.subtitle" style="font-style: italic;" t-esc="report.subtitle"/>
+                        <div style="font-style: italic;" t-esc="doc.period_text()"/>
+                    </div>
+                    <div style="text-align: right; font-style: italic; margin: 6px 0;">
+                        Đơn vị tính: <span t-esc="company.currency_id.name"/>
+                    </div>
+                    <t t-set="amount_width" t-value="16 if len(columns) &lt;= 2 else max(9, 48 // len(columns))"/>
+                    <table t-att-style="'width: 100%; border-collapse: collapse; font-size: ' + ('12' if len(columns) &lt;= 3 else '10') + 'px;'" class="o_vn_lines">
+                        <thead>
+                            <tr style="text-align: center; font-weight: bold;">
+                                <th style="border: 1px solid #000; padding: 3px;">Chỉ tiêu</th>
+                                <th style="border: 1px solid #000; padding: 3px; width: 7%;">Mã số</th>
+                                <th style="border: 1px solid #000; padding: 3px; width: 8%;">Thuyết minh</th>
+                                <th t-foreach="columns" t-as="column" t-att-style="'border: 1px solid #000; padding: 3px; width: ' + str(amount_width) + '%;'">
+                                    <span t-esc="column['label']"/><br/><span style="font-weight: normal; font-size: 9px;" t-esc="column['date']"/>
+                                </th>
+                            </tr>
+                            <tr style="text-align: center; font-style: italic;">
+                                <td t-foreach="range(1, len(columns) + 4)" t-as="number" style="border: 1px solid #000;" t-esc="number"/>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="doc.line_ids" t-as="line" t-att-style="'font-weight: bold;' if line.bold else ''">
+                                <td t-att-style="'border-left: 1px solid #000; border-right: 1px solid #000; padding: 2px 4px 2px %spx;' % (4 + 12 * max(line.level - 1, 0))"
+                                    t-esc="line.name"/>
+                                <td style="border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;" t-esc="line.display_code"/>
+                                <td style="border-left: 1px solid #000; border-right: 1px solid #000; text-align: center;" t-esc="line.note_ref or ''"/>
+                                <t t-foreach="zip(columns, line.cells())" t-as="cell">
+                                    <td style="border-left: 1px solid #000; border-right: 1px solid #000; text-align: right; padding-right: 4px; white-space: nowrap;"
+                                        t-esc="doc.format_cell(cell[1], cell[0]['kind'], line.blank)"/>
+                                </t>
+                            </tr>
+                            <tr><td t-att-colspan="len(columns) + 3" style="border-top: 1px solid #000;"/></tr>
+                        </tbody>
+                    </table>
+                    <div style="text-align: right; font-style: italic; margin-top: 12px; margin-right: 40px;">
+                        Phê duyệt, ngày ... tháng ... năm ...
+                    </div>
+                    <table style="width: 100%; text-align: center; margin-top: 6px; page-break-inside: avoid;">
+                        <tr style="font-weight: bold;">
+                            <td style="width: 33%;">NGƯỜI LẬP</td>
+                            <td style="width: 33%;">KẾ TOÁN TRƯỞNG</td>
+                            <td style="width: 34%;">NGƯỜI ĐẠI DIỆN THEO PHÁP LUẬT</td>
+                        </tr>
+                        <tr style="font-style: italic;">
+                            <td>(Ký, họ tên)</td>
+                            <td>(Ký, họ tên)</td>
+                            <td>(Ký, họ tên, đóng dấu)</td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

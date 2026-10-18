@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="l10n_vn_tt99_reports.DynamicReport">
+        <div class="o_action o_vn_tt99_report h-100 d-flex flex-column">
+            <div class="o_control_panel border-bottom px-3 py-2 bg-view" t-if="state.choices">
+                <div class="d-flex flex-wrap align-items-end gap-3">
+                    <div>
+                        <label class="form-label small text-muted mb-0">Báo cáo</label>
+                        <select class="form-select form-select-sm" t-on-change="onReportChange">
+                            <optgroup label="Báo cáo riêng">
+                                <t t-foreach="standaloneReports" t-as="r" t-key="r.id">
+                                    <option t-att-value="r.id" t-att-selected="r.id === state.options.report_id" t-esc="r.name"/>
+                                </t>
+                            </optgroup>
+                            <optgroup label="Báo cáo hợp nhất" t-if="consolidatedReports.length">
+                                <t t-foreach="consolidatedReports" t-as="r" t-key="r.id">
+                                    <option t-att-value="r.id" t-att-selected="r.id === state.options.report_id" t-esc="r.name"/>
+                                </t>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div t-if="report and report.consolidated">
+                        <label class="form-label small text-muted mb-0">Nhóm hợp nhất</label>
+                        <select class="form-select form-select-sm" t-on-change="(ev) => this.onOptionChange('consolidation_group_id', ev)">
+                            <t t-foreach="state.choices.groups" t-as="g" t-key="g.id">
+                                <option t-att-value="g.id" t-att-selected="g.id === state.options.consolidation_group_id" t-esc="g.name"/>
+                            </t>
+                        </select>
+                    </div>
+                    <div t-else="">
+                        <label class="form-label small text-muted mb-0">Công ty</label>
+                        <select class="form-select form-select-sm" t-on-change="(ev) => this.onOptionChange('company_id', ev)">
+                            <t t-foreach="state.choices.companies" t-as="c" t-key="c.id">
+                                <option t-att-value="c.id" t-att-selected="c.id === state.options.company_id" t-esc="c.name"/>
+                            </t>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label small text-muted mb-0">Năm</label>
+                        <select class="form-select form-select-sm" t-on-change="onYearChange">
+                            <t t-foreach="years" t-as="y" t-key="y">
+                                <option t-att-value="y" t-att-selected="y === state.year" t-esc="y"/>
+                            </t>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label small text-muted mb-0">Kỳ</label>
+                        <select class="form-select form-select-sm" t-on-change="onPeriodChange">
+                            <t t-foreach="periods" t-as="p" t-key="p.key">
+                                <option t-att-value="p.key" t-att-selected="p.key === state.period" t-esc="p.label"/>
+                            </t>
+                        </select>
+                    </div>
+                    <t t-if="state.period === 'custom'">
+                        <div>
+                            <label class="form-label small text-muted mb-0">Từ ngày</label>
+                            <input type="date" class="form-control form-control-sm" t-att-value="state.options.date_from"
+                                   t-on-change="(ev) => this.onDateChange('date_from', ev)"/>
+                        </div>
+                        <div>
+                            <label class="form-label small text-muted mb-0">Đến ngày</label>
+                            <input type="date" class="form-control form-control-sm" t-att-value="state.options.date_to"
+                                   t-on-change="(ev) => this.onDateChange('date_to', ev)"/>
+                        </div>
+                    </t>
+                    <div>
+                        <label class="form-label small text-muted mb-0">Bút toán</label>
+                        <select class="form-select form-select-sm" t-on-change="(ev) => this.onOptionChange('target_move', ev)">
+                            <option value="posted" t-att-selected="state.options.target_move === 'posted'">Đã vào sổ</option>
+                            <option value="all" t-att-selected="state.options.target_move === 'all'">Gồm cả nháp</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label small text-muted mb-0">So sánh với</label>
+                        <select class="form-select form-select-sm" t-on-change="(ev) => this.onOptionChange('comparison', ev)">
+                            <option value="default" t-att-selected="state.options.comparison === 'default'">Theo mẫu TT99</option>
+                            <option value="previous_period" t-att-selected="state.options.comparison === 'previous_period'">Kỳ trước liền kề</option>
+                            <option value="previous_year" t-att-selected="state.options.comparison === 'previous_year'">Cùng kỳ năm trước</option>
+                            <option value="none" t-att-selected="state.options.comparison === 'none'">Không so sánh</option>
+                        </select>
+                    </div>
+                    <div t-if="state.options.comparison !== 'none'">
+                        <label class="form-label small text-muted mb-0">Số kỳ</label>
+                        <select class="form-select form-select-sm" t-on-change="(ev) => this.onOptionChange('comparison_count', ev)">
+                            <t t-foreach="[1, 2, 3, 4, 5, 6]" t-as="n" t-key="n">
+                                <option t-att-value="n" t-att-selected="n === state.options.comparison_count" t-esc="n"/>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="form-check mb-1" t-if="state.options.comparison !== 'none'">
+                        <input class="form-check-input" type="checkbox" id="vn_show_variance" t-att-checked="state.options.show_variance"
+                               t-on-change="(ev) => this.onOptionChange('show_variance', ev)"/>
+                        <label class="form-check-label small" for="vn_show_variance">Chênh lệch</label>
+                    </div>
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" id="vn_hide_zero" t-att-checked="state.options.hide_zero"
+                               t-on-change="(ev) => this.onOptionChange('hide_zero', ev)"/>
+                        <label class="form-check-label small" for="vn_hide_zero">Ẩn chỉ tiêu bằng 0</label>
+                    </div>
+                    <div class="ms-auto d-flex gap-2">
+                        <button class="btn btn-sm btn-secondary" t-att-disabled="!state.data or state.exporting" t-on-click="() => this.export('action_export_xlsx')">
+                            <i class="fa fa-file-excel-o me-1"/>Xuất Excel
+                        </button>
+                        <button class="btn btn-sm btn-secondary" t-att-disabled="!state.data or state.exporting" t-on-click="() => this.export('action_print_pdf')">
+                            <i class="fa fa-file-pdf-o me-1"/>In PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-grow-1 overflow-auto px-3 py-3 position-relative">
+                <div t-if="state.loading" class="o_vn_loading position-absolute top-0 start-50 translate-middle-x mt-2 badge text-bg-info">
+                    <i class="fa fa-circle-o-notch fa-spin me-1"/>Đang tính...
+                </div>
+                <div t-if="state.error" class="alert alert-danger" role="alert" t-esc="state.error"/>
+                <t t-if="state.data">
+                    <div class="o_vn_sheet mx-auto" t-att-class="{ 'opacity-50': state.loading, 'o_vn_wide': state.data.columns.length &gt; 2 }">
+                        <div class="d-flex justify-content-between small">
+                            <div>
+                                <div><b>Đơn vị báo cáo:</b> <t t-esc="state.data.company"/></div>
+                            </div>
+                            <div class="text-end"><b t-esc="state.data.form_code"/></div>
+                        </div>
+                        <div class="text-center my-3">
+                            <div class="fs-4 fw-bold" t-esc="state.data.title"/>
+                            <div t-if="state.data.subtitle" class="fst-italic" t-esc="state.data.subtitle"/>
+                            <div class="fst-italic" t-esc="state.data.period_text"/>
+                        </div>
+                        <div t-if="state.data.warnings.length" class="alert alert-warning small" role="alert">
+                            <div t-foreach="state.data.warnings" t-as="w" t-key="w_index" t-esc="w"/>
+                        </div>
+                        <div class="text-end small fst-italic mb-1">Đơn vị tính: <t t-esc="state.data.currency"/></div>
+                        <table class="table table-sm table-hover o_vn_table">
+                            <thead class="sticky-top bg-view">
+                                <tr class="text-center align-middle">
+                                    <th class="text-start">Chỉ tiêu</th>
+                                    <th style="width: 6rem;">Mã số</th>
+                                    <th style="width: 6rem;">Thuyết minh</th>
+                                    <th t-foreach="state.data.columns" t-as="column" t-key="column_index"
+                                        t-att-style="column.kind === 'percent' ? 'width: 6rem;' : 'width: 11rem;'">
+                                        <t t-esc="column.label"/><div class="small fw-normal text-muted" t-esc="column.date"/>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="state.data.lines" t-as="line" t-key="line.id"
+                                    t-att-class="{ 'fw-bold': line.bold, 'o_vn_drillable': line.drillable and !line.blank }"
+                                    t-att-title="line.drillable and !line.blank ? 'Bấm để xem bút toán' : ''"
+                                    t-on-click="() => this.openLine(line)">
+                                    <td t-att-style="indent(line)" t-esc="line.name"/>
+                                    <td class="text-center" t-esc="line.code"/>
+                                    <td class="text-center" t-esc="line.note_ref"/>
+                                    <t t-foreach="state.data.columns" t-as="column" t-key="column_index">
+                                        <td t-att-class="'text-end font-monospace text-nowrap ' + cellClass(line.cells[column_index], column)"
+                                            t-esc="formatCell(line.cells[column_index], column, line.blank)"/>
+                                    </t>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>

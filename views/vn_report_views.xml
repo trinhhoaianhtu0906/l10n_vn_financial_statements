@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="vn_report_view_list" model="ir.ui.view">
+        <field name="name">vn.report.list</field>
+        <field name="model">vn.report</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="kind"/>
+                <field name="consolidated"/>
+                <button name="action_open_wizard" type="object" string="Lập báo cáo" icon="fa-play"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="vn_report_view_form" model="ir.ui.view">
+        <field name="name">vn.report.form</field>
+        <field name="model">vn.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_open_wizard" type="object" string="Lập báo cáo" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="kind"/>
+                            <field name="consolidated"/>
+                        </group>
+                        <group>
+                            <field name="form_code"/>
+                            <field name="title"/>
+                            <field name="subtitle"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="form_note"/>
+                        <field name="check_expression"/>
+                        <field name="check_message"/>
+                    </group>
+                    <notebook>
+                        <page string="Chỉ tiêu" name="lines">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="note_ref"/>
+                                    <field name="formula"/>
+                                    <field name="level" optional="hide"/>
+                                    <field name="bold" optional="hide"/>
+                                    <field name="hide_if_zero" optional="hide"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Cú pháp công thức" name="help">
+                            <p>Tham số là đầu mã tài khoản: <code>131</code> khớp 1311 và 1312.</p>
+                            <ul>
+                                <li><code>BAL(...)</code>: số dư Nợ - Có. <code>NBAL(...)</code>: số dư Có - Nợ.</li>
+                                <li><code>DR(...)</code> / <code>CR(...)</code>: tổng dư Nợ / dư Có của từng tài khoản.</li>
+                                <li><code>PDR(...)</code> / <code>PCR(...)</code>: tổng dư Nợ / dư Có chi tiết theo từng đối tượng (khách hàng, nhà cung cấp).</li>
+                                <li><code>DT(...)</code> / <code>CT(...)</code>: phát sinh Nợ / Có trong kỳ, không tính bút toán kết chuyển 911.</li>
+                                <li><code>PL_CUR()</code> / <code>PL_PRIOR()</code>: lãi lỗ chưa kết chuyển của năm nay / các năm trước (B01).</li>
+                                <li><code>OPEN(...)</code>, <code>CLOSE(...)</code>, <code>CHG(...)</code>: số dư đầu kỳ, cuối kỳ, chênh lệch (B03).</li>
+                                <li><code>CASH(...)</code>, <code>CASHC(...)</code>, <code>CASHD(...)</code>: dòng tiền thuần / thu / chi đối ứng với tài khoản (B03).
+                                    <code>CASH_REST_IN()</code>, <code>CASH_REST_OUT()</code>: dòng tiền chưa thuộc chỉ tiêu nào khác.</li>
+                                <li><code>[110]</code>: giá trị mã số 110 của cùng báo cáo. Dùng được + - * / và dấu ngoặc.</li>
+                            </ul>
+                            <p>Muốn tùy chỉnh, hãy nhân bản mẫu (Hành động → Nhân bản): khi nâng cấp module, mẫu gốc sẽ được ghi đè.</p>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_vn_dynamic_report" model="ir.actions.client">
+        <field name="name">Báo cáo tài chính TT99</field>
+        <field name="tag">l10n_vn_tt99_reports.dynamic_report</field>
+    </record>
+
+    <record id="vn_report_action" model="ir.actions.act_window">
+        <field name="name">Mẫu báo cáo TT99</field>
+        <field name="res_model">vn.report</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

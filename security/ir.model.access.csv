@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vn_report_readonly,vn.report readonly,model_vn_report,account.group_account_readonly,1,0,0,0
+access_vn_report_manager,vn.report manager,model_vn_report,account.group_account_manager,1,1,1,1
+access_vn_report_line_readonly,vn.report.line readonly,model_vn_report_line,account.group_account_readonly,1,0,0,0
+access_vn_report_line_manager,vn.report.line manager,model_vn_report_line,account.group_account_manager,1,1,1,1
+access_vn_report_wizard,vn.report.wizard,model_vn_report_wizard,account.group_account_readonly,1,1,1,1
+access_vn_report_wizard_line,vn.report.wizard.line,model_vn_report_wizard_line,account.group_account_readonly,1,1,1,1
+access_vn_report_wizard_manager,vn.report.wizard manager,model_vn_report_wizard,account.group_account_manager,1,1,1,1
+access_vn_report_wizard_line_manager,vn.report.wizard.line manager,model_vn_report_wizard_line,account.group_account_manager,1,1,1,1
