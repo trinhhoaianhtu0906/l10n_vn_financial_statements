@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0-20261015\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-19 03:48+0000\n"
-"PO-Revision-Date: 2026-10-19 03:48+0000\n"
+"POT-Creation-Date: 2026-10-19 05:12+0000\n"
+"PO-Revision-Date: 2026-10-19 05:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1215,12 +1215,6 @@ msgid "Consolidated"
 msgstr ""
 
 #. module: l10n_vn_financial_statements
-#. odoo-javascript
-#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
-msgid "Consolidated Statements"
-msgstr ""
-
-#. module: l10n_vn_financial_statements
 #: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__consolidated
 msgid "Consolidated statement: runs on a consolidation group only."
 msgstr ""
@@ -1291,6 +1285,7 @@ msgid "Display Code"
 msgstr ""
 
 #. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_account_journal__display_name
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__display_name
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__display_name
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__display_name
@@ -1456,11 +1451,34 @@ msgid "I. Long-term receivables"
 msgstr ""
 
 #. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_account_journal__id
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__id
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__id
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__id
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__id
 msgid "ID"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report__ledger__ifrs
+msgid "IFRS"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "IFRS - Consolidated Statements"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "IFRS - Separate Statements"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__account_journal__vn_ledger__ifrs
+msgid "IFRS Adjustments Only"
 msgstr ""
 
 #. module: l10n_vn_financial_statements
@@ -1545,6 +1563,11 @@ msgid "Invalid formula: %(formula)s"
 msgstr ""
 
 #. module: l10n_vn_financial_statements
+#: model:ir.model,name:l10n_vn_financial_statements.model_account_journal
+msgid "Journal"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
 #: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
 msgid "Journal Items"
 msgstr ""
@@ -1588,6 +1611,12 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
 msgid "Last Year"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_account_journal__vn_ledger
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__ledger
+msgid "Ledger"
 msgstr ""
 
 #. module: l10n_vn_financial_statements
@@ -1826,15 +1855,14 @@ msgid "Same Period Last Year"
 msgstr ""
 
 #. module: l10n_vn_financial_statements
-#. odoo-javascript
-#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
-msgid "Separate Statements"
-msgstr ""
-
-#. module: l10n_vn_financial_statements
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__sequence
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__sequence
 msgid "Sequence"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__show_codes
+msgid "Show Line Codes"
 msgstr ""
 
 #. module: l10n_vn_financial_statements
@@ -1980,6 +2008,47 @@ msgid "V. Short-term biological assets"
 msgstr ""
 
 #. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report__ledger__vas
+msgid "VAS"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "VAS - Consolidated Statements"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "VAS - Separate Statements"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__account_journal__vn_ledger__vas
+msgid "VAS Only"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__account_journal__vn_ledger__all
+msgid "VAS and IFRS"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_account_journal__vn_ledger
+msgid ""
+"VAS is the statutory books. Entries of an 'IFRS Adjustments Only' journal "
+"are added to the VAS figures in IFRS reports and left out of VAS reports; "
+"entries of a 'VAS Only' journal are left out of IFRS reports."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__ledger
+msgid ""
+"VAS reads the books without the IFRS adjustment journals; IFRS adds them."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
 #: model:vn.report.line,name:l10n_vn_financial_statements.b01_260
 msgid "VI. Long-term financial investments"
 msgstr ""
@@ -2030,6 +2099,13 @@ msgstr ""
 #. module: l10n_vn_financial_statements
 #: model:ir.model,name:l10n_vn_financial_statements.model_vn_report_wizard
 msgid "Vietnamese financial statement wizard"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__show_codes
+msgid ""
+"Vietnamese statutory forms print the line code column and the column "
+"numbers."
 msgstr ""
 
 #. module: l10n_vn_financial_statements

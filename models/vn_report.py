@@ -21,6 +21,17 @@ class VnReport(models.Model):
         ],
         required=True,
     )
+    ledger = fields.Selection(
+        [("vas", "VAS"), ("ifrs", "IFRS")],
+        default="vas",
+        required=True,
+        help="VAS reads the books without the IFRS adjustment journals; IFRS adds them.",
+    )
+    show_codes = fields.Boolean(
+        string="Show Line Codes",
+        default=True,
+        help="Vietnamese statutory forms print the line code column and the column numbers.",
+    )
     consolidated = fields.Boolean(
         help="Consolidated statement: runs on a consolidation group only."
     )

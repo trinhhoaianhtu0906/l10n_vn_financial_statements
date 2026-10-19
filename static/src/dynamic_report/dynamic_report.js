@@ -78,6 +78,24 @@ export class VnFinancialStatementReport extends Component {
         return this.state.choices?.reports.find((r) => r.id === this.state.options.report_id);
     }
 
+    get reportGroups() {
+        const reports = this.state.choices.reports;
+        const groups = [
+            { key: "vas_separate", label: _t("VAS - Separate Statements"), ledger: "vas", consolidated: false },
+            { key: "vas_consolidated", label: _t("VAS - Consolidated Statements"), ledger: "vas", consolidated: true },
+            { key: "ifrs_separate", label: _t("IFRS - Separate Statements"), ledger: "ifrs", consolidated: false },
+            { key: "ifrs_consolidated", label: _t("IFRS - Consolidated Statements"), ledger: "ifrs", consolidated: true },
+        ];
+        return groups
+            .map((group) => ({
+                ...group,
+                reports: reports.filter(
+                    (r) => (r.ledger || "vas") === group.ledger && Boolean(r.consolidated) === group.consolidated
+                ),
+            }))
+            .filter((group) => group.reports.length);
+    }
+
     get standaloneReports() {
         return this.state.choices.reports.filter((r) => !r.consolidated);
     }

@@ -12,6 +12,7 @@ from ..models.engine import (
     COMPARE_LAST_YEAR,
     COMPARE_NONE,
     COMPARE_PREVIOUS,
+    OTHER_LEDGER,
     LedgerProvider,
     comparison_periods,
     evaluate_report,
@@ -155,7 +156,7 @@ class VnReportWizard(models.TransientModel):
         """Choices for the filters of the on-screen report."""
         dates = self.env.company.compute_fiscalyear_dates(fields.Date.context_today(self))
         return {
-            "reports": self.env["vn.report"].search_read([], ["name", "code", "kind", "consolidated"]),
+            "reports": self.env["vn.report"].search_read([], ["name", "code", "kind", "consolidated", "ledger"]),
             "companies": [{"id": c.id, "name": c.name} for c in self.env.user.sudo().company_ids],
             "company_id": self.env.company.id,
             "date_from": fields.Date.to_string(dates["date_from"]),
@@ -189,6 +190,7 @@ class VnReportWizard(models.TransientModel):
             "col_date": col_date,
             "col_cmp_date": col_cmp_date,
             "columns": columns,
+            "show_codes": report.show_codes,
             "warnings": (wizard.warning_text or "").splitlines(),
             "lines": [
                 {
@@ -219,7 +221,9 @@ class VnReportWizard(models.TransientModel):
             env = with_companies(self.env, self.company_id)
             companies = env["res.company"].search([("id", "child_of", self.company_id.id)])
             companies &= self.env.user.sudo().company_ids  # branches the user may read
-        return LedgerProvider(self.env, companies, posted_only=self.target_move == "posted")
+        return LedgerProvider(
+            self.env, companies, posted_only=self.target_move == "posted", ledger=self.report_id.ledger or "vas"
+        )
 
     def _compute_report(self):
         self.ensure_one()
@@ -414,7 +418,8 @@ class VnReportWizard(models.TransientModel):
         row += 1
         sheet.merge_range(row, 0, row, right, self.env._("Currency: %s", company.currency_id.name), fmt["right"])
         row += 2
-        headers = [self.env._("Line"), self.env._("Code"), self.env._("Note")] + [c["label"] for c in columns]
+        code_label = self.env._("Code") if report.show_codes else ""
+        headers = [self.env._("Line"), code_label, self.env._("Note")] + [c["label"] for c in columns]
         for i, label in enumerate(headers):
             sheet.write(row, i, label, fmt["head"])
         row += 1
@@ -423,9 +428,10 @@ class VnReportWizard(models.TransientModel):
         for i, column in enumerate(columns, start=3):
             sheet.write(row, i, column["date"], fmt["head_date"])
         row += 1
-        for i in range(len(headers)):
-            sheet.write(row, i, str(i + 1), fmt["head"])
-        row += 1
+        if report.show_codes:
+            for i in range(len(headers)):
+                sheet.write(row, i, str(i + 1), fmt["head"])
+            row += 1
         for line in self.line_ids:
             indent = "    " * max(line.level - 1, 0)
             sheet.write(row, 0, indent + line.name, fmt["cell_b"] if line.bold else fmt["cell"])
@@ -479,11 +485,12 @@ class VnReportWizardLine(models.TransientModel):
     formula = fields.Char(related="report_line_id.formula")
     display_code = fields.Char(compute="_compute_display_code")
 
-    @api.depends("code")
+    @api.depends("code", "wizard_id.report_id.show_codes")
     def _compute_display_code(self):
         # Section headers (I, II, III) carry a technical code, not a printed line code.
         for line in self:
-            line.display_code = "" if (line.code or "").isalpha() else line.code
+            hidden = not line.wizard_id.report_id.show_codes or (line.code or "").isalpha()
+            line.display_code = "" if hidden else line.code
 
     def cells(self):
         """Amounts of every column of ``wizard.column_headers()`` (None: empty cell)."""
@@ -523,6 +530,7 @@ class VnReportWizardLine(models.TransientModel):
             account_ids += [a.id for a in accounts if (a.code or "").startswith(tuple(prefixes))]
         domain = [
             ("account_id", "in", account_ids),
+            ("journal_id.vn_ledger", "!=", OTHER_LEDGER[wizard.report_id.ledger or "vas"]),
             ("company_id", "in", companies.ids),
             ("date", "<=", wizard.date_to),
             ("parent_state", "in", ("posted",) if wizard.target_move == "posted" else ("draft", "posted")),

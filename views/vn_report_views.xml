@@ -9,6 +9,7 @@
                 <field name="code"/>
                 <field name="name"/>
                 <field name="kind"/>
+                <field name="ledger"/>
                 <field name="consolidated"/>
                 <button name="action_open_wizard" type="object" string="Open Report" icon="fa-play"/>
             </list>
@@ -31,7 +32,9 @@
                         <group>
                             <field name="code"/>
                             <field name="kind"/>
+                            <field name="ledger"/>
                             <field name="consolidated"/>
+                            <field name="show_codes"/>
                         </group>
                         <group>
                             <field name="form_code"/>
@@ -77,6 +80,17 @@
                     </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="account_journal_view_form_vn_ledger" model="ir.ui.view">
+        <field name="name">account.journal.form.vn.ledger</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="vn_ledger" invisible="type != 'general'"/>
+            </xpath>
         </field>
     </record>
 

@@ -7,16 +7,13 @@
                     <div>
                         <label class="form-label small text-muted mb-0">Report</label>
                         <select class="form-select form-select-sm" t-on-change="onReportChange">
-                            <optgroup label="Separate Statements">
-                                <t t-foreach="standaloneReports" t-as="r" t-key="r.id">
-                                    <option t-att-value="r.id" t-att-selected="r.id === state.options.report_id" t-esc="r.name"/>
-                                </t>
-                            </optgroup>
-                            <optgroup label="Consolidated Statements" t-if="consolidatedReports.length">
-                                <t t-foreach="consolidatedReports" t-as="r" t-key="r.id">
-                                    <option t-att-value="r.id" t-att-selected="r.id === state.options.report_id" t-esc="r.name"/>
-                                </t>
-                            </optgroup>
+                            <t t-foreach="reportGroups" t-as="group" t-key="group.key">
+                                <optgroup t-att-label="group.label">
+                                    <t t-foreach="group.reports" t-as="r" t-key="r.id">
+                                        <option t-att-value="r.id" t-att-selected="r.id === state.options.report_id" t-esc="r.name"/>
+                                    </t>
+                                </optgroup>
+                            </t>
                         </select>
                     </div>
                     <div t-if="report and report.consolidated">
@@ -134,7 +131,7 @@
                             <thead class="sticky-top bg-view">
                                 <tr class="text-center align-middle">
                                     <th class="text-start">Line</th>
-                                    <th style="width: 6rem;">Code</th>
+                                    <th t-if="state.data.show_codes" style="width: 6rem;">Code</th>
                                     <th style="width: 6rem;">Note</th>
                                     <th t-foreach="state.data.columns" t-as="column" t-key="column_index"
                                         t-att-style="column.kind === 'percent' ? 'width: 6rem;' : 'width: 11rem;'">
@@ -148,7 +145,7 @@
                                     t-att-title="drillTitle(line)"
                                     t-on-click="() => this.openLine(line)">
                                     <td t-att-style="indent(line)" t-esc="line.name"/>
-                                    <td class="text-center" t-esc="line.code"/>
+                                    <td t-if="state.data.show_codes" class="text-center" t-esc="line.code"/>
                                     <td class="text-center" t-esc="line.note_ref"/>
                                     <t t-foreach="state.data.columns" t-as="column" t-key="column_index">
                                         <td t-att-class="'text-end font-monospace text-nowrap ' + cellClass(line.cells[column_index], column)"

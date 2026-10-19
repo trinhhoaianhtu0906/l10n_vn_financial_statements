@@ -1186,12 +1186,6 @@ msgid "Consolidated"
 msgstr "Hợp nhất"
 
 #. module: l10n_vn_financial_statements
-#. odoo-javascript
-#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
-msgid "Consolidated Statements"
-msgstr "Báo cáo hợp nhất"
-
-#. module: l10n_vn_financial_statements
 #: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__consolidated
 msgid "Consolidated statement: runs on a consolidation group only."
 msgstr "Báo cáo hợp nhất: chỉ chạy được trên một nhóm hợp nhất."
@@ -1262,6 +1256,7 @@ msgid "Display Code"
 msgstr "Mã số hiển thị"
 
 #. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_account_journal__display_name
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__display_name
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__display_name
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__display_name
@@ -1422,12 +1417,35 @@ msgid "I. Long-term receivables"
 msgstr "I. Các khoản phải thu dài hạn"
 
 #. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_account_journal__id
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__id
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__id
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__id
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__id
 msgid "ID"
 msgstr "ID"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report__ledger__ifrs
+msgid "IFRS"
+msgstr "IFRS"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "IFRS - Consolidated Statements"
+msgstr "IFRS - Báo cáo hợp nhất"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "IFRS - Separate Statements"
+msgstr "IFRS - Báo cáo riêng"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__account_journal__vn_ledger__ifrs
+msgid "IFRS Adjustments Only"
+msgstr "Chỉ điều chỉnh IFRS"
 
 #. module: l10n_vn_financial_statements
 #: model:vn.report.line,name:l10n_vn_financial_statements.b03d_II
@@ -1509,6 +1527,11 @@ msgid "Invalid formula: %(formula)s"
 msgstr "Công thức không hợp lệ: %(formula)s"
 
 #. module: l10n_vn_financial_statements
+#: model:ir.model,name:l10n_vn_financial_statements.model_account_journal
+msgid "Journal"
+msgstr "Sổ nhật ký"
+
+#. module: l10n_vn_financial_statements
 #: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
 msgid "Journal Items"
 msgstr "Xem bút toán"
@@ -1553,6 +1576,12 @@ msgstr "Cập nhật lần cuối vào"
 #: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
 msgid "Last Year"
 msgstr "Năm trước"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_account_journal__vn_ledger
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__ledger
+msgid "Ledger"
+msgstr "Sổ"
 
 #. module: l10n_vn_financial_statements
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__form_note
@@ -1788,16 +1817,15 @@ msgid "Same Period Last Year"
 msgstr "Cùng kỳ năm trước"
 
 #. module: l10n_vn_financial_statements
-#. odoo-javascript
-#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
-msgid "Separate Statements"
-msgstr "Báo cáo riêng"
-
-#. module: l10n_vn_financial_statements
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__sequence
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__sequence
 msgid "Sequence"
 msgstr "Thứ tự"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__show_codes
+msgid "Show Line Codes"
+msgstr "Hiện mã số chỉ tiêu"
 
 #. module: l10n_vn_financial_statements
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__show_variance
@@ -1938,6 +1966,43 @@ msgid "V. Short-term biological assets"
 msgstr "V. Tài sản sinh học ngắn hạn"
 
 #. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report__ledger__vas
+msgid "VAS"
+msgstr "VAS"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "VAS - Consolidated Statements"
+msgstr "VAS - Báo cáo hợp nhất"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "VAS - Separate Statements"
+msgstr "VAS - Báo cáo riêng"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__account_journal__vn_ledger__vas
+msgid "VAS Only"
+msgstr "Chỉ VAS"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__account_journal__vn_ledger__all
+msgid "VAS and IFRS"
+msgstr "VAS và IFRS"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_account_journal__vn_ledger
+msgid "VAS is the statutory books. Entries of an 'IFRS Adjustments Only' journal are added to the VAS figures in IFRS reports and left out of VAS reports; entries of a 'VAS Only' journal are left out of IFRS reports."
+msgstr "VAS là sổ kế toán theo luật định. Bút toán của sổ 'Chỉ điều chỉnh IFRS' được cộng vào số liệu VAS trong báo cáo IFRS và không có trong báo cáo VAS; bút toán của sổ 'Chỉ VAS' không có trong báo cáo IFRS."
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__ledger
+msgid "VAS reads the books without the IFRS adjustment journals; IFRS adds them."
+msgstr "Báo cáo VAS đọc sổ, không gồm các sổ điều chỉnh IFRS; báo cáo IFRS cộng thêm các sổ đó."
+
+#. module: l10n_vn_financial_statements
 #: model:vn.report.line,name:l10n_vn_financial_statements.b01_260
 msgid "VI. Long-term financial investments"
 msgstr "VI. Đầu tư tài chính dài hạn"
@@ -1989,6 +2054,11 @@ msgstr "Kết quả chỉ tiêu báo cáo tài chính"
 #: model:ir.model,name:l10n_vn_financial_statements.model_vn_report_wizard
 msgid "Vietnamese financial statement wizard"
 msgstr "Lập báo cáo tài chính Việt Nam"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__show_codes
+msgid "Vietnamese statutory forms print the line code column and the column numbers."
+msgstr "Mẫu báo cáo theo luật định Việt Nam in cột mã số và số thứ tự cột."
 
 #. module: l10n_vn_financial_statements
 #: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__warning_text

@@ -39,6 +39,12 @@ PL_PSEUDO_CODES = frozenset({"HN_EQPL", "HN_PLNCI"})
 
 CHECK_CODE = "__check__"
 
+# Ledgers. VAS is the books; IFRS = VAS + journals of IFRS adjustments.
+# A journal marked for one ledger is left out of the other one's reports.
+LEDGER_VAS = "vas"
+LEDGER_IFRS = "ifrs"
+OTHER_LEDGER = {LEDGER_VAS: LEDGER_IFRS, LEDGER_IFRS: LEDGER_VAS}
+
 KIND_POSITION = "position"
 KIND_PERIOD = "period"
 KIND_CASHFLOW = "cashflow"
@@ -162,10 +168,11 @@ def iter_calls(node):
 class LedgerProvider:
     """Balances from the journal items of one legal entity (company + branches)."""
 
-    def __init__(self, env, companies, posted_only=True):
+    def __init__(self, env, companies, posted_only=True, ledger=LEDGER_VAS):
         self.env = with_companies(env, companies)
         self.companies = companies.with_env(self.env)
         self.states = ("posted",) if posted_only else ("draft", "posted")
+        self.ledger = ledger
         self._cache = {}
 
     @property
@@ -180,6 +187,8 @@ class LedgerProvider:
             ("company_id", "=", company.id),
             ("parent_state", "in", self.states),
             ("account_id", "!=", False),
+            # Journals reserved for the other ledger (e.g. IFRS adjustments in a VAS report).
+            ("journal_id.vn_ledger", "!=", OTHER_LEDGER[self.ledger]),
         ]
         if date_from:
             domain.append(("date", ">=", date_from))
