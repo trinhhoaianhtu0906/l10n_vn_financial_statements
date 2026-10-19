@@ -1,6 +1,6 @@
-"""Formula engine for the TT99 financial statements.
+"""Formula engine for the Vietnamese financial statements.
 
-Every report line ("mã số") carries a formula such as::
+Every report line (line code, "mã số") carries a formula such as::
 
     PDR(1311) + PDR(3311)
     [110] + [120] - [130]
@@ -23,6 +23,9 @@ from datetime import timedelta
 from dateutil.relativedelta import relativedelta
 
 from odoo.exceptions import UserError
+from odoo.tools.translate import LazyTranslate
+
+_lt = LazyTranslate(__name__)
 
 # One aggregated balance: account code, commercial partner id (or False),
 # debit, credit. ``elim`` marks consolidation adjustments, which reduce
@@ -67,7 +70,7 @@ def with_companies(env, companies):
         denied = companies - env.user.sudo().company_ids
         if denied:
             raise UserError(
-                env._("Bạn chưa được cấp quyền truy cập công ty: %s", ", ".join(denied.sudo().mapped("name")))
+                env._("You don't have access to these companies: %s", ", ".join(denied.sudo().mapped("name")))
             )
     allowed = list(dict.fromkeys(companies.ids + list(env.context.get("allowed_company_ids") or [])))
     allowed = [cid for cid in allowed if env.su or cid in env.user.sudo().company_ids.ids]
@@ -93,7 +96,15 @@ def _matches(code, prefixes):
 
 
 class FormulaError(ValueError):
-    pass
+    """A formula problem. ``message(env)`` gives it in the user's language."""
+
+    def __init__(self, lazy_message):
+        # The English text for logs and tracebacks: no environment is needed.
+        super().__init__(lazy_message._source % lazy_message._args)
+        self.lazy_message = lazy_message
+
+    def message(self, env):
+        return env._(self.lazy_message)
 
 
 def parse_formula(formula):
@@ -104,7 +115,7 @@ def parse_formula(formula):
     try:
         tree = ast.parse(source, mode="eval")
     except SyntaxError as e:
-        raise FormulaError(f"Công thức không hợp lệ: {formula}") from e
+        raise FormulaError(_lt("Invalid formula: %(formula)s", formula=formula)) from e
     _validate(tree.body, formula)
     return tree.body
 
@@ -122,16 +133,16 @@ def _validate(node, formula):
     elif isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
         name = node.func.id
         if name != "_L" and name not in ALL_FUNCTIONS:
-            raise FormulaError(f"Hàm không được hỗ trợ: {name} (trong: {formula})")
+            raise FormulaError(_lt("Unsupported function: %(name)s (in: %(formula)s)", name=name, formula=formula))
         if node.keywords:
-            raise FormulaError(f"Không dùng tham số có tên (trong: {formula})")
+            raise FormulaError(_lt("Keyword arguments are not allowed (in: %(formula)s)", formula=formula))
         for arg in node.args:
             if not (isinstance(arg, ast.Constant) and isinstance(arg.value, (int, str))):
                 raise FormulaError(
-                    f"Tham số của {name} phải là mã tài khoản (trong: {formula})"
+                    _lt("The arguments of %(name)s must be account codes (in: %(formula)s)", name=name, formula=formula)
                 )
     else:
-        raise FormulaError(f"Biểu thức không được hỗ trợ trong công thức: {formula}")
+        raise FormulaError(_lt("Unsupported expression in formula: %(formula)s", formula=formula))
 
 
 def iter_calls(node):
@@ -189,7 +200,7 @@ class LedgerProvider:
         ]
 
     def _closing_move_ids(self, company, domain):
-        """Moves that close profit and loss into 911 (kết chuyển xác định KQKD)."""
+        """Moves that close profit and loss into account 911 (year-end closing)."""
         account_ids = self._account_ids(company, domain, ("911",))
         if not account_ids:
             return []
@@ -284,7 +295,7 @@ class ReportEvaluator:
             for name, prefixes in iter_calls(node):
                 if name in ALL_FUNCTIONS and name not in allowed:
                     raise FormulaError(
-                        f"Hàm {name} không dùng được trong loại báo cáo này (mã số {code})"
+                        _lt("Function %(name)s cannot be used in this kind of report (line %(code)s)", name=name, code=code)
                     )
                 if name in CASH_FUNCTIONS:
                     cash_prefixes.update(prefixes)
@@ -450,10 +461,10 @@ class ReportEvaluator:
         if code in self.values:
             return self.values[code]
         if code not in self.formulas:
-            raise FormulaError(f"Mã số không tồn tại trong báo cáo: [{code}]")
+            raise FormulaError(_lt("Unknown line code in the report: [%(code)s]", code=code))
         if code in self._stack:
             cycle = " → ".join(self._stack + [code])
-            raise FormulaError(f"Công thức tham chiếu vòng: {cycle}")
+            raise FormulaError(_lt("Circular reference between formulas: %(cycle)s", cycle=cycle))
         node = self.formulas[code]
         self._stack.append(code)
         try:
@@ -488,7 +499,7 @@ class ReportEvaluator:
         return {code: bal for code, bal in totals.items() if abs(bal) >= rounding}
 
 
-COMPARE_DEFAULT = "default"  # the TT99 form: B01 vs opening of the year, B02/B03 vs last year
+COMPARE_DEFAULT = "default"  # the statutory form: B01 vs opening of the year, B02/B03 vs last year
 COMPARE_PREVIOUS = "previous_period"
 COMPARE_LAST_YEAR = "previous_year"
 COMPARE_NONE = "none"
@@ -526,7 +537,7 @@ def comparison_periods(kind, date_from, date_to, mode=COMPARE_DEFAULT, count=1, 
         elif mode == COMPARE_LAST_YEAR or kind != KIND_POSITION:
             periods.append((date_from - relativedelta(years=step), date_to - relativedelta(years=step)))
         else:
-            # "Số đầu năm": the closing position of the previous fiscal year(s).
+            # Opening of the year ("Số đầu năm"): closing position of the previous fiscal year(s).
             year_start = fiscal_year_start(date_to) if fiscal_year_start else date_from
             opening = year_start - relativedelta(years=step - 1) - timedelta(days=1)
             periods.append((opening - relativedelta(years=1, days=-1), opening))
@@ -534,7 +545,7 @@ def comparison_periods(kind, date_from, date_to, mode=COMPARE_DEFAULT, count=1, 
 
 
 def comparative_dates(kind, date_from, date_to):
-    """Dates of the default (TT99) comparative column."""
+    """Dates of the default (statutory form) comparative column."""
     return comparison_periods(kind, date_from, date_to)[0]
 
 
@@ -542,12 +553,12 @@ def evaluate_report(report, provider, date_from, date_to, with_comparative=True,
     """Compute a ``vn.report`` record.
 
     ``comparisons`` lists the (date_from, date_to) of the comparative columns;
-    by default, the TT99 one. Returns ``{"lines": [...], "warnings": [...]}``.
+    by default, the one of the statutory form. Returns ``{"lines": [...], "warnings": [...]}``.
     Each line dict holds the line record plus ``value``, ``value_cmps`` (one per
     comparative column) and ``value_cmp`` (the first one); None when blank.
     """
     if date_from > date_to:
-        raise UserError("Ngày bắt đầu phải trước ngày kết thúc.")
+        raise UserError(provider.env._("The start date must be before the end date."))
     if comparisons is None:
         comparisons = (
             comparison_periods(
@@ -569,14 +580,19 @@ def evaluate_report(report, provider, date_from, date_to, with_comparative=True,
             evaluator.compute()
             comparatives.append(evaluator)
     except FormulaError as e:
-        raise UserError(str(e)) from e
+        raise UserError(e.message(provider.env)) from e
 
+    env = provider.env
     currency = provider.currency
     warnings = []
     for code, balance in sorted(current.unmapped().items()):
         warnings.append(
-            f"Tài khoản {code} có số dư {currency.round(balance):,.0f} nhưng chưa được"
-            f" đưa vào chỉ tiêu nào của {report.code}."
+            env._(
+                "Account %(code)s has a balance of %(balance)s but is not used by any line of %(report)s.",
+                code=code,
+                balance=f"{currency.round(balance):,.0f}",
+                report=report.code,
+            )
         )
     if hasattr(provider, "extra_warnings"):
         warnings += provider.extra_warnings(date_from, date_to)
@@ -584,8 +600,11 @@ def evaluate_report(report, provider, date_from, date_to, with_comparative=True,
         difference = currency.round(current.values.get(CHECK_CODE) or 0.0)
         if difference:
             warnings.append(
-                f"{report.check_message or 'Kiểm tra không khớp'}:"
-                f" chênh lệch {difference:,.0f}."
+                env._(
+                    "%(message)s: difference of %(difference)s.",
+                    message=report.check_message or env._("Check failed"),
+                    difference=f"{difference:,.0f}",
+                )
             )
 
     def rounded(value):

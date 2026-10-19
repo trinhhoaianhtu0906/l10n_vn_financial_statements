@@ -1,0 +1,2080 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_vn_financial_statements
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-19 03:48+0000\n"
+"PO-Revision-Date: 2026-10-19 03:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "%(message)s: difference of %(difference)s."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/vn_report.py:0
+msgid "%s (copy)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,subtitle:l10n_vn_financial_statements.report_b03_direct
+msgid "(Direct method)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,subtitle:l10n_vn_financial_statements.report_b01
+msgid "(For enterprises meeting the going concern assumption)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,subtitle:l10n_vn_financial_statements.report_b03_indirect
+msgid "(Indirect method)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,form_note:l10n_vn_financial_statements.report_b01
+#: model:vn.report,form_note:l10n_vn_financial_statements.report_b02
+#: model:vn.report,form_note:l10n_vn_financial_statements.report_b03_direct
+#: model:vn.report,form_note:l10n_vn_financial_statements.report_b03_indirect
+msgid ""
+"(Issued with Circular No. 99/2025/TT-BTC of 27 October 2025 of the Minister "
+"of Finance)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "(Signature, full name)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "(Signature, full name, seal)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_223
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_226
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_229
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_242
+msgid "- Accumulated depreciation (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_235
+msgid "- Accumulated depreciation of mature livestock (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_420a
+msgid "- Accumulated to the end of the previous period"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_06
+msgid "- Borrowing costs"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_14
+msgid "- Borrowing costs paid"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_15
+msgid "- Corporate income tax paid"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_222
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_225
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_228
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_234
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_241
+msgid "- Cost"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_02
+msgid "- Depreciation of fixed assets and investment property"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_04
+msgid ""
+"- Exchange gains or losses on revaluation of foreign currency monetary items"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_05
+msgid "- Gains or losses from investing and financing activities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_12
+msgid "- Increase or decrease in deferred costs"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_10
+msgid "- Increase or decrease in inventories"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_11
+msgid ""
+"- Increase or decrease in payables (excluding interest and corporate income "
+"tax payable)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_09
+msgid "- Increase or decrease in receivables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_13
+msgid "- Increase or decrease in trading securities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_420b
+msgid "- Of the current period"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_24
+msgid "- Of which: borrowing costs"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_411a
+msgid "- Ordinary shares with voting rights"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_07
+msgid "- Other adjustments"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_17
+msgid "- Other payments for operating activities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_16
+msgid "- Other receipts from operating activities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_411b
+msgid "- Preference shares"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_03
+msgid "- Provisions"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_line__level
+msgid "0: part, 1: roman numeral section, 2: line, 3: detail line"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_111
+msgid "1. Cash"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_141
+msgid "1. Inventories"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_261
+msgid "1. Investments in subsidiaries"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_231
+msgid "1. Livestock producing periodic products"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_271
+msgid "1. Long-term deferred costs"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_331
+msgid "1. Long-term trade payables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_211
+msgid "1. Long-term trade receivables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_251
+msgid "1. Long-term work in progress"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_411
+msgid "1. Owners' contributed capital"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_31
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_31
+msgid "1. Proceeds from share issues and owners' contributions"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_01
+msgid "1. Profit before tax"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_21
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_21
+msgid ""
+"1. Purchase and construction of fixed assets and other long-term assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_01
+msgid "1. Receipts from sales of goods, services and other revenue"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_01
+msgid "1. Revenue from sales of goods and services"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_161
+msgid "1. Short-term deferred costs"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_151
+msgid "1. Short-term livestock for one-time harvest"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_311
+msgid "1. Short-term trade payables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_131
+msgid "1. Short-term trade receivables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_221
+msgid "1. Tangible fixed assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_121
+msgid "1. Trading securities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_340
+msgid "10. Convertible bonds"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_26
+msgid "10. General and administrative expenses"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_320
+msgid "10. Other short-term payables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_420
+msgid "10. Undistributed profit after tax"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_30
+msgid "11. Operating profit"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_341
+msgid "11. Preference shares"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_321
+msgid "11. Short-term borrowings and finance lease liabilities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_342
+msgid "12. Deferred tax liabilities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_31
+msgid "12. Other income"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_322
+msgid "12. Short-term provisions"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_323
+msgid "13. Bonus and welfare funds"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_343
+msgid "13. Long-term provisions"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_32
+msgid "13. Other expenses"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_40
+msgid "14. Other profit"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_324
+msgid "14. Price stabilisation fund"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_344
+msgid "14. Science and technology development fund"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_50
+msgid "15. Accounting profit before tax"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_325
+msgid "15. Government bond repurchase transactions"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_51
+msgid "16. Current corporate income tax expense"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_52
+msgid "17. Deferred corporate income tax expense"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_60
+msgid "18. Profit after corporate income tax"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_70
+msgid "19. Basic earnings per share (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_32
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_32
+msgid "2. Capital returned to owners and issued shares repurchased"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_112
+msgid "2. Cash equivalents"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_252
+msgid "2. Construction in progress"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_162
+msgid "2. Deductible VAT"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_272
+msgid "2. Deferred tax assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_224
+msgid "2. Finance lease fixed assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_262
+msgid "2. Investments in joint ventures and associates"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_332
+msgid "2. Long-term advances from customers"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_236
+msgid "2. Long-term livestock for one-time harvest"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_212
+msgid "2. Long-term prepayments to suppliers"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_02
+msgid "2. Payments to suppliers of goods and services"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_22
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_22
+msgid "2. Proceeds from disposal of fixed assets and other long-term assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_142
+msgid "2. Provision for decline in value of inventories (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_122
+msgid "2. Provision for diminution in value of trading securities (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_02
+msgid "2. Revenue deductions"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_412
+msgid "2. Share premium"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_312
+msgid "2. Short-term advances from customers"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_132
+msgid "2. Short-term prepayments to suppliers"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_152
+msgid "2. Short-term seasonal or one-time-harvest crops"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_71
+msgid "20. Diluted earnings per share (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_413
+msgid "3. Bond conversion options"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_313
+msgid "3. Dividends and profits payable"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_263
+msgid "3. Equity investments in other entities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_227
+msgid "3. Intangible fixed assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_23
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_23
+msgid "3. Loans granted and debt instruments of other entities purchased"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_273
+msgid "3. Long-term equipment, supplies and spare parts"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_237
+msgid "3. Long-term seasonal or one-time-harvest crops"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_333
+msgid "3. Long-term taxes and amounts payable to the State"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_10
+msgid "3. Net revenue from sales of goods and services"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_08
+msgid "3. Operating profit before changes in working capital"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_03
+msgid "3. Payments to employees"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_33
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_33
+msgid "3. Proceeds from borrowings"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_153
+msgid "3. Provision for losses on short-term biological assets (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_123
+msgid "3. Short-term held-to-maturity investments"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_133
+msgid "3. Short-term intra-company receivables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_163
+msgid "3. Taxes and other receivables from the State"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_213
+msgid "3. Working capital in dependent units"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_04
+msgid "4. Borrowing costs paid"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_11
+msgid "4. Cost of goods sold"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_164
+msgid "4. Government bond repurchase transactions"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_24
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_24
+msgid "4. Loans collected and debt instruments of other entities resold"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_334
+msgid "4. Long-term accrued expenses"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_214
+msgid "4. Long-term intra-company receivables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_274
+msgid "4. Other non-current assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_414
+msgid "4. Other owners' capital"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_264
+msgid "4. Provision for long-term investment losses (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_238
+msgid "4. Provision for losses on long-term biological assets (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_124
+msgid "4. Provision for short-term held-to-maturity investments (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_134
+msgid "4. Receivables under construction contracts"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_34
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_34
+msgid "4. Repayment of borrowings"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_314
+msgid "4. Short-term taxes and amounts payable to the State"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_05
+msgid "5. Corporate income tax paid"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_25
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_25
+msgid "5. Equity investments in other entities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_20
+msgid "5. Gross profit from sales of goods and services"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_335
+msgid "5. Intra-company payables for working capital"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_265
+msgid "5. Long-term held-to-maturity investments"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_165
+msgid "5. Other current assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_215
+msgid "5. Other long-term receivables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_125
+msgid "5. Other short-term investments"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_135
+msgid "5. Other short-term receivables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_315
+msgid "5. Payables to employees"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_35
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_35
+msgid "5. Repayment of finance lease liabilities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_415
+msgid "5. Treasury shares (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_416
+msgid "6. Asset revaluation differences"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_36
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_36
+msgid "6. Dividends and profits paid to owners"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_21
+msgid "6. Gain or loss on sale and disposal of investment property"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_336
+msgid "6. Long-term intra-company payables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_06
+msgid "6. Other receipts from operating activities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_26
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_26
+msgid "6. Proceeds from equity investments in other entities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_216
+msgid "6. Provision for long-term doubtful debts (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_266
+msgid "6. Provision for long-term held-to-maturity investments (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_126
+msgid "6. Provision for losses on other short-term investments (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_136
+msgid "6. Provision for short-term doubtful debts (*)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_316
+msgid "6. Short-term accrued expenses"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_22
+msgid "7. Financial income"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_417
+msgid "7. Foreign exchange differences"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_27
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_27
+msgid "7. Interest, dividends and profits received"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_337
+msgid "7. Long-term deferred revenue"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_07
+msgid "7. Other payments for operating activities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_317
+msgid "7. Short-term intra-company payables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_137
+msgid "7. Shortage of assets awaiting resolution"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_418
+msgid "8. Development investment fund"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_23
+msgid "8. Financial expenses"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_338
+msgid "8. Other long-term payables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_318
+msgid "8. Short-term payables under construction contracts"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_339
+msgid "9. Long-term borrowings and finance lease liabilities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_419
+msgid "9. Other equity funds"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_25
+msgid "9. Selling expenses"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_319
+msgid "9. Short-term deferred revenue"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "<b>Address:</b>"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "<b>Reporting entity:</b>"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "<b>Tax ID:</b>"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid ""
+"<code>BAL(...)</code>: debit minus credit balance. <code>NBAL(...)</code>: "
+"credit minus debit balance."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid ""
+"<code>CASH(...)</code>, <code>CASHC(...)</code>, <code>CASHD(...)</code>: net cash flow / receipts / payments against the accounts (B03).\n"
+"                                    <code>CASH_REST_IN()</code>, <code>CASH_REST_OUT()</code>: cash flows not used by any other line."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid ""
+"<code>DR(...)</code> / <code>CR(...)</code>: sum of the debit / credit "
+"balances of each account."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid ""
+"<code>DT(...)</code> / <code>CT(...)</code>: debit / credit movements of the"
+" period, closing entries (account 911) excluded."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid ""
+"<code>OPEN(...)</code>, <code>CLOSE(...)</code>, <code>CHG(...)</code>: "
+"opening balance, closing balance, change (B03)."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid ""
+"<code>PDR(...)</code> / <code>PCR(...)</code>: sum of the debit / credit "
+"balances per partner (customer, vendor)."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid ""
+"<code>PL_CUR()</code> / <code>PL_PRIOR()</code>: unclosed profit or loss of "
+"the current year / prior years (B01)."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid ""
+"<code>[110]</code>: value of line 110 of the same report. You can use + - * "
+"/ and brackets."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_100
+msgid "A - CURRENT ASSETS"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.constraint,message:l10n_vn_financial_statements.constraint_vn_report_line_code_uniq
+msgid "A line code must be unique within a report."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid ""
+"Account %(code)s has a balance of %(balance)s but is not used by any line of"
+" %(report)s."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Accounting period from %(date_from)s to %(date_to)s"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__active
+msgid "Active"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_wizard__include_branches
+msgid "Add the figures of the branches (child companies in Odoo)."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_wizard__show_variance
+msgid "Add variance and % columns against the first comparison period."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Address: %s"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__target_move__all
+msgid "All Entries (including drafts)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "Approved on ......"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid ""
+"Arguments are account code prefixes: <code>131</code> matches 1311 and 1312."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "As at %(day)s/%(month)s/%(year)s"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_200
+msgid "B - NON-CURRENT ASSETS"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,name:l10n_vn_financial_statements.report_b01
+msgid "B01-DN Statement of Financial Position"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,name:l10n_vn_financial_statements.report_b02
+msgid "B02-DN Income Statement"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,name:l10n_vn_financial_statements.report_b03_direct
+msgid "B03-DN Cash Flow Statement (Direct Method)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,name:l10n_vn_financial_statements.report_b03_indirect
+msgid "B03-DN Cash Flow Statement (Indirect Method)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__blank
+msgid "Blank"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__bold
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__bold
+msgid "Bold"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_300
+msgid "C - LIABILITIES"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,title:l10n_vn_financial_statements.report_b03_direct
+#: model:vn.report,title:l10n_vn_financial_statements.report_b03_indirect
+msgid "CASH FLOW STATEMENT"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "CHIEF ACCOUNTANT"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_60
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_60
+msgid "Cash and cash equivalents at the beginning of the period"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_70
+msgid "Cash and cash equivalents at the end of the period"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_70
+msgid "Cash and cash equivalents at the end of the period (70 = 50 + 60 + 61)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report__kind__cashflow
+msgid "Cash flows"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__check_expression
+msgid "Check Formula"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__check_message
+msgid "Check Message"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Check failed"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Check warnings:"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_line__hide_if_zero
+msgid ""
+"Circular 99 allows leaving out lines without figures (their codes are kept)."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_wizard__hide_zero
+msgid ""
+"Circular 99: lines without figures may be left out, but the line codes are "
+"not renumbered."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Circular reference between formulas: %(cycle)s"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Click to see the journal items"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Close"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Closing Balance"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,check_message:l10n_vn_financial_statements.report_b03_direct
+msgid ""
+"Closing cash (70) does not match the ledger balance of cash and cash "
+"equivalents"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__code
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__code
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__code
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Code"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__col_cmp_label
+msgid "Col Cmp Label"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__col_label
+msgid "Col Label"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__company_id
+msgid "Company"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__comparison
+msgid "Compare With"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__value_cmp
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Comparison"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__comparison_dates
+msgid "Comparison Dates"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Compute"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__computed
+msgid "Computed"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Computing..."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__consolidated
+msgid "Consolidated"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Consolidated Statements"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__consolidated
+msgid "Consolidated statement: runs on a consolidation group only."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Consolidation Group"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__create_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__create_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "Currency:"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Currency: %s"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Custom Dates"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_400
+msgid "D - OWNERS' EQUITY"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__date_from
+msgid "Date From"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__date_to
+msgid "Date To"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__display_code
+msgid "Display Code"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__display_name
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__display_name
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__form_code
+msgid "E.g. Form B 01 - DN"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_line__formula
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_wizard_line__formula
+msgid ""
+"E.g. PDR(1311): debit balances of account 1311 per partner; [110] + [120]: "
+"sum of other lines. Leave empty for a line filled in by hand."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_61
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_61
+msgid "Effect of foreign exchange rate changes"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "End of Period"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__target_move
+msgid "Entries"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Export to Excel"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__check_expression
+msgid ""
+"Expression that must equal 0, e.g. [280] - [440]. Otherwise the report shows"
+" a warning."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.actions.act_window,name:l10n_vn_financial_statements.vn_report_wizard_action
+#: model:ir.actions.report,name:l10n_vn_financial_statements.action_report_vn_financial
+msgid "Financial Statement"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.actions.client,name:l10n_vn_financial_statements.action_vn_dynamic_report
+msgid "Financial Statements (Circular 99)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report__kind__position
+msgid "Financial position (balances at a date)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "First 6 Months"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "First 9 Months"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__form_code
+msgid "Form"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,form_code:l10n_vn_financial_statements.report_b01
+msgid "Form B 01 - DN"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,form_code:l10n_vn_financial_statements.report_b02
+msgid "Form B 02 - DN"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,form_code:l10n_vn_financial_statements.report_b03_direct
+#: model:vn.report,form_code:l10n_vn_financial_statements.report_b03_indirect
+msgid "Form B 03 - DN"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__code
+msgid "Form code, e.g. B01-DN"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__formula
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__formula
+msgid "Formula"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "Formula Syntax"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Full Year"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid ""
+"Function %(name)s cannot be used in this kind of report (line %(code)s)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__hide_zero
+msgid "Hide Empty Lines"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__hide_if_zero
+msgid "Hide When Zero"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_110
+msgid "I. Cash and cash equivalents"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_I
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_I
+msgid "I. Cash flows from operating activities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_310
+msgid "I. Current liabilities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_210
+msgid "I. Long-term receivables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__id
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__id
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__id
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_II
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_II
+msgid "II. Cash flows from investing activities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_220
+msgid "II. Fixed assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_330
+msgid "II. Non-current liabilities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_120
+msgid "II. Short-term financial investments"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_III
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_III
+msgid "III. Cash flows from financing activities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_230
+msgid "III. Long-term biological assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_130
+msgid "III. Short-term receivables"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,title:l10n_vn_financial_statements.report_b02
+msgid "INCOME STATEMENT"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_140
+msgid "IV. Inventories"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_240
+msgid "IV. Investment property"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__include_branches
+msgid "Include Branches"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Including Drafts"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report__kind__period
+msgid "Income statement (movements of the period)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,check_message:l10n_vn_financial_statements.report_b03_indirect
+msgid ""
+"Indirect method: the adjustment lines are estimates and closing cash (70) "
+"does not match the ledger; review lines 04, 07, 16 and 17"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Invalid formula: %(formula)s"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Journal Items"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Keyword arguments are not allowed (in: %(formula)s)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__kind
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__report_kind
+msgid "Kind"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "LEGAL REPRESENTATIVE"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__write_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__write_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Last Year"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__form_note
+msgid "Legal Basis"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__level
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__level
+msgid "Level"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__name
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__name
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "Line"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__subtitle
+msgid "Line under the title, e.g. the method used"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "Lines"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Month %s"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__name
+msgid "Name"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_50
+msgid "Net cash flows for the period"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_50
+msgid "Net cash flows for the period (50 = 20 + 30 + 40)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_40
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_40
+msgid "Net cash flows from financing activities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_30
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_30
+msgid "Net cash flows from investing activities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_20
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_20
+msgid "Net cash flows from operating activities"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__comparison__none
+msgid "No Comparison"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid ""
+"No consolidation group yet. Create one in Consolidation > Consolidation "
+"Groups."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__note_ref
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__note_ref
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "Note"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__comparison_count
+msgid "Number of Periods"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_list
+msgid "Open Report"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Opening Balance"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "PREPARED BY"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Period"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Periods"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Posted"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__target_move__posted
+msgid "Posted Entries"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__comparison__previous_period
+msgid "Previous Period"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Print PDF"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Quarter 1"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Quarter 2"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Quarter 3"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Quarter 4"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__report_id
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__report_id
+msgid "Report"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__report_line_id
+msgid "Report Line"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.actions.act_window,name:l10n_vn_financial_statements.vn_report_action
+#: model:ir.ui.menu,name:l10n_vn_financial_statements.menu_vn_fs_reports
+msgid "Report Templates"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Reporting entity:"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Reporting entity: %s"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__line_ids
+msgid "Results"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,title:l10n_vn_financial_statements.report_b01
+msgid "STATEMENT OF FINANCIAL POSITION"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__comparison__previous_year
+msgid "Same Period Last Year"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Separate Statements"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__sequence
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__show_variance
+msgid "Show Variance"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.ui.menu,name:l10n_vn_financial_statements.menu_vn_fs_wizard
+msgid "Statement (Dialog)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.ui.menu,name:l10n_vn_financial_statements.menu_vn_fs_dynamic
+msgid "Statements"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Statutory Form"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__comparison__default
+msgid "Statutory Form (opening of the year / same period last year)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__subtitle
+msgid "Subtitle"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_280
+msgid "TOTAL ASSETS"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_440
+msgid "TOTAL LIABILITIES AND EQUITY"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "The arguments of %(name)s must be account codes (in: %(formula)s)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid ""
+"The list only shows the journal items of the companies active in the company"
+" switcher (top right). Switch on: %s."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "The number of comparison periods must be between 1 and 6."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.constraint,message:l10n_vn_financial_statements.constraint_vn_report_code_uniq
+msgid "The report code must be unique."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "The start date must be before the end date."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__value
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "This Period"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "This Year"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "This line does not read any account directly."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__title
+msgid "Title"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__title
+msgid "Title printed on the statement"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid ""
+"To customise a report, duplicate it (Action → Duplicate): upgrading the "
+"module overwrites the original reports."
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,check_message:l10n_vn_financial_statements.report_b01
+msgid "Total assets (280) differ from total liabilities and equity (440)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Unknown line code in the report: [%(code)s]"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Unsupported expression in formula: %(formula)s"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Unsupported function: %(name)s (in: %(formula)s)"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_250
+msgid "V. Long-term assets in progress"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_150
+msgid "V. Short-term biological assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_260
+msgid "VI. Long-term financial investments"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_160
+msgid "VI. Other current assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_270
+msgid "VII. Other non-current assets"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__values_cmp
+msgid "Values Cmp"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Variance"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.ui.menu,name:l10n_vn_financial_statements.menu_vn_fs_root
+msgid "Vietnamese Financial Statements"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model,name:l10n_vn_financial_statements.model_vn_report
+msgid "Vietnamese financial statement"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model,name:l10n_vn_financial_statements.model_vn_report_line
+msgid "Vietnamese financial statement line"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model,name:l10n_vn_financial_statements.model_vn_report_wizard_line
+msgid "Vietnamese financial statement result line"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model,name:l10n_vn_financial_statements.model_vn_report_wizard
+msgid "Vietnamese financial statement wizard"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__warning_text
+msgid "Warnings"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__wizard_id
+msgid "Wizard"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__xlsx_file
+msgid "Xlsx File"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__xlsx_filename
+msgid "Xlsx Filename"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Year"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "You don't have access to these companies: %s"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_232
+msgid "a) Immature livestock producing periodic products"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_233
+msgid "b) Mature livestock producing periodic products"
+msgstr ""
+
+#. module: l10n_vn_financial_statements
+#: model:ir.actions.report,print_report_name:l10n_vn_financial_statements.action_report_vn_financial
+msgid "object._export_filename()"
+msgstr ""

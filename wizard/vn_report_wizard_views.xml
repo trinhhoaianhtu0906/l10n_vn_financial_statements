@@ -32,26 +32,26 @@
                         <field name="bold" column_invisible="1"/>
                         <field name="blank" column_invisible="1"/>
                         <field name="name"/>
-                        <field name="display_code" string="Mã số"/>
+                        <field name="display_code" string="Code"/>
                         <field name="note_ref" optional="hide"/>
-                        <field name="value" string="Kỳ này" invisible="blank"/>
-                        <field name="value_cmp" string="Kỳ so sánh" invisible="blank"/>
+                        <field name="value" string="This Period" invisible="blank"/>
+                        <field name="value_cmp" string="Comparison" invisible="blank"/>
                         <field name="formula" optional="hide"/>
-                        <button name="action_open_journal_items" type="object" icon="fa-search" title="Xem bút toán" invisible="blank"/>
+                        <button name="action_open_journal_items" type="object" icon="fa-search" title="Journal Items" invisible="blank"/>
                     </list>
                 </field>
                 <footer>
-                    <button name="action_compute" type="object" string="Xem" class="btn-primary"/>
-                    <button name="action_print_pdf" type="object" string="In PDF" icon="fa-file-pdf-o"/>
-                    <button name="action_export_xlsx" type="object" string="Xuất Excel" icon="fa-file-excel-o"/>
-                    <button special="cancel" string="Đóng"/>
+                    <button name="action_compute" type="object" string="Compute" class="btn-primary"/>
+                    <button name="action_print_pdf" type="object" string="Print PDF" icon="fa-file-pdf-o"/>
+                    <button name="action_export_xlsx" type="object" string="Export to Excel" icon="fa-file-excel-o"/>
+                    <button special="cancel" string="Close"/>
                 </footer>
             </form>
         </field>
     </record>
 
     <record id="vn_report_wizard_action" model="ir.actions.act_window">
-        <field name="name">Lập báo cáo tài chính TT99</field>
+        <field name="name">Financial Statement</field>
         <field name="res_model">vn.report.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>

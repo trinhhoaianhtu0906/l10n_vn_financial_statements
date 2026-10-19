@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="menu_vn_tt99_root"
-              name="Báo cáo tài chính TT99"
+    <menuitem id="menu_vn_fs_root"
+              name="Vietnamese Financial Statements"
               parent="account.menu_finance_reports"
               sequence="2"
               groups="account.group_account_readonly,account.group_account_manager"/>
-    <menuitem id="menu_vn_tt99_dynamic"
-              name="Xem báo cáo"
-              parent="menu_vn_tt99_root"
+    <menuitem id="menu_vn_fs_dynamic"
+              name="Statements"
+              parent="menu_vn_fs_root"
               action="action_vn_dynamic_report"
               sequence="5"/>
-    <menuitem id="menu_vn_tt99_wizard"
-              name="Lập báo cáo (hộp thoại)"
-              parent="menu_vn_tt99_root"
+    <menuitem id="menu_vn_fs_wizard"
+              name="Statement (Dialog)"
+              parent="menu_vn_fs_root"
               action="vn_report_wizard_action"
               sequence="10"/>
-    <menuitem id="menu_vn_tt99_reports"
-              name="Mẫu báo cáo và công thức"
-              parent="menu_vn_tt99_root"
+    <menuitem id="menu_vn_fs_reports"
+              name="Report Templates"
+              parent="menu_vn_fs_root"
               action="vn_report_action"
               sequence="90"
               groups="account.group_account_manager"/>

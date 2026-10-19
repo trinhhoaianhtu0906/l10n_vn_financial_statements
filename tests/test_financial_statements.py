@@ -6,13 +6,13 @@ from ..models.engine import LedgerProvider, evaluate_report
 
 
 @tagged("post_install", "-at_install")
-class TestTt99Reports(TransactionCase):
+class TestFinancialStatements(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.company = cls.env["res.company"].create(
             {
-                "name": "Công ty TT99 Test",
+                "name": "Test Company (Circular 99)",
                 "country_id": cls.env.ref("base.vn").id,
                 "currency_id": cls.env.ref("base.VND").id,
             }
@@ -77,7 +77,7 @@ class TestTt99Reports(TransactionCase):
         return move
 
     def _run(self, xmlid):
-        report = self.env.ref(f"l10n_vn_tt99_reports.{xmlid}")
+        report = self.env.ref(f"l10n_vn_financial_statements.{xmlid}")
         provider = LedgerProvider(self.env, self.company)
         result = evaluate_report(report, provider, date(2026, 1, 1), date(2026, 12, 31))
         values = {item["line"].code: item["value"] for item in result["lines"]}
@@ -166,7 +166,7 @@ class TestTt99Reports(TransactionCase):
         self.assertIn("B01-DN", [r["code"] for r in choices["reports"]])
         data = Wizard.get_dynamic_report(
             {
-                "report_id": self.env.ref("l10n_vn_tt99_reports.report_b01").id,
+                "report_id": self.env.ref("l10n_vn_financial_statements.report_b01").id,
                 "company_id": self.company.id,
                 "date_from": "2026-01-01",
                 "date_to": "2026-12-31",
@@ -188,7 +188,7 @@ class TestTt99Reports(TransactionCase):
     def test_compare_previous_periods_with_variance(self):
         """B02 for Q1 2026 against the two quarters before, with variance columns."""
         data = self.env["vn.report.wizard"].get_dynamic_report({
-            "report_id": self.env.ref("l10n_vn_tt99_reports.report_b02").id,
+            "report_id": self.env.ref("l10n_vn_financial_statements.report_b02").id,
             "company_id": self.company.id,
             "date_from": "2026-01-01",
             "date_to": "2026-03-31",
@@ -197,7 +197,7 @@ class TestTt99Reports(TransactionCase):
             "show_variance": True,
         })
         self.assertEqual([c["label"] for c in data["columns"]],
-                         ["Kỳ này", "Kỳ trước", "Kỳ trước (2)", "Chênh lệch", "%"])
+                         ["This Period", "Previous Period", "Previous Period (2)", "Variance", "%"])
         self.assertEqual(data["columns"][1]["date"], "01/10/2025 - 31/12/2025")
         lines = {line["code"]: line for line in data["lines"]}
         # Q1 2026: revenue 100 (sale in February), nothing in Q4 or Q3 2025.
@@ -209,7 +209,7 @@ class TestTt99Reports(TransactionCase):
 
     def test_b01_quarter_compares_with_year_opening(self):
         data = self.env["vn.report.wizard"].get_dynamic_report({
-            "report_id": self.env.ref("l10n_vn_tt99_reports.report_b01").id,
+            "report_id": self.env.ref("l10n_vn_financial_statements.report_b01").id,
             "company_id": self.company.id,
             "date_from": "2026-04-01",
             "date_to": "2026-06-30",
@@ -221,7 +221,7 @@ class TestTt99Reports(TransactionCase):
     def test_wizard_outputs(self):
         wizard = self.env["vn.report.wizard"].create(
             {
-                "report_id": self.env.ref("l10n_vn_tt99_reports.report_b01").id,
+                "report_id": self.env.ref("l10n_vn_financial_statements.report_b01").id,
                 "company_id": self.company.id,
                 "date_from": date(2026, 1, 1),
                 "date_to": date(2026, 12, 31),
@@ -231,11 +231,39 @@ class TestTt99Reports(TransactionCase):
         line_280 = wizard.line_ids.filtered(lambda line: line.code == "280")
         self.assertEqual(line_280.value, 1_000_000_191)
         self.assertEqual(wizard.format_amount(-1234567), "(1.234.567)")
+        # The statutory form has its own header: no document layout dialog first.
+        self.assertEqual(wizard.action_print_pdf()["type"], "ir.actions.report")
         action = wizard.action_export_xlsx()
         self.assertEqual(action["type"], "ir.actions.act_url")
         self.assertTrue(wizard.xlsx_file)
         html = self.env["ir.actions.report"]._render_qweb_html(
-            "l10n_vn_tt99_reports.report_vn_financial", wizard.ids
+            "l10n_vn_financial_statements.report_vn_financial", wizard.ids
         )[0]
-        self.assertIn("BÁO CÁO TÌNH HÌNH TÀI CHÍNH", html.decode())
+        self.assertIn("STATEMENT OF FINANCIAL POSITION", html.decode())
         self.assertIn("1.000.000.191", html.decode())
+
+    def test_vietnamese_translation(self):
+        """In Vietnamese, the statement reads exactly as the Circular 99 form."""
+        self.env["res.lang"]._activate_lang("vi_VN")
+        self.env["ir.module.module"]._load_module_terms(["l10n_vn_financial_statements"], ["vi_VN"], overwrite=True)
+        env = self.env(context=dict(self.env.context, lang="vi_VN"))
+        wizard = env["vn.report.wizard"].create(
+            {
+                "report_id": self.env.ref("l10n_vn_financial_statements.report_b01").id,
+                "company_id": self.company.id,
+                "date_from": date(2026, 1, 1),
+                "date_to": date(2026, 12, 31),
+            }
+        )
+        wizard.action_compute()
+        self.assertEqual(wizard.period_text(), "Tại ngày 31 tháng 12 năm 2026")
+        self.assertEqual([c["label"] for c in wizard.column_headers()], ["Số cuối năm", "Số đầu năm"])
+        names = dict(wizard.line_ids.mapped(lambda line: (line.code, line.name)))
+        self.assertEqual(names["110"], "I. Tiền và các khoản tương đương tiền")
+        self.assertEqual(names["420a"], "- LNST chưa phân phối lũy kế đến cuối kỳ trước")
+        html = env["ir.actions.report"]._render_qweb_html(
+            "l10n_vn_financial_statements.report_vn_financial", wizard.ids
+        )[0].decode()
+        for text in ("BÁO CÁO TÌNH HÌNH TÀI CHÍNH", "Mẫu số B 01 - DN", "Đơn vị báo cáo:", "Mã số", "NGƯỜI LẬP",
+                     "Kèm theo Thông tư số 99/2025/TT-BTC"):
+            self.assertIn(text, html)

@@ -5,6 +5,7 @@ import xlsxwriter
 
 from odoo import api, fields, models
 from odoo.exceptions import UserError
+from odoo.tools.translate import LazyTranslate
 
 from ..models.engine import (
     COMPARE_DEFAULT,
@@ -19,14 +20,16 @@ from ..models.engine import (
     with_companies,
 )
 
+_lt = LazyTranslate(__name__)
+
 COLUMN_LABELS = {
-    "position": ("Số cuối năm", "Số đầu năm"),
-    "period": ("Năm nay", "Năm trước"),
-    "cashflow": ("Năm nay", "Năm trước"),
+    "position": (_lt("Closing Balance"), _lt("Opening Balance")),
+    "period": (_lt("This Year"), _lt("Last Year")),
+    "cashflow": (_lt("This Year"), _lt("Last Year")),
 }
 
 
-COMPARISON_LABELS = {COMPARE_PREVIOUS: "Kỳ trước", COMPARE_LAST_YEAR: "Cùng kỳ năm trước"}
+COMPARISON_LABELS = {COMPARE_PREVIOUS: _lt("Previous Period"), COMPARE_LAST_YEAR: _lt("Same Period Last Year")}
 
 
 def format_percent(value):
@@ -36,7 +39,7 @@ def format_percent(value):
 
 
 def format_amount(value):
-    """1234567 -> '1.234.567'; negatives in brackets, as TT99 requires."""
+    """1234567 -> '1.234.567'; negatives in brackets, as Circular 99 requires."""
     if value is None or value is False:
         return ""
     text = f"{abs(round(value)):,.0f}".replace(",", ".")
@@ -45,7 +48,7 @@ def format_amount(value):
 
 class VnReportWizard(models.TransientModel):
     _name = "vn.report.wizard"
-    _description = "TT99 financial statement wizard"
+    _description = "Vietnamese financial statement wizard"
 
     def _default_dates(self, key):
         dates = self.env.company.compute_fiscalyear_dates(fields.Date.context_today(self))
@@ -53,57 +56,57 @@ class VnReportWizard(models.TransientModel):
 
     report_id = fields.Many2one(
         "vn.report",
-        string="Báo cáo",
+        string="Report",
         required=True,
         domain="[('consolidated', '=', False)]",
     )
     report_kind = fields.Selection(related="report_id.kind")
     company_id = fields.Many2one(
         "res.company",
-        string="Công ty",
+        string="Company",
         required=True,
         default=lambda self: self.env.company,
         domain=lambda self: [("id", "in", self.env.companies.ids)],
     )
     include_branches = fields.Boolean(
-        string="Gồm chi nhánh",
+        string="Include Branches",
         default=True,
-        help="Cộng số liệu của các chi nhánh (công ty con trực thuộc trong Odoo).",
+        help="Add the figures of the branches (child companies in Odoo).",
     )
     date_from = fields.Date(
-        string="Từ ngày", required=True, default=lambda self: self._default_dates("date_from")
+        string="Date From", required=True, default=lambda self: self._default_dates("date_from")
     )
     date_to = fields.Date(
-        string="Đến ngày", required=True, default=lambda self: self._default_dates("date_to")
+        string="Date To", required=True, default=lambda self: self._default_dates("date_to")
     )
     target_move = fields.Selection(
-        [("posted", "Chỉ bút toán đã vào sổ"), ("all", "Gồm cả bút toán nháp")],
-        string="Bút toán",
+        [("posted", "Posted Entries"), ("all", "All Entries (including drafts)")],
+        string="Entries",
         default="posted",
         required=True,
     )
     hide_zero = fields.Boolean(
-        string="Ẩn chỉ tiêu không có số liệu",
-        help="TT99: chỉ tiêu không có số liệu được miễn trình bày, nhưng không đánh lại mã số.",
+        string="Hide Empty Lines",
+        help="Circular 99: lines without figures may be left out, but the line codes are not renumbered.",
     )
     comparison = fields.Selection(
         [
-            (COMPARE_DEFAULT, "Theo mẫu TT99 (đầu năm / cùng kỳ năm trước)"),
-            (COMPARE_PREVIOUS, "Kỳ trước liền kề"),
-            (COMPARE_LAST_YEAR, "Cùng kỳ năm trước"),
-            (COMPARE_NONE, "Không so sánh"),
+            (COMPARE_DEFAULT, "Statutory Form (opening of the year / same period last year)"),
+            (COMPARE_PREVIOUS, "Previous Period"),
+            (COMPARE_LAST_YEAR, "Same Period Last Year"),
+            (COMPARE_NONE, "No Comparison"),
         ],
-        string="So sánh với",
+        string="Compare With",
         default=COMPARE_DEFAULT,
         required=True,
     )
-    comparison_count = fields.Integer(string="Số kỳ so sánh", default=1)
+    comparison_count = fields.Integer(string="Number of Periods", default=1)
     show_variance = fields.Boolean(
-        string="Hiện chênh lệch", help="Thêm cột chênh lệch và % so với kỳ so sánh đầu tiên."
+        string="Show Variance", help="Add variance and % columns against the first comparison period."
     )
     comparison_dates = fields.Json(readonly=True)
-    line_ids = fields.One2many("vn.report.wizard.line", "wizard_id", string="Kết quả")
-    warning_text = fields.Text(string="Cảnh báo", readonly=True)
+    line_ids = fields.One2many("vn.report.wizard.line", "wizard_id", string="Results")
+    warning_text = fields.Text(string="Warnings", readonly=True)
     computed = fields.Boolean(readonly=True)
     col_label = fields.Char(compute="_compute_col_labels")
     col_cmp_label = fields.Char(compute="_compute_col_labels")
@@ -114,13 +117,13 @@ class VnReportWizard(models.TransientModel):
     def _compute_col_labels(self):
         for wizard in self:
             labels = COLUMN_LABELS.get(wizard.report_id.kind or "position")
-            wizard.col_label, wizard.col_cmp_label = labels
+            wizard.col_label, wizard.col_cmp_label = (self.env._(label) for label in labels)
 
     @api.constrains("comparison_count")
     def _check_comparison_count(self):
         for wizard in self:
             if not 1 <= wizard.comparison_count <= 6:
-                raise UserError(self.env._("Số kỳ so sánh từ 1 đến 6."))
+                raise UserError(self.env._("The number of comparison periods must be between 1 and 6."))
 
     @api.onchange(
         "report_id", "company_id", "date_from", "date_to", "target_move",
@@ -285,7 +288,7 @@ class VnReportWizard(models.TransientModel):
 
     def action_print_pdf(self):
         self._ensure_computed()
-        return self.env.ref("l10n_vn_tt99_reports.action_report_vn_financial").report_action(self)
+        return self.env.ref("l10n_vn_financial_statements.action_report_vn_financial").report_action(self, config=False)
 
     def action_export_xlsx(self):
         self._ensure_computed()
@@ -313,14 +316,17 @@ class VnReportWizard(models.TransientModel):
         return "" if blank else format_amount(value)
 
     def period_text(self):
-        """Second title line, as printed on the TT99 forms."""
+        """Second title line, as printed on the statutory forms."""
         d_to = self.date_to
         if self.report_id.kind == "position":
-            return f"Tại ngày {d_to.day:02d} tháng {d_to.month:02d} năm {d_to.year}"
+            return self.env._(
+                "As at %(day)s/%(month)s/%(year)s", day=f"{d_to.day:02d}", month=f"{d_to.month:02d}", year=d_to.year
+            )
         d_from = self.date_from
-        return (
-            f"Kỳ kế toán từ ngày {d_from.day:02d}/{d_from.month:02d}/{d_from.year}"
-            f" đến ngày {d_to.day:02d}/{d_to.month:02d}/{d_to.year}"
+        return self.env._(
+            "Accounting period from %(date_from)s to %(date_to)s",
+            date_from=f"{d_from:%d/%m/%Y}",
+            date_to=f"{d_to:%d/%m/%Y}",
         )
 
     def _period_label(self, date_from, date_to):
@@ -333,20 +339,22 @@ class VnReportWizard(models.TransientModel):
         default_labels = COLUMN_LABELS.get(self.report_id.kind or "position")
         periods = [(fields.Date.to_date(f), fields.Date.to_date(t)) for f, t in self.comparison_dates or []]
         if self.comparison == COMPARE_DEFAULT:
-            current = default_labels[0]
+            current = self.env._(default_labels[0])
+        elif self.report_id.kind == "position":
+            current = self.env._("End of Period")
         else:
-            current = "Số cuối kỳ" if self.report_id.kind == "position" else "Kỳ này"
+            current = self.env._("This Period")
         columns = [{"label": current, "date": self._period_label(self.date_from, self.date_to), "kind": "amount"}]
         for index, (date_from, date_to) in enumerate(periods, start=1):
             if self.comparison == COMPARE_DEFAULT:
-                label = default_labels[1]
+                label = self.env._(default_labels[1])
             else:
-                label = COMPARISON_LABELS[self.comparison]
+                label = self.env._(COMPARISON_LABELS[self.comparison])
             if index > 1:
                 label = f"{label} ({index})"
             columns.append({"label": label, "date": self._period_label(date_from, date_to), "kind": "amount"})
         if self.show_variance and periods:
-            columns.append({"label": "Chênh lệch", "date": "(4) - (5)", "kind": "amount"})
+            columns.append({"label": self.env._("Variance"), "date": "(4) - (5)", "kind": "amount"})
             columns.append({"label": "%", "date": "(4) / (5) - 1", "kind": "percent"})
         return columns
 
@@ -392,8 +400,8 @@ class VnReportWizard(models.TransientModel):
         company = self.company_id
         report = self.report_id
         address = ", ".join(filter(None, [company.street, company.street2, company.city, company.state_id.name]))
-        sheet.write(0, 0, f"Đơn vị báo cáo: {company.name}", fmt["bold"])
-        sheet.write(1, 0, f"Địa chỉ: {address}", fmt["text"])
+        sheet.write(0, 0, self.env._("Reporting entity: %s", company.name), fmt["bold"])
+        sheet.write(1, 0, self.env._("Address: %s", address), fmt["text"])
         right = max(last, 4)
         sheet.merge_range(0, 2, 0, right, report.form_code or "", fmt["bold"])
         sheet.merge_range(1, 2, 2, right, report.form_note or "", book.add_format({**base, "italic": True, "text_wrap": True}))
@@ -404,9 +412,9 @@ class VnReportWizard(models.TransientModel):
             row += 1
         sheet.merge_range(row, 0, row, right, self.period_text(), fmt["center"])
         row += 1
-        sheet.merge_range(row, 0, row, right, f"Đơn vị tính: {company.currency_id.name}", fmt["right"])
+        sheet.merge_range(row, 0, row, right, self.env._("Currency: %s", company.currency_id.name), fmt["right"])
         row += 2
-        headers = ["Chỉ tiêu", "Mã số", "Thuyết minh"] + [c["label"] for c in columns]
+        headers = [self.env._("Line"), self.env._("Code"), self.env._("Note")] + [c["label"] for c in columns]
         for i, label in enumerate(headers):
             sheet.write(row, i, label, fmt["head"])
         row += 1
@@ -435,15 +443,16 @@ class VnReportWizard(models.TransientModel):
                     sheet.write_number(row, i, value, cell_format)
             row += 1
         row += 2
-        signers = ["NGƯỜI LẬP", "KẾ TOÁN TRƯỞNG", "NGƯỜI ĐẠI DIỆN THEO PHÁP LUẬT"]
-        sheet.merge_range(row, 2, row, right, "Phê duyệt, ngày ... tháng ... năm ...", fmt["center"])
+        signers = [self.env._("PREPARED BY"), self.env._("CHIEF ACCOUNTANT"), self.env._("LEGAL REPRESENTATIVE")]
+        sheet.merge_range(row, 2, row, right, self.env._("Approved on ......"), fmt["center"])
         row += 1
         for i, (label, col_idx) in enumerate(zip(signers, (0, 2, 3), strict=True)):
             sheet.write(row, col_idx, label, fmt["bold"])
-            sheet.write(row + 1, col_idx, "(Ký, họ tên, đóng dấu)" if i == 2 else "(Ký, họ tên)", fmt["text"])
+            signature = self.env._("(Signature, full name, seal)") if i == 2 else self.env._("(Signature, full name)")
+            sheet.write(row + 1, col_idx, signature, fmt["text"])
         if self.warning_text:
             row += 4
-            sheet.write(row, 0, "Cảnh báo kiểm tra:", fmt["bold"])
+            sheet.write(row, 0, self.env._("Check warnings:"), fmt["bold"])
             for warning in self.warning_text.splitlines():
                 row += 1
                 sheet.write(row, 0, warning, fmt["text"])
@@ -453,26 +462,26 @@ class VnReportWizard(models.TransientModel):
 
 class VnReportWizardLine(models.TransientModel):
     _name = "vn.report.wizard.line"
-    _description = "TT99 financial statement result line"
+    _description = "Vietnamese financial statement result line"
     _order = "id"
 
     wizard_id = fields.Many2one("vn.report.wizard", required=True, ondelete="cascade")
     report_line_id = fields.Many2one("vn.report.line", readonly=True)
-    code = fields.Char(string="Mã số", readonly=True)
-    name = fields.Char(string="Chỉ tiêu", readonly=True)
-    note_ref = fields.Char(string="Thuyết minh", readonly=True)
+    code = fields.Char(string="Code", readonly=True)
+    name = fields.Char(string="Line", readonly=True)
+    note_ref = fields.Char(string="Note", readonly=True)
     level = fields.Integer(readonly=True)
     bold = fields.Boolean(readonly=True)
     blank = fields.Boolean(readonly=True)
-    value = fields.Float(string="Kỳ này", readonly=True, digits=(16, 0))
-    value_cmp = fields.Float(string="Kỳ so sánh", readonly=True, digits=(16, 0))
+    value = fields.Float(string="This Period", readonly=True, digits=(16, 0))
+    value_cmp = fields.Float(string="Comparison", readonly=True, digits=(16, 0))
     values_cmp = fields.Json(readonly=True)
     formula = fields.Char(related="report_line_id.formula")
     display_code = fields.Char(compute="_compute_display_code")
 
     @api.depends("code")
     def _compute_display_code(self):
-        # Section headers (I, II, III) carry a technical code, not a "mã số".
+        # Section headers (I, II, III) carry a technical code, not a printed line code.
         for line in self:
             line.display_code = "" if (line.code or "").isalpha() else line.code
 
@@ -504,7 +513,7 @@ class VnReportWizardLine(models.TransientModel):
         prefixes = {p for _name, args in iter_calls(parse_formula(self.formula)) for p in args}
         prefixes = {p for p in prefixes if p[:1].isdigit()}
         if not prefixes:
-            raise UserError(self.env._("Chỉ tiêu này không đọc trực tiếp tài khoản nào."))
+            raise UserError(self.env._("This line does not read any account directly."))
         wizard = self.wizard_id
         companies = wizard._drilldown_companies()
         env = with_companies(self.env, companies)

@@ -1,0 +1,2038 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_vn_financial_statements
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "%(message)s: difference of %(difference)s."
+msgstr "%(message)s: chênh lệch %(difference)s."
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/vn_report.py:0
+msgid "%s (copy)"
+msgstr "%s (bản sao)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,subtitle:l10n_vn_financial_statements.report_b03_direct
+msgid "(Direct method)"
+msgstr "(Theo phương pháp trực tiếp)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,subtitle:l10n_vn_financial_statements.report_b01
+msgid "(For enterprises meeting the going concern assumption)"
+msgstr "(Áp dụng cho doanh nghiệp đáp ứng giả định hoạt động liên tục)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,subtitle:l10n_vn_financial_statements.report_b03_indirect
+msgid "(Indirect method)"
+msgstr "(Theo phương pháp gián tiếp)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,form_note:l10n_vn_financial_statements.report_b01
+#: model:vn.report,form_note:l10n_vn_financial_statements.report_b02
+#: model:vn.report,form_note:l10n_vn_financial_statements.report_b03_direct
+#: model:vn.report,form_note:l10n_vn_financial_statements.report_b03_indirect
+msgid "(Issued with Circular No. 99/2025/TT-BTC of 27 October 2025 of the Minister of Finance)"
+msgstr "(Kèm theo Thông tư số 99/2025/TT-BTC ngày 27 tháng 10 năm 2025 của Bộ trưởng Bộ Tài chính)"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "(Signature, full name)"
+msgstr "(Ký, họ tên)"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "(Signature, full name, seal)"
+msgstr "(Ký, họ tên, đóng dấu)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_223
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_226
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_229
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_242
+msgid "- Accumulated depreciation (*)"
+msgstr "- Giá trị hao mòn lũy kế (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_235
+msgid "- Accumulated depreciation of mature livestock (*)"
+msgstr "- Giá trị khấu hao lũy kế (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_420a
+msgid "- Accumulated to the end of the previous period"
+msgstr "- LNST chưa phân phối lũy kế đến cuối kỳ trước"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_06
+msgid "- Borrowing costs"
+msgstr "- Chi phí đi vay"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_14
+msgid "- Borrowing costs paid"
+msgstr "- Chi phí đi vay đã trả"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_15
+msgid "- Corporate income tax paid"
+msgstr "- Thuế thu nhập doanh nghiệp đã nộp"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_222
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_225
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_228
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_234
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_241
+msgid "- Cost"
+msgstr "- Nguyên giá"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_02
+msgid "- Depreciation of fixed assets and investment property"
+msgstr "- Khấu hao TSCĐ và BĐSĐT"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_04
+msgid "- Exchange gains or losses on revaluation of foreign currency monetary items"
+msgstr "- Lãi, lỗ chênh lệch tỷ giá hối đoái do đánh giá lại các khoản mục tiền tệ có gốc ngoại tệ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_05
+msgid "- Gains or losses from investing and financing activities"
+msgstr "- Lãi, lỗ từ hoạt động đầu tư, tài chính"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_12
+msgid "- Increase or decrease in deferred costs"
+msgstr "- Tăng, giảm chi phí chờ phân bổ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_10
+msgid "- Increase or decrease in inventories"
+msgstr "- Tăng, giảm hàng tồn kho"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_11
+msgid "- Increase or decrease in payables (excluding interest and corporate income tax payable)"
+msgstr "- Tăng, giảm các khoản phải trả (Không kể lãi vay phải trả, thuế thu nhập doanh nghiệp phải nộp)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_09
+msgid "- Increase or decrease in receivables"
+msgstr "- Tăng, giảm các khoản phải thu"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_13
+msgid "- Increase or decrease in trading securities"
+msgstr "- Tăng, giảm chứng khoán kinh doanh"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_420b
+msgid "- Of the current period"
+msgstr "- LNST chưa phân phối kỳ này"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_24
+msgid "- Of which: borrowing costs"
+msgstr "- Trong đó: Chi phí đi vay"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_411a
+msgid "- Ordinary shares with voting rights"
+msgstr "- Cổ phiếu phổ thông có quyền biểu quyết"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_07
+msgid "- Other adjustments"
+msgstr "- Các khoản điều chỉnh khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_17
+msgid "- Other payments for operating activities"
+msgstr "- Tiền chi khác cho hoạt động kinh doanh"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_16
+msgid "- Other receipts from operating activities"
+msgstr "- Tiền thu khác từ hoạt động kinh doanh"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_411b
+msgid "- Preference shares"
+msgstr "- Cổ phiếu ưu đãi"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_03
+msgid "- Provisions"
+msgstr "- Các khoản dự phòng"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_line__level
+msgid "0: part, 1: roman numeral section, 2: line, 3: detail line"
+msgstr "0: phần lớn, 1: mục La Mã, 2: chỉ tiêu, 3: dòng chi tiết"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_111
+msgid "1. Cash"
+msgstr "1. Tiền"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_141
+msgid "1. Inventories"
+msgstr "1. Hàng tồn kho"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_261
+msgid "1. Investments in subsidiaries"
+msgstr "1. Đầu tư vào công ty con"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_231
+msgid "1. Livestock producing periodic products"
+msgstr "1. Súc vật nuôi cho sản phẩm định kỳ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_271
+msgid "1. Long-term deferred costs"
+msgstr "1. Chi phí chờ phân bổ dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_331
+msgid "1. Long-term trade payables"
+msgstr "1. Phải trả người bán dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_211
+msgid "1. Long-term trade receivables"
+msgstr "1. Phải thu dài hạn của khách hàng"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_251
+msgid "1. Long-term work in progress"
+msgstr "1. Chi phí sản xuất, kinh doanh dở dang dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_411
+msgid "1. Owners' contributed capital"
+msgstr "1. Vốn góp của chủ sở hữu"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_31
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_31
+msgid "1. Proceeds from share issues and owners' contributions"
+msgstr "1. Tiền thu từ phát hành cổ phiếu, nhận vốn góp của chủ sở hữu"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_01
+msgid "1. Profit before tax"
+msgstr "1. Lợi nhuận trước thuế"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_21
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_21
+msgid "1. Purchase and construction of fixed assets and other long-term assets"
+msgstr "1. Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_01
+msgid "1. Receipts from sales of goods, services and other revenue"
+msgstr "1. Tiền thu từ bán hàng, cung cấp dịch vụ và doanh thu khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_01
+msgid "1. Revenue from sales of goods and services"
+msgstr "1. Doanh thu bán hàng và cung cấp dịch vụ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_161
+msgid "1. Short-term deferred costs"
+msgstr "1. Chi phí chờ phân bổ ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_151
+msgid "1. Short-term livestock for one-time harvest"
+msgstr "1. Súc vật nuôi lấy sản phẩm một lần ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_311
+msgid "1. Short-term trade payables"
+msgstr "1. Phải trả người bán ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_131
+msgid "1. Short-term trade receivables"
+msgstr "1. Phải thu ngắn hạn của khách hàng"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_221
+msgid "1. Tangible fixed assets"
+msgstr "1. Tài sản cố định hữu hình"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_121
+msgid "1. Trading securities"
+msgstr "1. Chứng khoán kinh doanh"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_340
+msgid "10. Convertible bonds"
+msgstr "10. Trái phiếu chuyển đổi"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_26
+msgid "10. General and administrative expenses"
+msgstr "10. Chi phí quản lý doanh nghiệp"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_320
+msgid "10. Other short-term payables"
+msgstr "10. Phải trả ngắn hạn khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_420
+msgid "10. Undistributed profit after tax"
+msgstr "10. Lợi nhuận sau thuế chưa phân phối"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_30
+msgid "11. Operating profit"
+msgstr "11. Lợi nhuận thuần từ hoạt động kinh doanh"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_341
+msgid "11. Preference shares"
+msgstr "11. Cổ phiếu ưu đãi"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_321
+msgid "11. Short-term borrowings and finance lease liabilities"
+msgstr "11. Vay và nợ thuê tài chính ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_342
+msgid "12. Deferred tax liabilities"
+msgstr "12. Thuế thu nhập hoãn lại phải trả"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_31
+msgid "12. Other income"
+msgstr "12. Thu nhập khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_322
+msgid "12. Short-term provisions"
+msgstr "12. Dự phòng phải trả ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_323
+msgid "13. Bonus and welfare funds"
+msgstr "13. Quỹ khen thưởng, phúc lợi"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_343
+msgid "13. Long-term provisions"
+msgstr "13. Dự phòng phải trả dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_32
+msgid "13. Other expenses"
+msgstr "13. Chi phí khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_40
+msgid "14. Other profit"
+msgstr "14. Lợi nhuận khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_324
+msgid "14. Price stabilisation fund"
+msgstr "14. Quỹ bình ổn giá"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_344
+msgid "14. Science and technology development fund"
+msgstr "14. Quỹ phát triển khoa học và công nghệ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_50
+msgid "15. Accounting profit before tax"
+msgstr "15. Tổng lợi nhuận kế toán trước thuế"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_325
+msgid "15. Government bond repurchase transactions"
+msgstr "15. Giao dịch mua bán lại trái phiếu Chính phủ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_51
+msgid "16. Current corporate income tax expense"
+msgstr "16. Chi phí thuế TNDN hiện hành"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_52
+msgid "17. Deferred corporate income tax expense"
+msgstr "17. Chi phí thuế TNDN hoãn lại"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_60
+msgid "18. Profit after corporate income tax"
+msgstr "18. Lợi nhuận sau thuế thu nhập doanh nghiệp"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_70
+msgid "19. Basic earnings per share (*)"
+msgstr "19. Lãi cơ bản trên cổ phiếu (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_32
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_32
+msgid "2. Capital returned to owners and issued shares repurchased"
+msgstr "2. Tiền trả lại vốn góp cho các chủ sở hữu, mua lại cổ phiếu đã phát hành"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_112
+msgid "2. Cash equivalents"
+msgstr "2. Các khoản tương đương tiền"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_252
+msgid "2. Construction in progress"
+msgstr "2. Chi phí xây dựng cơ bản dở dang"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_162
+msgid "2. Deductible VAT"
+msgstr "2. Thuế GTGT được khấu trừ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_272
+msgid "2. Deferred tax assets"
+msgstr "2. Tài sản thuế thu nhập hoãn lại"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_224
+msgid "2. Finance lease fixed assets"
+msgstr "2. Tài sản cố định thuê tài chính"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_262
+msgid "2. Investments in joint ventures and associates"
+msgstr "2. Đầu tư vào công ty liên doanh, liên kết"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_332
+msgid "2. Long-term advances from customers"
+msgstr "2. Người mua trả tiền trước dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_236
+msgid "2. Long-term livestock for one-time harvest"
+msgstr "2. Súc vật nuôi lấy sản phẩm một lần dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_212
+msgid "2. Long-term prepayments to suppliers"
+msgstr "2. Trả trước cho người bán dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_02
+msgid "2. Payments to suppliers of goods and services"
+msgstr "2. Tiền chi trả cho người cung cấp hàng hóa và dịch vụ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_22
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_22
+msgid "2. Proceeds from disposal of fixed assets and other long-term assets"
+msgstr "2. Tiền thu từ thanh lý, nhượng bán TSCĐ và các tài sản dài hạn khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_142
+msgid "2. Provision for decline in value of inventories (*)"
+msgstr "2. Dự phòng giảm giá hàng tồn kho (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_122
+msgid "2. Provision for diminution in value of trading securities (*)"
+msgstr "2. Dự phòng giảm giá chứng khoán kinh doanh (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_02
+msgid "2. Revenue deductions"
+msgstr "2. Các khoản giảm trừ doanh thu"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_412
+msgid "2. Share premium"
+msgstr "2. Thặng dư vốn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_312
+msgid "2. Short-term advances from customers"
+msgstr "2. Người mua trả tiền trước ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_132
+msgid "2. Short-term prepayments to suppliers"
+msgstr "2. Trả trước cho người bán ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_152
+msgid "2. Short-term seasonal or one-time-harvest crops"
+msgstr "2. Cây trồng theo mùa vụ hoặc lấy sản phẩm một lần ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_71
+msgid "20. Diluted earnings per share (*)"
+msgstr "20. Lãi suy giảm trên cổ phiếu (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_413
+msgid "3. Bond conversion options"
+msgstr "3. Quyền chọn chuyển đổi trái phiếu"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_313
+msgid "3. Dividends and profits payable"
+msgstr "3. Phải trả cổ tức, lợi nhuận"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_263
+msgid "3. Equity investments in other entities"
+msgstr "3. Đầu tư góp vốn vào đơn vị khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_227
+msgid "3. Intangible fixed assets"
+msgstr "3. Tài sản cố định vô hình"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_23
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_23
+msgid "3. Loans granted and debt instruments of other entities purchased"
+msgstr "3. Tiền chi cho vay, mua các công cụ nợ của đơn vị khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_273
+msgid "3. Long-term equipment, supplies and spare parts"
+msgstr "3. Thiết bị, vật tư, phụ tùng thay thế dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_237
+msgid "3. Long-term seasonal or one-time-harvest crops"
+msgstr "3. Cây trồng theo mùa vụ hoặc lấy sản phẩm một lần dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_333
+msgid "3. Long-term taxes and amounts payable to the State"
+msgstr "3. Thuế và các khoản phải nộp Nhà nước dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_10
+msgid "3. Net revenue from sales of goods and services"
+msgstr "3. Doanh thu thuần về bán hàng và cung cấp dịch vụ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_08
+msgid "3. Operating profit before changes in working capital"
+msgstr "3. Lợi nhuận từ hoạt động kinh doanh trước thay đổi vốn lưu động"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_03
+msgid "3. Payments to employees"
+msgstr "3. Tiền chi trả cho người lao động"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_33
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_33
+msgid "3. Proceeds from borrowings"
+msgstr "3. Tiền thu từ đi vay"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_153
+msgid "3. Provision for losses on short-term biological assets (*)"
+msgstr "3. Dự phòng tổn thất tài sản sinh học ngắn hạn (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_123
+msgid "3. Short-term held-to-maturity investments"
+msgstr "3. Đầu tư nắm giữ đến ngày đáo hạn ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_133
+msgid "3. Short-term intra-company receivables"
+msgstr "3. Phải thu nội bộ ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_163
+msgid "3. Taxes and other receivables from the State"
+msgstr "3. Thuế và các khoản khác phải thu Nhà nước"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_213
+msgid "3. Working capital in dependent units"
+msgstr "3. Vốn kinh doanh ở đơn vị trực thuộc"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_04
+msgid "4. Borrowing costs paid"
+msgstr "4. Chi phí đi vay đã trả"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_11
+msgid "4. Cost of goods sold"
+msgstr "4. Giá vốn hàng bán"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_164
+msgid "4. Government bond repurchase transactions"
+msgstr "4. Giao dịch mua bán lại trái phiếu Chính phủ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_24
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_24
+msgid "4. Loans collected and debt instruments of other entities resold"
+msgstr "4. Tiền thu hồi cho vay, bán lại các công cụ nợ của đơn vị khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_334
+msgid "4. Long-term accrued expenses"
+msgstr "4. Chi phí phải trả dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_214
+msgid "4. Long-term intra-company receivables"
+msgstr "4. Phải thu nội bộ dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_274
+msgid "4. Other non-current assets"
+msgstr "4. Tài sản dài hạn khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_414
+msgid "4. Other owners' capital"
+msgstr "4. Vốn khác của chủ sở hữu"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_264
+msgid "4. Provision for long-term investment losses (*)"
+msgstr "4. Dự phòng tổn thất đầu tư vào đơn vị khác dài hạn (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_238
+msgid "4. Provision for losses on long-term biological assets (*)"
+msgstr "4. Dự phòng tổn thất tài sản sinh học dài hạn (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_124
+msgid "4. Provision for short-term held-to-maturity investments (*)"
+msgstr "4. Dự phòng đầu tư nắm giữ đến ngày đáo hạn ngắn hạn (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_134
+msgid "4. Receivables under construction contracts"
+msgstr "4. Phải thu theo tiến độ hợp đồng xây dựng"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_34
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_34
+msgid "4. Repayment of borrowings"
+msgstr "4. Tiền trả nợ gốc vay"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_314
+msgid "4. Short-term taxes and amounts payable to the State"
+msgstr "4. Thuế và các khoản phải nộp Nhà nước ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_05
+msgid "5. Corporate income tax paid"
+msgstr "5. Thuế thu nhập doanh nghiệp đã nộp"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_25
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_25
+msgid "5. Equity investments in other entities"
+msgstr "5. Tiền chi đầu tư góp vốn vào đơn vị khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_20
+msgid "5. Gross profit from sales of goods and services"
+msgstr "5. Lợi nhuận gộp về bán hàng và cung cấp dịch vụ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_335
+msgid "5. Intra-company payables for working capital"
+msgstr "5. Phải trả nội bộ về vốn kinh doanh"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_265
+msgid "5. Long-term held-to-maturity investments"
+msgstr "5. Đầu tư nắm giữ đến ngày đáo hạn dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_165
+msgid "5. Other current assets"
+msgstr "5. Tài sản ngắn hạn khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_215
+msgid "5. Other long-term receivables"
+msgstr "5. Phải thu dài hạn khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_125
+msgid "5. Other short-term investments"
+msgstr "5. Đầu tư ngắn hạn khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_135
+msgid "5. Other short-term receivables"
+msgstr "5. Phải thu ngắn hạn khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_315
+msgid "5. Payables to employees"
+msgstr "5. Phải trả người lao động"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_35
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_35
+msgid "5. Repayment of finance lease liabilities"
+msgstr "5. Tiền trả nợ gốc thuê tài chính"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_415
+msgid "5. Treasury shares (*)"
+msgstr "5. Cổ phiếu mua lại của chính mình (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_416
+msgid "6. Asset revaluation differences"
+msgstr "6. Chênh lệch đánh giá lại tài sản"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_36
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_36
+msgid "6. Dividends and profits paid to owners"
+msgstr "6. Cổ tức, lợi nhuận đã trả cho chủ sở hữu"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_21
+msgid "6. Gain or loss on sale and disposal of investment property"
+msgstr "6. Lãi/lỗ của hoạt động bán, thanh lý bất động sản đầu tư"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_336
+msgid "6. Long-term intra-company payables"
+msgstr "6. Phải trả nội bộ dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_06
+msgid "6. Other receipts from operating activities"
+msgstr "6. Tiền thu khác từ hoạt động kinh doanh"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_26
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_26
+msgid "6. Proceeds from equity investments in other entities"
+msgstr "6. Tiền thu hồi đầu tư góp vốn vào đơn vị khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_216
+msgid "6. Provision for long-term doubtful debts (*)"
+msgstr "6. Dự phòng phải thu dài hạn khó đòi (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_266
+msgid "6. Provision for long-term held-to-maturity investments (*)"
+msgstr "6. Dự phòng đầu tư nắm giữ đến ngày đáo hạn dài hạn (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_126
+msgid "6. Provision for losses on other short-term investments (*)"
+msgstr "6. Dự phòng tổn thất các khoản đầu tư ngắn hạn khác (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_136
+msgid "6. Provision for short-term doubtful debts (*)"
+msgstr "6. Dự phòng phải thu ngắn hạn khó đòi (*)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_316
+msgid "6. Short-term accrued expenses"
+msgstr "6. Chi phí phải trả ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_22
+msgid "7. Financial income"
+msgstr "7. Doanh thu hoạt động tài chính"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_417
+msgid "7. Foreign exchange differences"
+msgstr "7. Chênh lệch tỷ giá hối đoái"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_27
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_27
+msgid "7. Interest, dividends and profits received"
+msgstr "7. Tiền thu lãi cho vay, cổ tức và lợi nhuận được chia"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_337
+msgid "7. Long-term deferred revenue"
+msgstr "7. Doanh thu chờ phân bổ dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_07
+msgid "7. Other payments for operating activities"
+msgstr "7. Tiền chi khác cho hoạt động kinh doanh"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_317
+msgid "7. Short-term intra-company payables"
+msgstr "7. Phải trả nội bộ ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_137
+msgid "7. Shortage of assets awaiting resolution"
+msgstr "7. Tài sản thiếu chờ xử lý"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_418
+msgid "8. Development investment fund"
+msgstr "8. Quỹ đầu tư phát triển"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_23
+msgid "8. Financial expenses"
+msgstr "8. Chi phí tài chính"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_338
+msgid "8. Other long-term payables"
+msgstr "8. Phải trả dài hạn khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_318
+msgid "8. Short-term payables under construction contracts"
+msgstr "8. Phải trả theo tiến độ hợp đồng xây dựng ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_339
+msgid "9. Long-term borrowings and finance lease liabilities"
+msgstr "9. Vay và nợ thuê tài chính dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_419
+msgid "9. Other equity funds"
+msgstr "9. Quỹ khác thuộc vốn chủ sở hữu"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b02_25
+msgid "9. Selling expenses"
+msgstr "9. Chi phí bán hàng"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_319
+msgid "9. Short-term deferred revenue"
+msgstr "9. Doanh thu chờ phân bổ ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "<b>Address:</b>"
+msgstr "<b>Địa chỉ:</b>"
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "<b>Reporting entity:</b>"
+msgstr "<b>Đơn vị báo cáo:</b>"
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "<b>Tax ID:</b>"
+msgstr "<b>Mã số thuế:</b>"
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "<code>BAL(...)</code>: debit minus credit balance. <code>NBAL(...)</code>: credit minus debit balance."
+msgstr "<code>BAL(...)</code>: số dư Nợ - Có. <code>NBAL(...)</code>: số dư Có - Nợ."
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid ""
+"<code>CASH(...)</code>, <code>CASHC(...)</code>, <code>CASHD(...)</code>: net cash flow / receipts / payments against the accounts (B03).\n"
+"                                    <code>CASH_REST_IN()</code>, <code>CASH_REST_OUT()</code>: cash flows not used by any other line."
+msgstr ""
+"<code>CASH(...)</code>, <code>CASHC(...)</code>, <code>CASHD(...)</code>: dòng tiền thuần / thu / chi đối ứng với tài khoản (B03).\n"
+"                                    <code>CASH_REST_IN()</code>, <code>CASH_REST_OUT()</code>: dòng tiền chưa thuộc chỉ tiêu nào khác."
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "<code>DR(...)</code> / <code>CR(...)</code>: sum of the debit / credit balances of each account."
+msgstr "<code>DR(...)</code> / <code>CR(...)</code>: tổng dư Nợ / dư Có của từng tài khoản."
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "<code>DT(...)</code> / <code>CT(...)</code>: debit / credit movements of the period, closing entries (account 911) excluded."
+msgstr "<code>DT(...)</code> / <code>CT(...)</code>: phát sinh Nợ / Có trong kỳ, không tính bút toán kết chuyển 911."
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "<code>OPEN(...)</code>, <code>CLOSE(...)</code>, <code>CHG(...)</code>: opening balance, closing balance, change (B03)."
+msgstr "<code>OPEN(...)</code>, <code>CLOSE(...)</code>, <code>CHG(...)</code>: số dư đầu kỳ, cuối kỳ, chênh lệch (B03)."
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "<code>PDR(...)</code> / <code>PCR(...)</code>: sum of the debit / credit balances per partner (customer, vendor)."
+msgstr "<code>PDR(...)</code> / <code>PCR(...)</code>: tổng dư Nợ / dư Có chi tiết theo từng đối tượng (khách hàng, nhà cung cấp)."
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "<code>PL_CUR()</code> / <code>PL_PRIOR()</code>: unclosed profit or loss of the current year / prior years (B01)."
+msgstr "<code>PL_CUR()</code> / <code>PL_PRIOR()</code>: lãi lỗ chưa kết chuyển của năm nay / các năm trước (B01)."
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "<code>[110]</code>: value of line 110 of the same report. You can use + - * / and brackets."
+msgstr "<code>[110]</code>: giá trị mã số 110 của cùng báo cáo. Dùng được + - * / và dấu ngoặc."
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_100
+msgid "A - CURRENT ASSETS"
+msgstr "A - TÀI SẢN NGẮN HẠN"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.constraint,message:l10n_vn_financial_statements.constraint_vn_report_line_code_uniq
+msgid "A line code must be unique within a report."
+msgstr "Mã số phải là duy nhất trong một báo cáo."
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Account %(code)s has a balance of %(balance)s but is not used by any line of %(report)s."
+msgstr "Tài khoản %(code)s có số dư %(balance)s nhưng chưa được đưa vào chỉ tiêu nào của %(report)s."
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Accounting period from %(date_from)s to %(date_to)s"
+msgstr "Kỳ kế toán từ ngày %(date_from)s đến ngày %(date_to)s"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__active
+msgid "Active"
+msgstr "Đang hoạt động"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_wizard__include_branches
+msgid "Add the figures of the branches (child companies in Odoo)."
+msgstr "Cộng số liệu của các chi nhánh (công ty con trực thuộc trong Odoo)."
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_wizard__show_variance
+msgid "Add variance and % columns against the first comparison period."
+msgstr "Thêm cột chênh lệch và % so với kỳ so sánh đầu tiên."
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Address: %s"
+msgstr "Địa chỉ: %s"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__target_move__all
+msgid "All Entries (including drafts)"
+msgstr "Gồm cả bút toán nháp"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "Approved on ......"
+msgstr "Phê duyệt, ngày ... tháng ... năm ..."
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "Arguments are account code prefixes: <code>131</code> matches 1311 and 1312."
+msgstr "Tham số là đầu mã tài khoản: <code>131</code> khớp 1311 và 1312."
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "As at %(day)s/%(month)s/%(year)s"
+msgstr "Tại ngày %(day)s tháng %(month)s năm %(year)s"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_200
+msgid "B - NON-CURRENT ASSETS"
+msgstr "B - TÀI SẢN DÀI HẠN"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,name:l10n_vn_financial_statements.report_b01
+msgid "B01-DN Statement of Financial Position"
+msgstr "B01-DN Báo cáo tình hình tài chính"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,name:l10n_vn_financial_statements.report_b02
+msgid "B02-DN Income Statement"
+msgstr "B02-DN Báo cáo kết quả hoạt động kinh doanh"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,name:l10n_vn_financial_statements.report_b03_direct
+msgid "B03-DN Cash Flow Statement (Direct Method)"
+msgstr "B03-DN Báo cáo lưu chuyển tiền tệ (trực tiếp)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,name:l10n_vn_financial_statements.report_b03_indirect
+msgid "B03-DN Cash Flow Statement (Indirect Method)"
+msgstr "B03-DN Báo cáo lưu chuyển tiền tệ (gián tiếp)"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__blank
+msgid "Blank"
+msgstr "Để trống"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__bold
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__bold
+msgid "Bold"
+msgstr "In đậm"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_300
+msgid "C - LIABILITIES"
+msgstr "C - NỢ PHẢI TRẢ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,title:l10n_vn_financial_statements.report_b03_direct
+#: model:vn.report,title:l10n_vn_financial_statements.report_b03_indirect
+msgid "CASH FLOW STATEMENT"
+msgstr "BÁO CÁO LƯU CHUYỂN TIỀN TỆ"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "CHIEF ACCOUNTANT"
+msgstr "KẾ TOÁN TRƯỞNG"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_60
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_60
+msgid "Cash and cash equivalents at the beginning of the period"
+msgstr "Tiền và tương đương tiền đầu kỳ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_70
+msgid "Cash and cash equivalents at the end of the period"
+msgstr "Tiền và tương đương tiền cuối kỳ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_70
+msgid "Cash and cash equivalents at the end of the period (70 = 50 + 60 + 61)"
+msgstr "Tiền và tương đương tiền cuối kỳ (70 = 50 + 60 + 61)"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report__kind__cashflow
+msgid "Cash flows"
+msgstr "Lưu chuyển tiền tệ"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__check_expression
+msgid "Check Formula"
+msgstr "Công thức kiểm tra"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__check_message
+msgid "Check Message"
+msgstr "Thông báo khi lệch"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Check failed"
+msgstr "Kiểm tra không khớp"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Check warnings:"
+msgstr "Cảnh báo kiểm tra:"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_line__hide_if_zero
+msgid "Circular 99 allows leaving out lines without figures (their codes are kept)."
+msgstr "Thông tư 99 cho phép không trình bày chỉ tiêu không có số liệu (vẫn giữ mã số)."
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_wizard__hide_zero
+msgid "Circular 99: lines without figures may be left out, but the line codes are not renumbered."
+msgstr "Thông tư 99: chỉ tiêu không có số liệu được miễn trình bày, nhưng không đánh lại mã số."
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Circular reference between formulas: %(cycle)s"
+msgstr "Công thức tham chiếu vòng: %(cycle)s"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Click to see the journal items"
+msgstr "Bấm để xem bút toán"
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Close"
+msgstr "Đóng"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Closing Balance"
+msgstr "Số cuối năm"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,check_message:l10n_vn_financial_statements.report_b03_direct
+msgid "Closing cash (70) does not match the ledger balance of cash and cash equivalents"
+msgstr "Tiền cuối kỳ (70) không khớp số dư tiền và tương đương tiền trên sổ"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__code
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__code
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__code
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Code"
+msgstr "Mã số"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__col_cmp_label
+msgid "Col Cmp Label"
+msgstr "Nhãn cột so sánh"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__col_label
+msgid "Col Label"
+msgstr "Nhãn cột"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__comparison
+msgid "Compare With"
+msgstr "So sánh với"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__value_cmp
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Comparison"
+msgstr "Kỳ so sánh"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__comparison_dates
+msgid "Comparison Dates"
+msgstr "Ngày các kỳ so sánh"
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Compute"
+msgstr "Tính"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__computed
+msgid "Computed"
+msgstr "Đã tính"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Computing..."
+msgstr "Đang tính..."
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__consolidated
+msgid "Consolidated"
+msgstr "Hợp nhất"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Consolidated Statements"
+msgstr "Báo cáo hợp nhất"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__consolidated
+msgid "Consolidated statement: runs on a consolidation group only."
+msgstr "Báo cáo hợp nhất: chỉ chạy được trên một nhóm hợp nhất."
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Consolidation Group"
+msgstr "Nhóm hợp nhất"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__create_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__create_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__create_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__create_date
+msgid "Created on"
+msgstr "Được tạo vào"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "Currency:"
+msgstr "Đơn vị tính:"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Currency: %s"
+msgstr "Đơn vị tính: %s"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Custom Dates"
+msgstr "Tùy chọn ngày"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_400
+msgid "D - OWNERS' EQUITY"
+msgstr "D - VỐN CHỦ SỞ HỮU"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__date_from
+msgid "Date From"
+msgstr "Từ ngày"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__date_to
+msgid "Date To"
+msgstr "Đến ngày"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__display_code
+msgid "Display Code"
+msgstr "Mã số hiển thị"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__display_name
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__display_name
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__display_name
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__form_code
+msgid "E.g. Form B 01 - DN"
+msgstr "Ví dụ: Mẫu số B 01 - DN"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_line__formula
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report_wizard_line__formula
+msgid "E.g. PDR(1311): debit balances of account 1311 per partner; [110] + [120]: sum of other lines. Leave empty for a line filled in by hand."
+msgstr "Ví dụ: PDR(1311) — dư Nợ chi tiết theo đối tượng của TK 1311; [110] + [120] — cộng các mã số khác. Để trống nếu chỉ tiêu nhập tay."
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_61
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_61
+msgid "Effect of foreign exchange rate changes"
+msgstr "Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "End of Period"
+msgstr "Số cuối kỳ"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__target_move
+msgid "Entries"
+msgstr "Bút toán"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Export to Excel"
+msgstr "Xuất Excel"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__check_expression
+msgid "Expression that must equal 0, e.g. [280] - [440]. Otherwise the report shows a warning."
+msgstr "Biểu thức phải bằng 0, ví dụ [280] - [440]. Nếu khác 0, báo cáo hiện cảnh báo."
+
+#. module: l10n_vn_financial_statements
+#: model:ir.actions.act_window,name:l10n_vn_financial_statements.vn_report_wizard_action
+#: model:ir.actions.report,name:l10n_vn_financial_statements.action_report_vn_financial
+msgid "Financial Statement"
+msgstr "Báo cáo tài chính"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.actions.client,name:l10n_vn_financial_statements.action_vn_dynamic_report
+msgid "Financial Statements (Circular 99)"
+msgstr "Báo cáo tài chính (Thông tư 99)"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report__kind__position
+msgid "Financial position (balances at a date)"
+msgstr "Tình hình tài chính (số dư tại ngày)"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "First 6 Months"
+msgstr "6 tháng đầu năm"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "First 9 Months"
+msgstr "9 tháng đầu năm"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__form_code
+msgid "Form"
+msgstr "Mẫu số"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,form_code:l10n_vn_financial_statements.report_b01
+msgid "Form B 01 - DN"
+msgstr "Mẫu số B 01 - DN"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,form_code:l10n_vn_financial_statements.report_b02
+msgid "Form B 02 - DN"
+msgstr "Mẫu số B 02 - DN"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,form_code:l10n_vn_financial_statements.report_b03_direct
+#: model:vn.report,form_code:l10n_vn_financial_statements.report_b03_indirect
+msgid "Form B 03 - DN"
+msgstr "Mẫu số B 03 - DN"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__code
+msgid "Form code, e.g. B01-DN"
+msgstr "Ký hiệu mẫu, ví dụ B01-DN"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__formula
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__formula
+msgid "Formula"
+msgstr "Công thức"
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "Formula Syntax"
+msgstr "Cú pháp công thức"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Full Year"
+msgstr "Cả năm"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Function %(name)s cannot be used in this kind of report (line %(code)s)"
+msgstr "Hàm %(name)s không dùng được trong loại báo cáo này (mã số %(code)s)"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__hide_zero
+msgid "Hide Empty Lines"
+msgstr "Ẩn chỉ tiêu không có số liệu"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__hide_if_zero
+msgid "Hide When Zero"
+msgstr "Ẩn khi bằng 0"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_110
+msgid "I. Cash and cash equivalents"
+msgstr "I. Tiền và các khoản tương đương tiền"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_I
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_I
+msgid "I. Cash flows from operating activities"
+msgstr "I. Lưu chuyển tiền từ hoạt động kinh doanh"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_310
+msgid "I. Current liabilities"
+msgstr "I. Nợ ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_210
+msgid "I. Long-term receivables"
+msgstr "I. Các khoản phải thu dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__id
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__id
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__id
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_II
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_II
+msgid "II. Cash flows from investing activities"
+msgstr "II. Lưu chuyển tiền từ hoạt động đầu tư"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_220
+msgid "II. Fixed assets"
+msgstr "II. Tài sản cố định"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_330
+msgid "II. Non-current liabilities"
+msgstr "II. Nợ dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_120
+msgid "II. Short-term financial investments"
+msgstr "II. Đầu tư tài chính ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_III
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_III
+msgid "III. Cash flows from financing activities"
+msgstr "III. Lưu chuyển tiền từ hoạt động tài chính"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_230
+msgid "III. Long-term biological assets"
+msgstr "III. Tài sản sinh học dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_130
+msgid "III. Short-term receivables"
+msgstr "III. Các khoản phải thu ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,title:l10n_vn_financial_statements.report_b02
+msgid "INCOME STATEMENT"
+msgstr "BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_140
+msgid "IV. Inventories"
+msgstr "IV. Hàng tồn kho"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_240
+msgid "IV. Investment property"
+msgstr "IV. Bất động sản đầu tư"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__include_branches
+msgid "Include Branches"
+msgstr "Gồm chi nhánh"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Including Drafts"
+msgstr "Gồm cả nháp"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report__kind__period
+msgid "Income statement (movements of the period)"
+msgstr "Kết quả kinh doanh (phát sinh trong kỳ)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,check_message:l10n_vn_financial_statements.report_b03_indirect
+msgid "Indirect method: the adjustment lines are estimates and closing cash (70) does not match the ledger; review lines 04, 07, 16 and 17"
+msgstr "Phương pháp gián tiếp: các dòng điều chỉnh là ước tính, tiền cuối kỳ (70) chưa khớp sổ — cần rà soát các chỉ tiêu 04, 07, 16, 17"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Invalid formula: %(formula)s"
+msgstr "Công thức không hợp lệ: %(formula)s"
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Journal Items"
+msgstr "Xem bút toán"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Keyword arguments are not allowed (in: %(formula)s)"
+msgstr "Không dùng tham số có tên (trong: %(formula)s)"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__kind
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__report_kind
+msgid "Kind"
+msgstr "Loại báo cáo"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "LEGAL REPRESENTATIVE"
+msgstr "NGƯỜI ĐẠI DIỆN THEO PHÁP LUẬT"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__write_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__write_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__write_date
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Last Year"
+msgstr "Năm trước"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__form_note
+msgid "Legal Basis"
+msgstr "Căn cứ"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__level
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__level
+msgid "Level"
+msgstr "Cấp"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__name
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__name
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "Line"
+msgstr "Chỉ tiêu"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__subtitle
+msgid "Line under the title, e.g. the method used"
+msgstr "Dòng phụ dưới tiêu đề, ví dụ phương pháp lập"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "Lines"
+msgstr "Chỉ tiêu"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Month %s"
+msgstr "Tháng %s"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_50
+msgid "Net cash flows for the period"
+msgstr "Lưu chuyển tiền thuần trong kỳ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_50
+msgid "Net cash flows for the period (50 = 20 + 30 + 40)"
+msgstr "Lưu chuyển tiền thuần trong kỳ (50 = 20 + 30 + 40)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_40
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_40
+msgid "Net cash flows from financing activities"
+msgstr "Lưu chuyển tiền thuần từ hoạt động tài chính"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_30
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_30
+msgid "Net cash flows from investing activities"
+msgstr "Lưu chuyển tiền thuần từ hoạt động đầu tư"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03d_20
+#: model:vn.report.line,name:l10n_vn_financial_statements.b03i_20
+msgid "Net cash flows from operating activities"
+msgstr "Lưu chuyển tiền thuần từ hoạt động kinh doanh"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__comparison__none
+msgid "No Comparison"
+msgstr "Không so sánh"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "No consolidation group yet. Create one in Consolidation > Consolidation Groups."
+msgstr "Chưa có nhóm hợp nhất. Hãy tạo nhóm trong menu Hợp nhất > Nhóm hợp nhất."
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__note_ref
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__note_ref
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "Note"
+msgstr "Thuyết minh"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__comparison_count
+msgid "Number of Periods"
+msgstr "Số kỳ so sánh"
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_list
+msgid "Open Report"
+msgstr "Lập báo cáo"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Opening Balance"
+msgstr "Số đầu năm"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.report_vn_financial
+msgid "PREPARED BY"
+msgstr "NGƯỜI LẬP"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Period"
+msgstr "Kỳ"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Periods"
+msgstr "Số kỳ"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Posted"
+msgstr "Đã vào sổ"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__target_move__posted
+msgid "Posted Entries"
+msgstr "Chỉ bút toán đã vào sổ"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__comparison__previous_period
+msgid "Previous Period"
+msgstr "Kỳ trước liền kề"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "Print PDF"
+msgstr "In PDF"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Quarter 1"
+msgstr "Quý 1"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Quarter 2"
+msgstr "Quý 2"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Quarter 3"
+msgstr "Quý 3"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "Quarter 4"
+msgstr "Quý 4"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__report_id
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__report_id
+msgid "Report"
+msgstr "Báo cáo"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__report_line_id
+msgid "Report Line"
+msgstr "Chỉ tiêu gốc"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.actions.act_window,name:l10n_vn_financial_statements.vn_report_action
+#: model:ir.ui.menu,name:l10n_vn_financial_statements.menu_vn_fs_reports
+msgid "Report Templates"
+msgstr "Mẫu báo cáo và công thức"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Reporting entity:"
+msgstr "Đơn vị báo cáo:"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Reporting entity: %s"
+msgstr "Đơn vị báo cáo: %s"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__line_ids
+msgid "Results"
+msgstr "Kết quả"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,title:l10n_vn_financial_statements.report_b01
+msgid "STATEMENT OF FINANCIAL POSITION"
+msgstr "BÁO CÁO TÌNH HÌNH TÀI CHÍNH"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__comparison__previous_year
+msgid "Same Period Last Year"
+msgstr "Cùng kỳ năm trước"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Separate Statements"
+msgstr "Báo cáo riêng"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__sequence
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_line__sequence
+msgid "Sequence"
+msgstr "Thứ tự"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__show_variance
+msgid "Show Variance"
+msgstr "Hiện chênh lệch"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.ui.menu,name:l10n_vn_financial_statements.menu_vn_fs_wizard
+msgid "Statement (Dialog)"
+msgstr "Lập báo cáo (hộp thoại)"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.ui.menu,name:l10n_vn_financial_statements.menu_vn_fs_dynamic
+msgid "Statements"
+msgstr "Xem báo cáo"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Statutory Form"
+msgstr "Theo mẫu TT99"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields.selection,name:l10n_vn_financial_statements.selection__vn_report_wizard__comparison__default
+msgid "Statutory Form (opening of the year / same period last year)"
+msgstr "Theo mẫu TT99 (đầu năm / cùng kỳ năm trước)"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__subtitle
+msgid "Subtitle"
+msgstr "Dòng phụ"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_280
+msgid "TOTAL ASSETS"
+msgstr "TỔNG CỘNG TÀI SẢN"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_440
+msgid "TOTAL LIABILITIES AND EQUITY"
+msgstr "TỔNG CỘNG NGUỒN VỐN"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "The arguments of %(name)s must be account codes (in: %(formula)s)"
+msgstr "Tham số của %(name)s phải là mã tài khoản (trong: %(formula)s)"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.js:0
+msgid "The list only shows the journal items of the companies active in the company switcher (top right). Switch on: %s."
+msgstr "Danh sách chỉ hiện bút toán của các công ty đang bật. Bật thêm ở bộ chọn công ty (góc phải trên) để xem: %s."
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "The number of comparison periods must be between 1 and 6."
+msgstr "Số kỳ so sánh từ 1 đến 6."
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.constraint,message:l10n_vn_financial_statements.constraint_vn_report_code_uniq
+msgid "The report code must be unique."
+msgstr "Ký hiệu mẫu báo cáo phải là duy nhất."
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "The start date must be before the end date."
+msgstr "Ngày bắt đầu phải trước ngày kết thúc."
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__value
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_wizard_view_form
+msgid "This Period"
+msgstr "Kỳ này"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "This Year"
+msgstr "Năm nay"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "This line does not read any account directly."
+msgstr "Chỉ tiêu này không đọc trực tiếp tài khoản nào."
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report__title
+msgid "Title"
+msgstr "Tiêu đề"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,help:l10n_vn_financial_statements.field_vn_report__title
+msgid "Title printed on the statement"
+msgstr "Tiêu đề in trên báo cáo"
+
+#. module: l10n_vn_financial_statements
+#: model_terms:ir.ui.view,arch_db:l10n_vn_financial_statements.vn_report_view_form
+msgid "To customise a report, duplicate it (Action → Duplicate): upgrading the module overwrites the original reports."
+msgstr "Muốn tùy chỉnh, hãy nhân bản mẫu (Hành động → Nhân bản): khi nâng cấp module, mẫu gốc sẽ được ghi đè."
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report,check_message:l10n_vn_financial_statements.report_b01
+msgid "Total assets (280) differ from total liabilities and equity (440)"
+msgstr "Tổng tài sản (280) không bằng tổng nguồn vốn (440)"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Unknown line code in the report: [%(code)s]"
+msgstr "Mã số không tồn tại trong báo cáo: [%(code)s]"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Unsupported expression in formula: %(formula)s"
+msgstr "Biểu thức không được hỗ trợ trong công thức: %(formula)s"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "Unsupported function: %(name)s (in: %(formula)s)"
+msgstr "Hàm không được hỗ trợ: %(name)s (trong: %(formula)s)"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_250
+msgid "V. Long-term assets in progress"
+msgstr "V. Tài sản dở dang dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_150
+msgid "V. Short-term biological assets"
+msgstr "V. Tài sản sinh học ngắn hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_260
+msgid "VI. Long-term financial investments"
+msgstr "VI. Đầu tư tài chính dài hạn"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_160
+msgid "VI. Other current assets"
+msgstr "VI. Tài sản ngắn hạn khác"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_270
+msgid "VII. Other non-current assets"
+msgstr "VII. Tài sản dài hạn khác"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__values_cmp
+msgid "Values Cmp"
+msgstr "Giá trị các kỳ so sánh"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+#: code:addons/l10n_vn_financial_statements/wizard/vn_report_wizard.py:0
+msgid "Variance"
+msgstr "Chênh lệch"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.ui.menu,name:l10n_vn_financial_statements.menu_vn_fs_root
+msgid "Vietnamese Financial Statements"
+msgstr "Báo cáo tài chính VAS"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model,name:l10n_vn_financial_statements.model_vn_report
+msgid "Vietnamese financial statement"
+msgstr "Báo cáo tài chính Việt Nam"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model,name:l10n_vn_financial_statements.model_vn_report_line
+msgid "Vietnamese financial statement line"
+msgstr "Chỉ tiêu báo cáo tài chính Việt Nam"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model,name:l10n_vn_financial_statements.model_vn_report_wizard_line
+msgid "Vietnamese financial statement result line"
+msgstr "Kết quả chỉ tiêu báo cáo tài chính"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model,name:l10n_vn_financial_statements.model_vn_report_wizard
+msgid "Vietnamese financial statement wizard"
+msgstr "Lập báo cáo tài chính Việt Nam"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__warning_text
+msgid "Warnings"
+msgstr "Cảnh báo"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard_line__wizard_id
+msgid "Wizard"
+msgstr "Phiếu lập báo cáo"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__xlsx_file
+msgid "Xlsx File"
+msgstr "File Excel"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.model.fields,field_description:l10n_vn_financial_statements.field_vn_report_wizard__xlsx_filename
+msgid "Xlsx Filename"
+msgstr "Tên file Excel"
+
+#. module: l10n_vn_financial_statements
+#. odoo-javascript
+#: code:addons/l10n_vn_financial_statements/static/src/dynamic_report/dynamic_report.xml:0
+msgid "Year"
+msgstr "Năm"
+
+#. module: l10n_vn_financial_statements
+#. odoo-python
+#: code:addons/l10n_vn_financial_statements/models/engine.py:0
+msgid "You don't have access to these companies: %s"
+msgstr "Bạn chưa được cấp quyền truy cập công ty: %s"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_232
+msgid "a) Immature livestock producing periodic products"
+msgstr "a) Súc vật nuôi cho sản phẩm định kỳ chưa đến giai đoạn trưởng thành"
+
+#. module: l10n_vn_financial_statements
+#: model:vn.report.line,name:l10n_vn_financial_statements.b01_233
+msgid "b) Mature livestock producing periodic products"
+msgstr "b) Súc vật nuôi cho sản phẩm định kỳ đến giai đoạn trưởng thành"
+
+#. module: l10n_vn_financial_statements
+#: model:ir.actions.report,print_report_name:l10n_vn_financial_statements.action_report_vn_financial
+msgid "object._export_filename()"
+msgstr "object._export_filename()"

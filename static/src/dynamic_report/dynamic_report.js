@@ -1,17 +1,18 @@
 import { Component, onWillStart, useState } from "@odoo/owl";
+import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 
 const PERIODS = [
-    { key: "year", label: "Cả năm", months: [1, 12] },
-    { key: "q1", label: "Quý 1", months: [1, 3] },
-    { key: "q2", label: "Quý 2", months: [4, 6] },
-    { key: "q3", label: "Quý 3", months: [7, 9] },
-    { key: "q4", label: "Quý 4", months: [10, 12] },
-    { key: "h1", label: "6 tháng đầu năm", months: [1, 6] },
-    { key: "m9", label: "9 tháng đầu năm", months: [1, 9] },
-    ...Array.from({ length: 12 }, (_, i) => ({ key: `m${i + 1}x`, label: `Tháng ${i + 1}`, months: [i + 1, i + 1] })),
-    { key: "custom", label: "Tùy chọn ngày" },
+    { key: "year", label: _t("Full Year"), months: [1, 12] },
+    { key: "q1", label: _t("Quarter 1"), months: [1, 3] },
+    { key: "q2", label: _t("Quarter 2"), months: [4, 6] },
+    { key: "q3", label: _t("Quarter 3"), months: [7, 9] },
+    { key: "q4", label: _t("Quarter 4"), months: [10, 12] },
+    { key: "h1", label: _t("First 6 Months"), months: [1, 6] },
+    { key: "m9", label: _t("First 9 Months"), months: [1, 9] },
+    ...Array.from({ length: 12 }, (_, i) => ({ key: `m${i + 1}x`, label: _t("Month %s", i + 1), months: [i + 1, i + 1] })),
+    { key: "custom", label: _t("Custom Dates") },
 ];
 
 function pad(n) {
@@ -23,11 +24,11 @@ function lastDay(year, month) {
 }
 
 /**
- * On-screen TT99 statements: the figures load when the menu opens and are
+ * On-screen Vietnamese financial statements: the figures load when the menu opens and are
  * recomputed whenever a filter changes; Excel and PDF use the same figures.
  */
-export class VnTt99DynamicReport extends Component {
-    static template = "l10n_vn_tt99_reports.DynamicReport";
+export class VnFinancialStatementReport extends Component {
+    static template = "l10n_vn_financial_statements.DynamicReport";
     static props = ["*"];
 
     setup() {
@@ -109,7 +110,7 @@ export class VnTt99DynamicReport extends Component {
         }
         if (this.report.consolidated && !this.state.options.consolidation_group_id) {
             this.state.data = null;
-            this.state.error = "Chưa có nhóm hợp nhất. Hãy tạo nhóm trong menu Hợp nhất > Nhóm hợp nhất.";
+            this.state.error = _t("No consolidation group yet. Create one in Consolidation > Consolidation Groups.");
             return;
         }
         const requestId = ++this.requestId;
@@ -210,7 +211,10 @@ export class VnTt99DynamicReport extends Component {
         const result = await this.orm.call("vn.report.wizard.line", "get_drilldown", [[line.id]]);
         if (result.inactive_companies.length) {
             this.notification.add(
-                `Danh sách chỉ hiện bút toán của các công ty đang bật. Bật thêm ở bộ chọn công ty (góc phải trên) để xem: ${result.inactive_companies.join(", ")}.`,
+                _t(
+                    "The list only shows the journal items of the companies active in the company switcher (top right). Switch on: %s.",
+                    result.inactive_companies.join(", ")
+                ),
                 { type: "warning", sticky: false }
             );
         }
@@ -247,9 +251,13 @@ export class VnTt99DynamicReport extends Component {
         return column.kind === "percent" ? "text-muted" : "";
     }
 
+    drillTitle(line) {
+        return line.drillable && !line.blank ? _t("Click to see the journal items") : "";
+    }
+
     indent(line) {
         return `padding-left: ${0.5 + Math.max(line.level - 1, 0) * 1.25}rem;`;
     }
 }
 
-registry.category("actions").add("l10n_vn_tt99_reports.dynamic_report", VnTt99DynamicReport);
+registry.category("actions").add("l10n_vn_financial_statements.dynamic_report", VnFinancialStatementReport);

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="report_b01" model="vn.report">
-        <field name="name">B01-DN Báo cáo tình hình tài chính</field>
+        <field name="name">B01-DN Statement of Financial Position</field>
         <field name="code">B01-DN</field>
         <field name="sequence">10</field>
         <field name="kind">position</field>
-        <field name="form_code">Mẫu số B 01 - DN</field>
-        <field name="form_note">(Kèm theo Thông tư số 99/2025/TT-BTC ngày 27 tháng 10 năm 2025 của Bộ trưởng Bộ Tài chính)</field>
-        <field name="title">BÁO CÁO TÌNH HÌNH TÀI CHÍNH</field>
-        <field name="subtitle">(Áp dụng cho doanh nghiệp đáp ứng giả định hoạt động liên tục)</field>
+        <field name="form_code">Form B 01 - DN</field>
+        <field name="form_note">(Issued with Circular No. 99/2025/TT-BTC of 27 October 2025 of the Minister of Finance)</field>
+        <field name="title">STATEMENT OF FINANCIAL POSITION</field>
+        <field name="subtitle">(For enterprises meeting the going concern assumption)</field>
         <field name="check_expression">[280] - [440]</field>
-        <field name="check_message">Tổng tài sản (280) không bằng tổng nguồn vốn (440)</field>
+        <field name="check_message">Total assets (280) differ from total liabilities and equity (440)</field>
     </record>
 
     <record id="b01_100" model="vn.report.line">
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">10</field>
         <field name="code">100</field>
-        <field name="name">A - TÀI SẢN NGẮN HẠN</field>
+        <field name="name">A - CURRENT ASSETS</field>
         <field name="formula">[110] + [120] + [130] + [140] + [150] + [160]</field>
         <field name="level">0</field>
         <field name="bold" eval="True"/>
@@ -27,7 +27,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">20</field>
         <field name="code">110</field>
-        <field name="name">I. Tiền và các khoản tương đương tiền</field>
+        <field name="name">I. Cash and cash equivalents</field>
         <field name="formula">[111] + [112]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -37,7 +37,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">30</field>
         <field name="code">111</field>
-        <field name="name">1. Tiền</field>
+        <field name="name">1. Cash</field>
         <field name="formula">BAL(111, 112, 113)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -47,7 +47,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">40</field>
         <field name="code">112</field>
-        <field name="name">2. Các khoản tương đương tiền</field>
+        <field name="name">2. Cash equivalents</field>
         <field name="formula">BAL(12811, 12881)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -57,7 +57,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">50</field>
         <field name="code">120</field>
-        <field name="name">II. Đầu tư tài chính ngắn hạn</field>
+        <field name="name">II. Short-term financial investments</field>
         <field name="formula">[121] + [122] + [123] + [124] + [125] + [126]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -67,7 +67,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">60</field>
         <field name="code">121</field>
-        <field name="name">1. Chứng khoán kinh doanh</field>
+        <field name="name">1. Trading securities</field>
         <field name="formula">BAL(121)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -77,7 +77,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">70</field>
         <field name="code">122</field>
-        <field name="name">2. Dự phòng giảm giá chứng khoán kinh doanh (*)</field>
+        <field name="name">2. Provision for diminution in value of trading securities (*)</field>
         <field name="formula">BAL(2291)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -87,7 +87,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">80</field>
         <field name="code">123</field>
-        <field name="name">3. Đầu tư nắm giữ đến ngày đáo hạn ngắn hạn</field>
+        <field name="name">3. Short-term held-to-maturity investments</field>
         <field name="formula">BAL(12812, 12822, 12831, 12882)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -97,7 +97,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">90</field>
         <field name="code">124</field>
-        <field name="name">4. Dự phòng đầu tư nắm giữ đến ngày đáo hạn ngắn hạn (*)</field>
+        <field name="name">4. Provision for short-term held-to-maturity investments (*)</field>
         <field name="formula"></field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -107,7 +107,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">100</field>
         <field name="code">125</field>
-        <field name="name">5. Đầu tư ngắn hạn khác</field>
+        <field name="name">5. Other short-term investments</field>
         <field name="formula">BAL(22811)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -117,7 +117,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">110</field>
         <field name="code">126</field>
-        <field name="name">6. Dự phòng tổn thất các khoản đầu tư ngắn hạn khác (*)</field>
+        <field name="name">6. Provision for losses on other short-term investments (*)</field>
         <field name="formula">BAL(22921, 22922)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -127,7 +127,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">120</field>
         <field name="code">130</field>
-        <field name="name">III. Các khoản phải thu ngắn hạn</field>
+        <field name="name">III. Short-term receivables</field>
         <field name="formula">[131] + [132] + [133] + [134] + [135] + [136] + [137]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -137,7 +137,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">130</field>
         <field name="code">131</field>
-        <field name="name">1. Phải thu ngắn hạn của khách hàng</field>
+        <field name="name">1. Short-term trade receivables</field>
         <field name="formula">PDR(1311)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -147,7 +147,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">140</field>
         <field name="code">132</field>
-        <field name="name">2. Trả trước cho người bán ngắn hạn</field>
+        <field name="name">2. Short-term prepayments to suppliers</field>
         <field name="formula">PDR(3311)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -157,7 +157,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">150</field>
         <field name="code">133</field>
-        <field name="name">3. Phải thu nội bộ ngắn hạn</field>
+        <field name="name">3. Short-term intra-company receivables</field>
         <field name="formula">BAL(13621, 13631, 13681)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -167,7 +167,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">160</field>
         <field name="code">134</field>
-        <field name="name">4. Phải thu theo tiến độ hợp đồng xây dựng</field>
+        <field name="name">4. Receivables under construction contracts</field>
         <field name="formula">PDR(337)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -177,7 +177,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">170</field>
         <field name="code">135</field>
-        <field name="name">5. Phải thu ngắn hạn khác</field>
+        <field name="name">5. Other short-term receivables</field>
         <field name="formula">PDR(13881, 1411, 2441, 3341, 33811, 33821, 33831, 33841, 33861, 33881, 3441, 332) + DR(3351)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -187,7 +187,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">180</field>
         <field name="code">136</field>
-        <field name="name">6. Dự phòng phải thu ngắn hạn khó đòi (*)</field>
+        <field name="name">6. Provision for short-term doubtful debts (*)</field>
         <field name="formula">BAL(22931)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -197,7 +197,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">190</field>
         <field name="code">137</field>
-        <field name="name">7. Tài sản thiếu chờ xử lý</field>
+        <field name="name">7. Shortage of assets awaiting resolution</field>
         <field name="formula">PDR(13811, 13812)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -207,7 +207,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">200</field>
         <field name="code">140</field>
-        <field name="name">IV. Hàng tồn kho</field>
+        <field name="name">IV. Inventories</field>
         <field name="formula">[141] + [142]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -217,7 +217,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">210</field>
         <field name="code">141</field>
-        <field name="name">1. Hàng tồn kho</field>
+        <field name="name">1. Inventories</field>
         <field name="formula">BAL(151, 152, 1531, 1541, 155, 156, 157, 158)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -227,7 +227,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">220</field>
         <field name="code">142</field>
-        <field name="name">2. Dự phòng giảm giá hàng tồn kho (*)</field>
+        <field name="name">2. Provision for decline in value of inventories (*)</field>
         <field name="formula">BAL(22941)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -237,7 +237,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">230</field>
         <field name="code">150</field>
-        <field name="name">V. Tài sản sinh học ngắn hạn</field>
+        <field name="name">V. Short-term biological assets</field>
         <field name="formula">[151] + [152] + [153]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -247,7 +247,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">240</field>
         <field name="code">151</field>
-        <field name="name">1. Súc vật nuôi lấy sản phẩm một lần ngắn hạn</field>
+        <field name="name">1. Short-term livestock for one-time harvest</field>
         <field name="formula">BAL(21521)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -257,7 +257,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">250</field>
         <field name="code">152</field>
-        <field name="name">2. Cây trồng theo mùa vụ hoặc lấy sản phẩm một lần ngắn hạn</field>
+        <field name="name">2. Short-term seasonal or one-time-harvest crops</field>
         <field name="formula">BAL(21531)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -267,7 +267,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">260</field>
         <field name="code">153</field>
-        <field name="name">3. Dự phòng tổn thất tài sản sinh học ngắn hạn (*)</field>
+        <field name="name">3. Provision for losses on short-term biological assets (*)</field>
         <field name="formula">BAL(22951)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -277,7 +277,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">270</field>
         <field name="code">160</field>
-        <field name="name">VI. Tài sản ngắn hạn khác</field>
+        <field name="name">VI. Other current assets</field>
         <field name="formula">[161] + [162] + [163] + [164] + [165]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -287,7 +287,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">280</field>
         <field name="code">161</field>
-        <field name="name">1. Chi phí chờ phân bổ ngắn hạn</field>
+        <field name="name">1. Short-term deferred costs</field>
         <field name="formula">BAL(2421)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -297,7 +297,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">290</field>
         <field name="code">162</field>
-        <field name="name">2. Thuế GTGT được khấu trừ</field>
+        <field name="name">2. Deductible VAT</field>
         <field name="formula">BAL(133)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -307,7 +307,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">300</field>
         <field name="code">163</field>
-        <field name="name">3. Thuế và các khoản khác phải thu Nhà nước</field>
+        <field name="name">3. Taxes and other receivables from the State</field>
         <field name="formula">PDR(13831, 13832) + DR(333)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -317,7 +317,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">310</field>
         <field name="code">164</field>
-        <field name="name">4. Giao dịch mua bán lại trái phiếu Chính phủ</field>
+        <field name="name">4. Government bond repurchase transactions</field>
         <field name="formula">DR(171)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -327,7 +327,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">320</field>
         <field name="code">165</field>
-        <field name="name">5. Tài sản ngắn hạn khác</field>
+        <field name="name">5. Other current assets</field>
         <field name="formula">BAL(22881)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -337,7 +337,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">330</field>
         <field name="code">200</field>
-        <field name="name">B - TÀI SẢN DÀI HẠN</field>
+        <field name="name">B - NON-CURRENT ASSETS</field>
         <field name="formula">[210] + [220] + [230] + [240] + [250] + [260] + [270]</field>
         <field name="level">0</field>
         <field name="bold" eval="True"/>
@@ -347,7 +347,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">340</field>
         <field name="code">210</field>
-        <field name="name">I. Các khoản phải thu dài hạn</field>
+        <field name="name">I. Long-term receivables</field>
         <field name="formula">[211] + [212] + [213] + [214] + [215] + [216]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -357,7 +357,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">350</field>
         <field name="code">211</field>
-        <field name="name">1. Phải thu dài hạn của khách hàng</field>
+        <field name="name">1. Long-term trade receivables</field>
         <field name="formula">PDR(1312)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -367,7 +367,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">360</field>
         <field name="code">212</field>
-        <field name="name">2. Trả trước cho người bán dài hạn</field>
+        <field name="name">2. Long-term prepayments to suppliers</field>
         <field name="formula">PDR(3312)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -377,7 +377,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">370</field>
         <field name="code">213</field>
-        <field name="name">3. Vốn kinh doanh ở đơn vị trực thuộc</field>
+        <field name="name">3. Working capital in dependent units</field>
         <field name="formula">BAL(1361)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -387,7 +387,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">380</field>
         <field name="code">214</field>
-        <field name="name">4. Phải thu nội bộ dài hạn</field>
+        <field name="name">4. Long-term intra-company receivables</field>
         <field name="formula">BAL(13622, 13632, 13682)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -397,7 +397,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">390</field>
         <field name="code">215</field>
-        <field name="name">5. Phải thu dài hạn khác</field>
+        <field name="name">5. Other long-term receivables</field>
         <field name="formula">PDR(13882, 1412, 2442, 3342, 33812, 33822, 33832, 33842, 33862, 33882, 3442) + DR(3352)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -407,7 +407,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">400</field>
         <field name="code">216</field>
-        <field name="name">6. Dự phòng phải thu dài hạn khó đòi (*)</field>
+        <field name="name">6. Provision for long-term doubtful debts (*)</field>
         <field name="formula">BAL(22932)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -417,7 +417,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">410</field>
         <field name="code">220</field>
-        <field name="name">II. Tài sản cố định</field>
+        <field name="name">II. Fixed assets</field>
         <field name="formula">[221] + [224] + [227]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -427,7 +427,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">420</field>
         <field name="code">221</field>
-        <field name="name">1. Tài sản cố định hữu hình</field>
+        <field name="name">1. Tangible fixed assets</field>
         <field name="formula">[222] + [223]</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -437,7 +437,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">430</field>
         <field name="code">222</field>
-        <field name="name">- Nguyên giá</field>
+        <field name="name">- Cost</field>
         <field name="formula">BAL(211)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -447,7 +447,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">440</field>
         <field name="code">223</field>
-        <field name="name">- Giá trị hao mòn lũy kế (*)</field>
+        <field name="name">- Accumulated depreciation (*)</field>
         <field name="formula">BAL(2141)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -457,7 +457,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">450</field>
         <field name="code">224</field>
-        <field name="name">2. Tài sản cố định thuê tài chính</field>
+        <field name="name">2. Finance lease fixed assets</field>
         <field name="formula">[225] + [226]</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -467,7 +467,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">460</field>
         <field name="code">225</field>
-        <field name="name">- Nguyên giá</field>
+        <field name="name">- Cost</field>
         <field name="formula">BAL(212)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -477,7 +477,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">470</field>
         <field name="code">226</field>
-        <field name="name">- Giá trị hao mòn lũy kế (*)</field>
+        <field name="name">- Accumulated depreciation (*)</field>
         <field name="formula">BAL(2142)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -487,7 +487,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">480</field>
         <field name="code">227</field>
-        <field name="name">3. Tài sản cố định vô hình</field>
+        <field name="name">3. Intangible fixed assets</field>
         <field name="formula">[228] + [229]</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -497,7 +497,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">490</field>
         <field name="code">228</field>
-        <field name="name">- Nguyên giá</field>
+        <field name="name">- Cost</field>
         <field name="formula">BAL(213)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -507,7 +507,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">500</field>
         <field name="code">229</field>
-        <field name="name">- Giá trị hao mòn lũy kế (*)</field>
+        <field name="name">- Accumulated depreciation (*)</field>
         <field name="formula">BAL(2143)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -517,7 +517,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">510</field>
         <field name="code">230</field>
-        <field name="name">III. Tài sản sinh học dài hạn</field>
+        <field name="name">III. Long-term biological assets</field>
         <field name="formula">[231] + [236] + [237] + [238]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -527,7 +527,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">520</field>
         <field name="code">231</field>
-        <field name="name">1. Súc vật nuôi cho sản phẩm định kỳ</field>
+        <field name="name">1. Livestock producing periodic products</field>
         <field name="formula">[232] + [233]</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -537,7 +537,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">530</field>
         <field name="code">232</field>
-        <field name="name">a) Súc vật nuôi cho sản phẩm định kỳ chưa đến giai đoạn trưởng thành</field>
+        <field name="name">a) Immature livestock producing periodic products</field>
         <field name="formula">BAL(21511)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -547,7 +547,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">540</field>
         <field name="code">233</field>
-        <field name="name">b) Súc vật nuôi cho sản phẩm định kỳ đến giai đoạn trưởng thành</field>
+        <field name="name">b) Mature livestock producing periodic products</field>
         <field name="formula">[234] + [235]</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -557,7 +557,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">550</field>
         <field name="code">234</field>
-        <field name="name">- Nguyên giá</field>
+        <field name="name">- Cost</field>
         <field name="formula">BAL(215121)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -567,7 +567,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">560</field>
         <field name="code">235</field>
-        <field name="name">- Giá trị khấu hao lũy kế (*)</field>
+        <field name="name">- Accumulated depreciation of mature livestock (*)</field>
         <field name="formula">BAL(215122)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -577,7 +577,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">570</field>
         <field name="code">236</field>
-        <field name="name">2. Súc vật nuôi lấy sản phẩm một lần dài hạn</field>
+        <field name="name">2. Long-term livestock for one-time harvest</field>
         <field name="formula">BAL(21522)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -587,7 +587,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">580</field>
         <field name="code">237</field>
-        <field name="name">3. Cây trồng theo mùa vụ hoặc lấy sản phẩm một lần dài hạn</field>
+        <field name="name">3. Long-term seasonal or one-time-harvest crops</field>
         <field name="formula">BAL(21532)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -597,7 +597,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">590</field>
         <field name="code">238</field>
-        <field name="name">4. Dự phòng tổn thất tài sản sinh học dài hạn (*)</field>
+        <field name="name">4. Provision for losses on long-term biological assets (*)</field>
         <field name="formula">BAL(22952)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -607,7 +607,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">600</field>
         <field name="code">240</field>
-        <field name="name">IV. Bất động sản đầu tư</field>
+        <field name="name">IV. Investment property</field>
         <field name="formula">[241] + [242]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -617,7 +617,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">610</field>
         <field name="code">241</field>
-        <field name="name">- Nguyên giá</field>
+        <field name="name">- Cost</field>
         <field name="formula">BAL(217)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -627,7 +627,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">620</field>
         <field name="code">242</field>
-        <field name="name">- Giá trị hao mòn lũy kế (*)</field>
+        <field name="name">- Accumulated depreciation (*)</field>
         <field name="formula">BAL(2147)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -637,7 +637,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">630</field>
         <field name="code">250</field>
-        <field name="name">V. Tài sản dở dang dài hạn</field>
+        <field name="name">V. Long-term assets in progress</field>
         <field name="formula">[251] + [252]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -647,7 +647,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">640</field>
         <field name="code">251</field>
-        <field name="name">1. Chi phí sản xuất, kinh doanh dở dang dài hạn</field>
+        <field name="name">1. Long-term work in progress</field>
         <field name="formula">BAL(1542, 22942)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -657,7 +657,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">650</field>
         <field name="code">252</field>
-        <field name="name">2. Chi phí xây dựng cơ bản dở dang</field>
+        <field name="name">2. Construction in progress</field>
         <field name="formula">BAL(241)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -667,7 +667,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">660</field>
         <field name="code">260</field>
-        <field name="name">VI. Đầu tư tài chính dài hạn</field>
+        <field name="name">VI. Long-term financial investments</field>
         <field name="formula">[261] + [262] + [263] + [264] + [265] + [266]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -677,7 +677,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">670</field>
         <field name="code">261</field>
-        <field name="name">1. Đầu tư vào công ty con</field>
+        <field name="name">1. Investments in subsidiaries</field>
         <field name="formula">BAL(221)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -687,7 +687,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">680</field>
         <field name="code">262</field>
-        <field name="name">2. Đầu tư vào công ty liên doanh, liên kết</field>
+        <field name="name">2. Investments in joint ventures and associates</field>
         <field name="formula">BAL(222)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -697,7 +697,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">690</field>
         <field name="code">263</field>
-        <field name="name">3. Đầu tư góp vốn vào đơn vị khác</field>
+        <field name="name">3. Equity investments in other entities</field>
         <field name="formula">BAL(22812)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -707,7 +707,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">700</field>
         <field name="code">264</field>
-        <field name="name">4. Dự phòng tổn thất đầu tư vào đơn vị khác dài hạn (*)</field>
+        <field name="name">4. Provision for long-term investment losses (*)</field>
         <field name="formula">BAL(22923)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -717,7 +717,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">710</field>
         <field name="code">265</field>
-        <field name="name">5. Đầu tư nắm giữ đến ngày đáo hạn dài hạn</field>
+        <field name="name">5. Long-term held-to-maturity investments</field>
         <field name="formula">BAL(12813, 12823, 12832, 12883)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -727,7 +727,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">720</field>
         <field name="code">266</field>
-        <field name="name">6. Dự phòng đầu tư nắm giữ đến ngày đáo hạn dài hạn (*)</field>
+        <field name="name">6. Provision for long-term held-to-maturity investments (*)</field>
         <field name="formula">BAL(22924)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -737,7 +737,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">730</field>
         <field name="code">270</field>
-        <field name="name">VII. Tài sản dài hạn khác</field>
+        <field name="name">VII. Other non-current assets</field>
         <field name="formula">[271] + [272] + [273] + [274]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -747,7 +747,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">740</field>
         <field name="code">271</field>
-        <field name="name">1. Chi phí chờ phân bổ dài hạn</field>
+        <field name="name">1. Long-term deferred costs</field>
         <field name="formula">BAL(2422)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -757,7 +757,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">750</field>
         <field name="code">272</field>
-        <field name="name">2. Tài sản thuế thu nhập hoãn lại</field>
+        <field name="name">2. Deferred tax assets</field>
         <field name="formula">BAL(243)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -767,7 +767,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">760</field>
         <field name="code">273</field>
-        <field name="name">3. Thiết bị, vật tư, phụ tùng thay thế dài hạn</field>
+        <field name="name">3. Long-term equipment, supplies and spare parts</field>
         <field name="formula">BAL(1532, 22943)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -777,7 +777,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">770</field>
         <field name="code">274</field>
-        <field name="name">4. Tài sản dài hạn khác</field>
+        <field name="name">4. Other non-current assets</field>
         <field name="formula">BAL(22882)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -787,7 +787,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">780</field>
         <field name="code">280</field>
-        <field name="name">TỔNG CỘNG TÀI SẢN</field>
+        <field name="name">TOTAL ASSETS</field>
         <field name="formula">[100] + [200]</field>
         <field name="level">0</field>
         <field name="bold" eval="True"/>
@@ -797,7 +797,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">790</field>
         <field name="code">300</field>
-        <field name="name">C - NỢ PHẢI TRẢ</field>
+        <field name="name">C - LIABILITIES</field>
         <field name="formula">[310] + [330]</field>
         <field name="level">0</field>
         <field name="bold" eval="True"/>
@@ -807,7 +807,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">800</field>
         <field name="code">310</field>
-        <field name="name">I. Nợ ngắn hạn</field>
+        <field name="name">I. Current liabilities</field>
         <field name="formula">[311] + [312] + [313] + [314] + [315] + [316] + [317] + [318] + [319] + [320] + [321] + [322] + [323] + [324] + [325]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -817,7 +817,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">810</field>
         <field name="code">311</field>
-        <field name="name">1. Phải trả người bán ngắn hạn</field>
+        <field name="name">1. Short-term trade payables</field>
         <field name="formula">PCR(3311)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -827,7 +827,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">820</field>
         <field name="code">312</field>
-        <field name="name">2. Người mua trả tiền trước ngắn hạn</field>
+        <field name="name">2. Short-term advances from customers</field>
         <field name="formula">PCR(1311)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -837,7 +837,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">830</field>
         <field name="code">313</field>
-        <field name="name">3. Phải trả cổ tức, lợi nhuận</field>
+        <field name="name">3. Dividends and profits payable</field>
         <field name="formula">PCR(332)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -847,7 +847,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">840</field>
         <field name="code">314</field>
-        <field name="name">4. Thuế và các khoản phải nộp Nhà nước ngắn hạn</field>
+        <field name="name">4. Short-term taxes and amounts payable to the State</field>
         <field name="formula">CR(33311, 33312, 33321, 33331, 33341, 33351, 33361, 33371, 33381, 33382, 33391)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -857,7 +857,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">850</field>
         <field name="code">315</field>
-        <field name="name">5. Phải trả người lao động</field>
+        <field name="name">5. Payables to employees</field>
         <field name="formula">PCR(3341)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -867,7 +867,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">860</field>
         <field name="code">316</field>
-        <field name="name">6. Chi phí phải trả ngắn hạn</field>
+        <field name="name">6. Short-term accrued expenses</field>
         <field name="formula">CR(3351)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -877,7 +877,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">870</field>
         <field name="code">317</field>
-        <field name="name">7. Phải trả nội bộ ngắn hạn</field>
+        <field name="name">7. Short-term intra-company payables</field>
         <field name="formula">NBAL(33621, 33631, 33681)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -887,7 +887,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">880</field>
         <field name="code">318</field>
-        <field name="name">8. Phải trả theo tiến độ hợp đồng xây dựng ngắn hạn</field>
+        <field name="name">8. Short-term payables under construction contracts</field>
         <field name="formula">PCR(337)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -897,7 +897,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">890</field>
         <field name="code">319</field>
-        <field name="name">9. Doanh thu chờ phân bổ ngắn hạn</field>
+        <field name="name">9. Short-term deferred revenue</field>
         <field name="formula">NBAL(33871)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -907,7 +907,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">900</field>
         <field name="code">320</field>
-        <field name="name">10. Phải trả ngắn hạn khác</field>
+        <field name="name">10. Other short-term payables</field>
         <field name="formula">PCR(13811, 13812, 13831, 13881, 1411, 2441, 33811, 33821, 33831, 33841, 33861, 33881, 3441)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -917,7 +917,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">910</field>
         <field name="code">321</field>
-        <field name="name">11. Vay và nợ thuê tài chính ngắn hạn</field>
+        <field name="name">11. Short-term borrowings and finance lease liabilities</field>
         <field name="formula">NBAL(34111, 34121, 34311)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -927,7 +927,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">920</field>
         <field name="code">322</field>
-        <field name="name">12. Dự phòng phải trả ngắn hạn</field>
+        <field name="name">12. Short-term provisions</field>
         <field name="formula">NBAL(35211, 35221, 35231, 35251)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -937,7 +937,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">930</field>
         <field name="code">323</field>
-        <field name="name">13. Quỹ khen thưởng, phúc lợi</field>
+        <field name="name">13. Bonus and welfare funds</field>
         <field name="formula">NBAL(353)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -947,7 +947,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">940</field>
         <field name="code">324</field>
-        <field name="name">14. Quỹ bình ổn giá</field>
+        <field name="name">14. Price stabilisation fund</field>
         <field name="formula">NBAL(357)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -957,7 +957,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">950</field>
         <field name="code">325</field>
-        <field name="name">15. Giao dịch mua bán lại trái phiếu Chính phủ</field>
+        <field name="name">15. Government bond repurchase transactions</field>
         <field name="formula">CR(171)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -967,7 +967,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">960</field>
         <field name="code">330</field>
-        <field name="name">II. Nợ dài hạn</field>
+        <field name="name">II. Non-current liabilities</field>
         <field name="formula">[331] + [332] + [333] + [334] + [335] + [336] + [337] + [338] + [339] + [340] + [341] + [342] + [343] + [344]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -977,7 +977,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">970</field>
         <field name="code">331</field>
-        <field name="name">1. Phải trả người bán dài hạn</field>
+        <field name="name">1. Long-term trade payables</field>
         <field name="formula">PCR(3312)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -987,7 +987,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">980</field>
         <field name="code">332</field>
-        <field name="name">2. Người mua trả tiền trước dài hạn</field>
+        <field name="name">2. Long-term advances from customers</field>
         <field name="formula">PCR(1312)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -997,7 +997,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">990</field>
         <field name="code">333</field>
-        <field name="name">3. Thuế và các khoản phải nộp Nhà nước dài hạn</field>
+        <field name="name">3. Long-term taxes and amounts payable to the State</field>
         <field name="formula">CR(33322, 33332, 33342, 33352, 33362, 33372, 33392)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1007,7 +1007,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1000</field>
         <field name="code">334</field>
-        <field name="name">4. Chi phí phải trả dài hạn</field>
+        <field name="name">4. Long-term accrued expenses</field>
         <field name="formula">CR(3352)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1017,7 +1017,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1010</field>
         <field name="code">335</field>
-        <field name="name">5. Phải trả nội bộ về vốn kinh doanh</field>
+        <field name="name">5. Intra-company payables for working capital</field>
         <field name="formula">NBAL(3361)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1027,7 +1027,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1020</field>
         <field name="code">336</field>
-        <field name="name">6. Phải trả nội bộ dài hạn</field>
+        <field name="name">6. Long-term intra-company payables</field>
         <field name="formula">NBAL(33622, 33632, 33682)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1037,7 +1037,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1030</field>
         <field name="code">337</field>
-        <field name="name">7. Doanh thu chờ phân bổ dài hạn</field>
+        <field name="name">7. Long-term deferred revenue</field>
         <field name="formula">NBAL(33872)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1047,7 +1047,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1040</field>
         <field name="code">338</field>
-        <field name="name">8. Phải trả dài hạn khác</field>
+        <field name="name">8. Other long-term payables</field>
         <field name="formula">PCR(13832, 13882, 1412, 2442, 3342, 33812, 33822, 33832, 33842, 33862, 33882, 3442)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1057,7 +1057,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1050</field>
         <field name="code">339</field>
-        <field name="name">9. Vay và nợ thuê tài chính dài hạn</field>
+        <field name="name">9. Long-term borrowings and finance lease liabilities</field>
         <field name="formula">NBAL(34112, 34122, 34312)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1067,7 +1067,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1060</field>
         <field name="code">340</field>
-        <field name="name">10. Trái phiếu chuyển đổi</field>
+        <field name="name">10. Convertible bonds</field>
         <field name="formula">NBAL(3432)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1077,7 +1077,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1070</field>
         <field name="code">341</field>
-        <field name="name">11. Cổ phiếu ưu đãi</field>
+        <field name="name">11. Preference shares</field>
         <field name="formula">NBAL(411121)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1087,7 +1087,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1080</field>
         <field name="code">342</field>
-        <field name="name">12. Thuế thu nhập hoãn lại phải trả</field>
+        <field name="name">12. Deferred tax liabilities</field>
         <field name="formula">NBAL(347)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1097,7 +1097,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1090</field>
         <field name="code">343</field>
-        <field name="name">13. Dự phòng phải trả dài hạn</field>
+        <field name="name">13. Long-term provisions</field>
         <field name="formula">NBAL(35212, 35222, 35232, 35252)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1107,7 +1107,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1100</field>
         <field name="code">344</field>
-        <field name="name">14. Quỹ phát triển khoa học và công nghệ</field>
+        <field name="name">14. Science and technology development fund</field>
         <field name="formula">NBAL(356)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1117,7 +1117,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1110</field>
         <field name="code">400</field>
-        <field name="name">D - VỐN CHỦ SỞ HỮU</field>
+        <field name="name">D - OWNERS' EQUITY</field>
         <field name="formula">[411] + [412] + [413] + [414] + [415] + [416] + [417] + [418] + [419] + [420]</field>
         <field name="level">0</field>
         <field name="bold" eval="True"/>
@@ -1127,7 +1127,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1120</field>
         <field name="code">411</field>
-        <field name="name">1. Vốn góp của chủ sở hữu</field>
+        <field name="name">1. Owners' contributed capital</field>
         <field name="formula">[411a] + [411b]</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1137,7 +1137,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1130</field>
         <field name="code">411a</field>
-        <field name="name">- Cổ phiếu phổ thông có quyền biểu quyết</field>
+        <field name="name">- Ordinary shares with voting rights</field>
         <field name="formula">NBAL(41111)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -1147,7 +1147,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1140</field>
         <field name="code">411b</field>
-        <field name="name">- Cổ phiếu ưu đãi</field>
+        <field name="name">- Preference shares</field>
         <field name="formula">NBAL(411122)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -1157,7 +1157,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1150</field>
         <field name="code">412</field>
-        <field name="name">2. Thặng dư vốn</field>
+        <field name="name">2. Share premium</field>
         <field name="formula">NBAL(4112)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1167,7 +1167,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1160</field>
         <field name="code">413</field>
-        <field name="name">3. Quyền chọn chuyển đổi trái phiếu</field>
+        <field name="name">3. Bond conversion options</field>
         <field name="formula">NBAL(4113)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1177,7 +1177,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1170</field>
         <field name="code">414</field>
-        <field name="name">4. Vốn khác của chủ sở hữu</field>
+        <field name="name">4. Other owners' capital</field>
         <field name="formula">NBAL(4118)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1187,7 +1187,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1180</field>
         <field name="code">415</field>
-        <field name="name">5. Cổ phiếu mua lại của chính mình (*)</field>
+        <field name="name">5. Treasury shares (*)</field>
         <field name="formula">NBAL(419)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1197,7 +1197,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1190</field>
         <field name="code">416</field>
-        <field name="name">6. Chênh lệch đánh giá lại tài sản</field>
+        <field name="name">6. Asset revaluation differences</field>
         <field name="formula">NBAL(412)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1207,7 +1207,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1200</field>
         <field name="code">417</field>
-        <field name="name">7. Chênh lệch tỷ giá hối đoái</field>
+        <field name="name">7. Foreign exchange differences</field>
         <field name="formula">NBAL(413)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1217,7 +1217,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1210</field>
         <field name="code">418</field>
-        <field name="name">8. Quỹ đầu tư phát triển</field>
+        <field name="name">8. Development investment fund</field>
         <field name="formula">NBAL(414)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1227,7 +1227,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1220</field>
         <field name="code">419</field>
-        <field name="name">9. Quỹ khác thuộc vốn chủ sở hữu</field>
+        <field name="name">9. Other equity funds</field>
         <field name="formula">NBAL(418)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1237,7 +1237,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1230</field>
         <field name="code">420</field>
-        <field name="name">10. Lợi nhuận sau thuế chưa phân phối</field>
+        <field name="name">10. Undistributed profit after tax</field>
         <field name="formula">[420a] + [420b]</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -1247,7 +1247,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1240</field>
         <field name="code">420a</field>
-        <field name="name">- LNST chưa phân phối lũy kế đến cuối kỳ trước</field>
+        <field name="name">- Accumulated to the end of the previous period</field>
         <field name="formula">NBAL(4211) + PL_PRIOR()</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -1257,7 +1257,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1250</field>
         <field name="code">420b</field>
-        <field name="name">- LNST chưa phân phối kỳ này</field>
+        <field name="name">- Of the current period</field>
         <field name="formula">NBAL(4212) + PL_CUR()</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -1267,7 +1267,7 @@
         <field name="report_id" ref="report_b01"/>
         <field name="sequence">1260</field>
         <field name="code">440</field>
-        <field name="name">TỔNG CỘNG NGUỒN VỐN</field>
+        <field name="name">TOTAL LIABILITIES AND EQUITY</field>
         <field name="formula">[300] + [400]</field>
         <field name="level">0</field>
         <field name="bold" eval="True"/>

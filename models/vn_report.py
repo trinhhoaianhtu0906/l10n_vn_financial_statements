@@ -6,46 +6,47 @@ from .engine import FormulaError, parse_formula
 
 class VnReport(models.Model):
     _name = "vn.report"
-    _description = "TT99 financial statement"
+    _description = "Vietnamese financial statement"
     _order = "sequence, code"
 
     name = fields.Char(required=True, translate=True)
-    code = fields.Char(required=True, help="Ký hiệu mẫu, ví dụ B01-DN")
+    code = fields.Char(required=True, help="Form code, e.g. B01-DN")
     sequence = fields.Integer(default=10)
     active = fields.Boolean(default=True)
     kind = fields.Selection(
         [
-            ("position", "Tình hình tài chính (số dư tại ngày)"),
-            ("period", "Kết quả kinh doanh (phát sinh trong kỳ)"),
-            ("cashflow", "Lưu chuyển tiền tệ"),
+            ("position", "Financial position (balances at a date)"),
+            ("period", "Income statement (movements of the period)"),
+            ("cashflow", "Cash flows"),
         ],
         required=True,
     )
     consolidated = fields.Boolean(
-        help="Báo cáo hợp nhất: chỉ chạy được trên một nhóm hợp nhất."
+        help="Consolidated statement: runs on a consolidation group only."
     )
-    form_code = fields.Char(string="Mẫu số", help="Ví dụ: Mẫu số B 01 - DN")
+    form_code = fields.Char(string="Form", translate=True, help="E.g. Form B 01 - DN")
     form_note = fields.Char(
-        string="Căn cứ",
-        default="(Kèm theo Thông tư số 99/2025/TT-BTC ngày 27 tháng 10 năm 2025"
-        " của Bộ trưởng Bộ Tài chính)",
+        string="Legal Basis",
+        translate=True,
+        default="(Issued with Circular No. 99/2025/TT-BTC of 27 October 2025"
+        " of the Minister of Finance)",
     )
-    title = fields.Char(required=True, help="Tiêu đề in trên báo cáo")
-    subtitle = fields.Char(help="Dòng phụ dưới tiêu đề, ví dụ phương pháp lập")
+    title = fields.Char(required=True, translate=True, help="Title printed on the statement")
+    subtitle = fields.Char(translate=True, help="Line under the title, e.g. the method used")
     check_expression = fields.Char(
-        string="Công thức kiểm tra",
-        help="Biểu thức phải bằng 0, ví dụ [280] - [440]. Nếu khác 0, báo cáo hiện cảnh báo.",
+        string="Check Formula",
+        help="Expression that must equal 0, e.g. [280] - [440]. Otherwise the report shows a warning.",
     )
-    check_message = fields.Char(string="Thông báo khi lệch")
-    line_ids = fields.One2many("vn.report.line", "report_id", string="Chỉ tiêu", copy=True)
+    check_message = fields.Char(string="Check Message", translate=True)
+    line_ids = fields.One2many("vn.report.line", "report_id", string="Lines", copy=True)
 
-    _code_uniq = models.Constraint("UNIQUE(code)", "Ký hiệu mẫu báo cáo phải là duy nhất.")
+    _code_uniq = models.Constraint("UNIQUE(code)", "The report code must be unique.")
 
     def copy_data(self, default=None):
         vals_list = super().copy_data(default=default)
         for report, vals in zip(self, vals_list, strict=True):
             vals.setdefault("code", f"{report.code}-copy")
-            vals.setdefault("name", self.env._("%s (bản sao)", report.name))
+            vals.setdefault("name", self.env._("%s (copy)", report.name))
         return vals_list
 
     @api.constrains("check_expression")
@@ -54,42 +55,42 @@ class VnReport(models.Model):
             try:
                 parse_formula(report.check_expression)
             except FormulaError as e:
-                raise ValidationError(str(e)) from e
+                raise ValidationError(e.message(self.env)) from e
 
     def action_open_wizard(self):
         self.ensure_one()
         return {
             "type": "ir.actions.client",
             "name": self.name,
-            "tag": "l10n_vn_tt99_reports.dynamic_report",
+            "tag": "l10n_vn_financial_statements.dynamic_report",
             "context": {"default_report_id": self.id},
         }
 
 
 class VnReportLine(models.Model):
     _name = "vn.report.line"
-    _description = "TT99 financial statement line"
+    _description = "Vietnamese financial statement line"
     _order = "report_id, sequence, id"
 
     report_id = fields.Many2one("vn.report", required=True, ondelete="cascade", index=True)
     sequence = fields.Integer(default=10)
-    code = fields.Char(string="Mã số", required=True)
-    name = fields.Char(string="Chỉ tiêu", required=True, translate=True)
-    note_ref = fields.Char(string="Thuyết minh")
+    code = fields.Char(string="Code", required=True)
+    name = fields.Char(string="Line", required=True, translate=True)
+    note_ref = fields.Char(string="Note")
     formula = fields.Char(
-        string="Công thức",
-        help="Ví dụ: PDR(1311) — dư Nợ chi tiết theo đối tượng của TK 1311; "
-        "[110] + [120] — cộng các mã số khác. Để trống nếu chỉ tiêu nhập tay.",
+        string="Formula",
+        help="E.g. PDR(1311): debit balances of account 1311 per partner; "
+        "[110] + [120]: sum of other lines. Leave empty for a line filled in by hand.",
     )
-    level = fields.Integer(default=2, help="0: phần lớn, 1: mục La Mã, 2: chỉ tiêu, 3: dòng chi tiết")
+    level = fields.Integer(default=2, help="0: part, 1: roman numeral section, 2: line, 3: detail line")
     bold = fields.Boolean()
     hide_if_zero = fields.Boolean(
-        string="Ẩn khi bằng 0",
-        help="TT99 cho phép không trình bày chỉ tiêu không có số liệu.",
+        string="Hide When Zero",
+        help="Circular 99 allows leaving out lines without figures (their codes are kept).",
     )
 
     _code_uniq = models.Constraint(
-        "UNIQUE(report_id, code)", "Mã số phải là duy nhất trong một báo cáo."
+        "UNIQUE(report_id, code)", "A line code must be unique within a report."
     )
 
     @api.constrains("formula")
@@ -98,4 +99,4 @@ class VnReportLine(models.Model):
             try:
                 parse_formula(line.formula)
             except FormulaError as e:
-                raise ValidationError(f"[{line.code}] {e}") from e
+                raise ValidationError(f"[{line.code}] {e.message(self.env)}") from e

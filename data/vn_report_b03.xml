@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="report_b03_direct" model="vn.report">
-        <field name="name">B03-DN Báo cáo lưu chuyển tiền tệ (trực tiếp)</field>
+        <field name="name">B03-DN Cash Flow Statement (Direct Method)</field>
         <field name="code">B03-DN</field>
         <field name="sequence">30</field>
         <field name="kind">cashflow</field>
-        <field name="form_code">Mẫu số B 03 - DN</field>
-        <field name="form_note">(Kèm theo Thông tư số 99/2025/TT-BTC ngày 27 tháng 10 năm 2025 của Bộ trưởng Bộ Tài chính)</field>
-        <field name="title">BÁO CÁO LƯU CHUYỂN TIỀN TỆ</field>
-        <field name="subtitle">(Theo phương pháp trực tiếp)</field>
+        <field name="form_code">Form B 03 - DN</field>
+        <field name="form_note">(Issued with Circular No. 99/2025/TT-BTC of 27 October 2025 of the Minister of Finance)</field>
+        <field name="title">CASH FLOW STATEMENT</field>
+        <field name="subtitle">(Direct method)</field>
         <field name="check_expression">[70] - CLOSE(111, 112, 113, 12811, 12881)</field>
-        <field name="check_message">Tiền cuối kỳ (70) không khớp số dư tiền và tương đương tiền trên sổ</field>
+        <field name="check_message">Closing cash (70) does not match the ledger balance of cash and cash equivalents</field>
     </record>
 
     <record id="b03d_I" model="vn.report.line">
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">10</field>
         <field name="code">I</field>
-        <field name="name">I. Lưu chuyển tiền từ hoạt động kinh doanh</field>
+        <field name="name">I. Cash flows from operating activities</field>
         <field name="formula"></field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -27,7 +27,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">20</field>
         <field name="code">01</field>
-        <field name="name">1. Tiền thu từ bán hàng, cung cấp dịch vụ và doanh thu khác</field>
+        <field name="name">1. Receipts from sales of goods, services and other revenue</field>
         <field name="formula">CASH(131, 511, 521, 3331, 3387) - CASH(5117)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -37,7 +37,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">30</field>
         <field name="code">02</field>
-        <field name="name">2. Tiền chi trả cho người cung cấp hàng hóa và dịch vụ</field>
+        <field name="name">2. Payments to suppliers of goods and services</field>
         <field name="formula">CASH(331, 151, 152, 153, 154, 155, 156, 157, 158, 133, 242, 621, 623, 627, 641, 642)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -47,7 +47,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">40</field>
         <field name="code">03</field>
-        <field name="name">3. Tiền chi trả cho người lao động</field>
+        <field name="name">3. Payments to employees</field>
         <field name="formula">CASH(334)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -57,7 +57,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">50</field>
         <field name="code">04</field>
-        <field name="name">4. Chi phí đi vay đã trả</field>
+        <field name="name">4. Borrowing costs paid</field>
         <field name="formula">CASH(6351)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -67,7 +67,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">60</field>
         <field name="code">05</field>
-        <field name="name">5. Thuế thu nhập doanh nghiệp đã nộp</field>
+        <field name="name">5. Corporate income tax paid</field>
         <field name="formula">CASH(3334)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -77,7 +77,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">70</field>
         <field name="code">06</field>
-        <field name="name">6. Tiền thu khác từ hoạt động kinh doanh</field>
+        <field name="name">6. Other receipts from operating activities</field>
         <field name="formula">CASH_REST_IN()</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -87,7 +87,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">80</field>
         <field name="code">07</field>
-        <field name="name">7. Tiền chi khác cho hoạt động kinh doanh</field>
+        <field name="name">7. Other payments for operating activities</field>
         <field name="formula">CASH_REST_OUT()</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -97,7 +97,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">90</field>
         <field name="code">20</field>
-        <field name="name">Lưu chuyển tiền thuần từ hoạt động kinh doanh</field>
+        <field name="name">Net cash flows from operating activities</field>
         <field name="formula">[01] + [02] + [03] + [04] + [05] + [06] + [07]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -107,7 +107,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">100</field>
         <field name="code">II</field>
-        <field name="name">II. Lưu chuyển tiền từ hoạt động đầu tư</field>
+        <field name="name">II. Cash flows from investing activities</field>
         <field name="formula"></field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -117,7 +117,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">110</field>
         <field name="code">21</field>
-        <field name="name">1. Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác</field>
+        <field name="name">1. Purchase and construction of fixed assets and other long-term assets</field>
         <field name="formula">CASHD(211, 212, 213, 215, 217, 241)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -127,7 +127,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">120</field>
         <field name="code">22</field>
-        <field name="name">2. Tiền thu từ thanh lý, nhượng bán TSCĐ và các tài sản dài hạn khác</field>
+        <field name="name">2. Proceeds from disposal of fixed assets and other long-term assets</field>
         <field name="formula">CASHC(211, 212, 213, 215, 217, 241, 711, 5117)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -137,7 +137,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">130</field>
         <field name="code">23</field>
-        <field name="name">3. Tiền chi cho vay, mua các công cụ nợ của đơn vị khác</field>
+        <field name="name">3. Loans granted and debt instruments of other entities purchased</field>
         <field name="formula">CASHD(1281, 1282, 1283, 1288, 171)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -147,7 +147,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">140</field>
         <field name="code">24</field>
-        <field name="name">4. Tiền thu hồi cho vay, bán lại các công cụ nợ của đơn vị khác</field>
+        <field name="name">4. Loans collected and debt instruments of other entities resold</field>
         <field name="formula">CASHC(1281, 1282, 1283, 1288, 171)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -157,7 +157,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">150</field>
         <field name="code">25</field>
-        <field name="name">5. Tiền chi đầu tư góp vốn vào đơn vị khác</field>
+        <field name="name">5. Equity investments in other entities</field>
         <field name="formula">CASHD(221, 222, 2281)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -167,7 +167,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">160</field>
         <field name="code">26</field>
-        <field name="name">6. Tiền thu hồi đầu tư góp vốn vào đơn vị khác</field>
+        <field name="name">6. Proceeds from equity investments in other entities</field>
         <field name="formula">CASHC(221, 222, 2281)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -177,7 +177,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">170</field>
         <field name="code">27</field>
-        <field name="name">7. Tiền thu lãi cho vay, cổ tức và lợi nhuận được chia</field>
+        <field name="name">7. Interest, dividends and profits received</field>
         <field name="formula">CASHC(515)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -187,7 +187,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">180</field>
         <field name="code">30</field>
-        <field name="name">Lưu chuyển tiền thuần từ hoạt động đầu tư</field>
+        <field name="name">Net cash flows from investing activities</field>
         <field name="formula">[21] + [22] + [23] + [24] + [25] + [26] + [27]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -197,7 +197,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">190</field>
         <field name="code">III</field>
-        <field name="name">III. Lưu chuyển tiền từ hoạt động tài chính</field>
+        <field name="name">III. Cash flows from financing activities</field>
         <field name="formula"></field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -207,7 +207,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">200</field>
         <field name="code">31</field>
-        <field name="name">1. Tiền thu từ phát hành cổ phiếu, nhận vốn góp của chủ sở hữu</field>
+        <field name="name">1. Proceeds from share issues and owners' contributions</field>
         <field name="formula">CASHC(411)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -217,7 +217,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">210</field>
         <field name="code">32</field>
-        <field name="name">2. Tiền trả lại vốn góp cho các chủ sở hữu, mua lại cổ phiếu đã phát hành</field>
+        <field name="name">2. Capital returned to owners and issued shares repurchased</field>
         <field name="formula">CASHD(411, 419)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -227,7 +227,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">220</field>
         <field name="code">33</field>
-        <field name="name">3. Tiền thu từ đi vay</field>
+        <field name="name">3. Proceeds from borrowings</field>
         <field name="formula">CASHC(341, 343)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -237,7 +237,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">230</field>
         <field name="code">34</field>
-        <field name="name">4. Tiền trả nợ gốc vay</field>
+        <field name="name">4. Repayment of borrowings</field>
         <field name="formula">CASHD(3411, 343)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -247,7 +247,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">240</field>
         <field name="code">35</field>
-        <field name="name">5. Tiền trả nợ gốc thuê tài chính</field>
+        <field name="name">5. Repayment of finance lease liabilities</field>
         <field name="formula">CASHD(3412)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -257,7 +257,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">250</field>
         <field name="code">36</field>
-        <field name="name">6. Cổ tức, lợi nhuận đã trả cho chủ sở hữu</field>
+        <field name="name">6. Dividends and profits paid to owners</field>
         <field name="formula">CASHD(332, 421)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -267,7 +267,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">260</field>
         <field name="code">40</field>
-        <field name="name">Lưu chuyển tiền thuần từ hoạt động tài chính</field>
+        <field name="name">Net cash flows from financing activities</field>
         <field name="formula">[31] + [32] + [33] + [34] + [35] + [36]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -277,7 +277,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">270</field>
         <field name="code">50</field>
-        <field name="name">Lưu chuyển tiền thuần trong kỳ (50 = 20 + 30 + 40)</field>
+        <field name="name">Net cash flows for the period (50 = 20 + 30 + 40)</field>
         <field name="formula">[20] + [30] + [40]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -287,7 +287,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">280</field>
         <field name="code">60</field>
-        <field name="name">Tiền và tương đương tiền đầu kỳ</field>
+        <field name="name">Cash and cash equivalents at the beginning of the period</field>
         <field name="formula">OPEN(111, 112, 113, 12811, 12881)</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -297,7 +297,7 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">290</field>
         <field name="code">61</field>
-        <field name="name">Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ</field>
+        <field name="name">Effect of foreign exchange rate changes</field>
         <field name="formula">CASH(413)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -307,30 +307,30 @@
         <field name="report_id" ref="report_b03_direct"/>
         <field name="sequence">300</field>
         <field name="code">70</field>
-        <field name="name">Tiền và tương đương tiền cuối kỳ (70 = 50 + 60 + 61)</field>
+        <field name="name">Cash and cash equivalents at the end of the period (70 = 50 + 60 + 61)</field>
         <field name="formula">[50] + [60] + [61]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
     </record>
 
     <record id="report_b03_indirect" model="vn.report">
-        <field name="name">B03-DN Báo cáo lưu chuyển tiền tệ (gián tiếp)</field>
+        <field name="name">B03-DN Cash Flow Statement (Indirect Method)</field>
         <field name="code">B03-DN-GT</field>
         <field name="sequence">31</field>
         <field name="kind">cashflow</field>
-        <field name="form_code">Mẫu số B 03 - DN</field>
-        <field name="form_note">(Kèm theo Thông tư số 99/2025/TT-BTC ngày 27 tháng 10 năm 2025 của Bộ trưởng Bộ Tài chính)</field>
-        <field name="title">BÁO CÁO LƯU CHUYỂN TIỀN TỆ</field>
-        <field name="subtitle">(Theo phương pháp gián tiếp)</field>
+        <field name="form_code">Form B 03 - DN</field>
+        <field name="form_note">(Issued with Circular No. 99/2025/TT-BTC of 27 October 2025 of the Minister of Finance)</field>
+        <field name="title">CASH FLOW STATEMENT</field>
+        <field name="subtitle">(Indirect method)</field>
         <field name="check_expression">[70] - CLOSE(111, 112, 113, 12811, 12881)</field>
-        <field name="check_message">Phương pháp gián tiếp: các dòng điều chỉnh là ước tính, tiền cuối kỳ (70) chưa khớp sổ — cần rà soát các chỉ tiêu 04, 07, 16, 17</field>
+        <field name="check_message">Indirect method: the adjustment lines are estimates and closing cash (70) does not match the ledger; review lines 04, 07, 16 and 17</field>
     </record>
 
     <record id="b03i_I" model="vn.report.line">
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">10</field>
         <field name="code">I</field>
-        <field name="name">I. Lưu chuyển tiền từ hoạt động kinh doanh</field>
+        <field name="name">I. Cash flows from operating activities</field>
         <field name="formula"></field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -340,7 +340,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">20</field>
         <field name="code">01</field>
-        <field name="name">1. Lợi nhuận trước thuế</field>
+        <field name="name">1. Profit before tax</field>
         <field name="formula">NBAL(511, 515, 521, 711) - BAL(632, 635, 641, 642, 811)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -350,7 +350,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">30</field>
         <field name="code">02</field>
-        <field name="name">- Khấu hao TSCĐ và BĐSĐT</field>
+        <field name="name">- Depreciation of fixed assets and investment property</field>
         <field name="formula">CT(214, 215122)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -360,7 +360,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">40</field>
         <field name="code">03</field>
-        <field name="name">- Các khoản dự phòng</field>
+        <field name="name">- Provisions</field>
         <field name="formula">-CHG(229, 352)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -370,7 +370,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">50</field>
         <field name="code">04</field>
-        <field name="name">- Lãi, lỗ chênh lệch tỷ giá hối đoái do đánh giá lại các khoản mục tiền tệ có gốc ngoại tệ</field>
+        <field name="name">- Exchange gains or losses on revaluation of foreign currency monetary items</field>
         <field name="formula"></field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -380,7 +380,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">60</field>
         <field name="code">05</field>
-        <field name="name">- Lãi, lỗ từ hoạt động đầu tư, tài chính</field>
+        <field name="name">- Gains or losses from investing and financing activities</field>
         <field name="formula">-NBAL(515, 5117) + BAL(6327)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -390,7 +390,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">70</field>
         <field name="code">06</field>
-        <field name="name">- Chi phí đi vay</field>
+        <field name="name">- Borrowing costs</field>
         <field name="formula">BAL(6351)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -400,7 +400,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">80</field>
         <field name="code">07</field>
-        <field name="name">- Các khoản điều chỉnh khác</field>
+        <field name="name">- Other adjustments</field>
         <field name="formula"></field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -410,7 +410,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">90</field>
         <field name="code">08</field>
-        <field name="name">3. Lợi nhuận từ hoạt động kinh doanh trước thay đổi vốn lưu động</field>
+        <field name="name">3. Operating profit before changes in working capital</field>
         <field name="formula">[01] + [02] + [03] + [04] + [05] + [06] + [07]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -420,7 +420,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">100</field>
         <field name="code">09</field>
-        <field name="name">- Tăng, giảm các khoản phải thu</field>
+        <field name="name">- Increase or decrease in receivables</field>
         <field name="formula">-CHG(131, 133, 136, 138, 141, 244)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -430,7 +430,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">110</field>
         <field name="code">10</field>
-        <field name="name">- Tăng, giảm hàng tồn kho</field>
+        <field name="name">- Increase or decrease in inventories</field>
         <field name="formula">-CHG(151, 152, 153, 154, 155, 156, 157, 158)</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -440,7 +440,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">120</field>
         <field name="code">11</field>
-        <field name="name">- Tăng, giảm các khoản phải trả (Không kể lãi vay phải trả, thuế thu nhập doanh nghiệp phải nộp)</field>
+        <field name="name">- Increase or decrease in payables (excluding interest and corporate income tax payable)</field>
         <field name="formula">-CHG(331, 3331, 3332, 3333, 3335, 3336, 3337, 3338, 3339, 334, 335, 336, 337, 338, 344)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -450,7 +450,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">130</field>
         <field name="code">12</field>
-        <field name="name">- Tăng, giảm chi phí chờ phân bổ</field>
+        <field name="name">- Increase or decrease in deferred costs</field>
         <field name="formula">-CHG(242)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -460,7 +460,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">140</field>
         <field name="code">13</field>
-        <field name="name">- Tăng, giảm chứng khoán kinh doanh</field>
+        <field name="name">- Increase or decrease in trading securities</field>
         <field name="formula">-CHG(121)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -470,7 +470,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">150</field>
         <field name="code">14</field>
-        <field name="name">- Chi phí đi vay đã trả</field>
+        <field name="name">- Borrowing costs paid</field>
         <field name="formula">CASH(6351)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -480,7 +480,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">160</field>
         <field name="code">15</field>
-        <field name="name">- Thuế thu nhập doanh nghiệp đã nộp</field>
+        <field name="name">- Corporate income tax paid</field>
         <field name="formula">CASH(3334)</field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -490,7 +490,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">170</field>
         <field name="code">16</field>
-        <field name="name">- Tiền thu khác từ hoạt động kinh doanh</field>
+        <field name="name">- Other receipts from operating activities</field>
         <field name="formula"></field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -500,7 +500,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">180</field>
         <field name="code">17</field>
-        <field name="name">- Tiền chi khác cho hoạt động kinh doanh</field>
+        <field name="name">- Other payments for operating activities</field>
         <field name="formula"></field>
         <field name="level">3</field>
         <field name="bold" eval="False"/>
@@ -510,7 +510,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">190</field>
         <field name="code">20</field>
-        <field name="name">Lưu chuyển tiền thuần từ hoạt động kinh doanh</field>
+        <field name="name">Net cash flows from operating activities</field>
         <field name="formula">[08] + [09] + [10] + [11] + [12] + [13] + [14] + [15] + [16] + [17]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -520,7 +520,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">200</field>
         <field name="code">II</field>
-        <field name="name">II. Lưu chuyển tiền từ hoạt động đầu tư</field>
+        <field name="name">II. Cash flows from investing activities</field>
         <field name="formula"></field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -530,7 +530,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">210</field>
         <field name="code">21</field>
-        <field name="name">1. Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác</field>
+        <field name="name">1. Purchase and construction of fixed assets and other long-term assets</field>
         <field name="formula">CASHD(211, 212, 213, 215, 217, 241)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -540,7 +540,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">220</field>
         <field name="code">22</field>
-        <field name="name">2. Tiền thu từ thanh lý, nhượng bán TSCĐ và các tài sản dài hạn khác</field>
+        <field name="name">2. Proceeds from disposal of fixed assets and other long-term assets</field>
         <field name="formula">CASHC(211, 212, 213, 215, 217, 241, 711, 5117)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -550,7 +550,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">230</field>
         <field name="code">23</field>
-        <field name="name">3. Tiền chi cho vay, mua các công cụ nợ của đơn vị khác</field>
+        <field name="name">3. Loans granted and debt instruments of other entities purchased</field>
         <field name="formula">CASHD(1281, 1282, 1283, 1288, 171)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -560,7 +560,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">240</field>
         <field name="code">24</field>
-        <field name="name">4. Tiền thu hồi cho vay, bán lại các công cụ nợ của đơn vị khác</field>
+        <field name="name">4. Loans collected and debt instruments of other entities resold</field>
         <field name="formula">CASHC(1281, 1282, 1283, 1288, 171)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -570,7 +570,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">250</field>
         <field name="code">25</field>
-        <field name="name">5. Tiền chi đầu tư góp vốn vào đơn vị khác</field>
+        <field name="name">5. Equity investments in other entities</field>
         <field name="formula">CASHD(221, 222, 2281)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -580,7 +580,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">260</field>
         <field name="code">26</field>
-        <field name="name">6. Tiền thu hồi đầu tư góp vốn vào đơn vị khác</field>
+        <field name="name">6. Proceeds from equity investments in other entities</field>
         <field name="formula">CASHC(221, 222, 2281)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -590,7 +590,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">270</field>
         <field name="code">27</field>
-        <field name="name">7. Tiền thu lãi cho vay, cổ tức và lợi nhuận được chia</field>
+        <field name="name">7. Interest, dividends and profits received</field>
         <field name="formula">CASHC(515)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -600,7 +600,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">280</field>
         <field name="code">30</field>
-        <field name="name">Lưu chuyển tiền thuần từ hoạt động đầu tư</field>
+        <field name="name">Net cash flows from investing activities</field>
         <field name="formula">[21] + [22] + [23] + [24] + [25] + [26] + [27]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -610,7 +610,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">290</field>
         <field name="code">III</field>
-        <field name="name">III. Lưu chuyển tiền từ hoạt động tài chính</field>
+        <field name="name">III. Cash flows from financing activities</field>
         <field name="formula"></field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -620,7 +620,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">300</field>
         <field name="code">31</field>
-        <field name="name">1. Tiền thu từ phát hành cổ phiếu, nhận vốn góp của chủ sở hữu</field>
+        <field name="name">1. Proceeds from share issues and owners' contributions</field>
         <field name="formula">CASHC(411)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -630,7 +630,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">310</field>
         <field name="code">32</field>
-        <field name="name">2. Tiền trả lại vốn góp cho các chủ sở hữu, mua lại cổ phiếu đã phát hành</field>
+        <field name="name">2. Capital returned to owners and issued shares repurchased</field>
         <field name="formula">CASHD(411, 419)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -640,7 +640,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">320</field>
         <field name="code">33</field>
-        <field name="name">3. Tiền thu từ đi vay</field>
+        <field name="name">3. Proceeds from borrowings</field>
         <field name="formula">CASHC(341, 343)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -650,7 +650,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">330</field>
         <field name="code">34</field>
-        <field name="name">4. Tiền trả nợ gốc vay</field>
+        <field name="name">4. Repayment of borrowings</field>
         <field name="formula">CASHD(3411, 343)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -660,7 +660,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">340</field>
         <field name="code">35</field>
-        <field name="name">5. Tiền trả nợ gốc thuê tài chính</field>
+        <field name="name">5. Repayment of finance lease liabilities</field>
         <field name="formula">CASHD(3412)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -670,7 +670,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">350</field>
         <field name="code">36</field>
-        <field name="name">6. Cổ tức, lợi nhuận đã trả cho chủ sở hữu</field>
+        <field name="name">6. Dividends and profits paid to owners</field>
         <field name="formula">CASHD(332, 421)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -680,7 +680,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">360</field>
         <field name="code">40</field>
-        <field name="name">Lưu chuyển tiền thuần từ hoạt động tài chính</field>
+        <field name="name">Net cash flows from financing activities</field>
         <field name="formula">[31] + [32] + [33] + [34] + [35] + [36]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -690,7 +690,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">370</field>
         <field name="code">50</field>
-        <field name="name">Lưu chuyển tiền thuần trong kỳ</field>
+        <field name="name">Net cash flows for the period</field>
         <field name="formula">[20] + [30] + [40]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -700,7 +700,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">380</field>
         <field name="code">60</field>
-        <field name="name">Tiền và tương đương tiền đầu kỳ</field>
+        <field name="name">Cash and cash equivalents at the beginning of the period</field>
         <field name="formula">OPEN(111, 112, 113, 12811, 12881)</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -710,7 +710,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">390</field>
         <field name="code">61</field>
-        <field name="name">Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ</field>
+        <field name="name">Effect of foreign exchange rate changes</field>
         <field name="formula">CASH(413)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -720,7 +720,7 @@
         <field name="report_id" ref="report_b03_indirect"/>
         <field name="sequence">400</field>
         <field name="code">70</field>
-        <field name="name">Tiền và tương đương tiền cuối kỳ</field>
+        <field name="name">Cash and cash equivalents at the end of the period</field>
         <field name="formula">[50] + [60] + [61]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>

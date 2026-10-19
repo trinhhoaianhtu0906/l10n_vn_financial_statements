@@ -94,7 +94,7 @@ class TestEngine(TransactionCase):
             comparison_periods("period", *q3, "previous_year", 1),
             [(date(2025, 7, 1), date(2025, 9, 30))],
         )
-        # B01: the TT99 column is the opening of the year, whatever the period.
+        # B01: the statutory column is the opening of the year, whatever the period.
         self.assertEqual(
             comparison_periods("position", *q3, "default", 2, fy_start),
             [(date(2025, 1, 1), date(2025, 12, 31)), (date(2024, 1, 1), date(2024, 12, 31))],

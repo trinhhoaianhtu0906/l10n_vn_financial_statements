@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="report_b02" model="vn.report">
-        <field name="name">B02-DN Báo cáo kết quả hoạt động kinh doanh</field>
+        <field name="name">B02-DN Income Statement</field>
         <field name="code">B02-DN</field>
         <field name="sequence">20</field>
         <field name="kind">period</field>
-        <field name="form_code">Mẫu số B 02 - DN</field>
-        <field name="form_note">(Kèm theo Thông tư số 99/2025/TT-BTC ngày 27 tháng 10 năm 2025 của Bộ trưởng Bộ Tài chính)</field>
-        <field name="title">BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH</field>
+        <field name="form_code">Form B 02 - DN</field>
+        <field name="form_note">(Issued with Circular No. 99/2025/TT-BTC of 27 October 2025 of the Minister of Finance)</field>
+        <field name="title">INCOME STATEMENT</field>
     </record>
 
     <record id="b02_01" model="vn.report.line">
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">10</field>
         <field name="code">01</field>
-        <field name="name">1. Doanh thu bán hàng và cung cấp dịch vụ</field>
+        <field name="name">1. Revenue from sales of goods and services</field>
         <field name="formula">CT(511) - CT(5117)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -24,7 +24,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">20</field>
         <field name="code">02</field>
-        <field name="name">2. Các khoản giảm trừ doanh thu</field>
+        <field name="name">2. Revenue deductions</field>
         <field name="formula">DT(511) - DT(5117) + BAL(521)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -34,7 +34,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">30</field>
         <field name="code">10</field>
-        <field name="name">3. Doanh thu thuần về bán hàng và cung cấp dịch vụ</field>
+        <field name="name">3. Net revenue from sales of goods and services</field>
         <field name="formula">[01] - [02]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -44,7 +44,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">40</field>
         <field name="code">11</field>
-        <field name="name">4. Giá vốn hàng bán</field>
+        <field name="name">4. Cost of goods sold</field>
         <field name="formula">BAL(632) - BAL(6327)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -54,7 +54,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">50</field>
         <field name="code">20</field>
-        <field name="name">5. Lợi nhuận gộp về bán hàng và cung cấp dịch vụ</field>
+        <field name="name">5. Gross profit from sales of goods and services</field>
         <field name="formula">[10] - [11]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -64,7 +64,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">60</field>
         <field name="code">21</field>
-        <field name="name">6. Lãi/lỗ của hoạt động bán, thanh lý bất động sản đầu tư</field>
+        <field name="name">6. Gain or loss on sale and disposal of investment property</field>
         <field name="formula">NBAL(5117) - BAL(6327)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -74,7 +74,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">70</field>
         <field name="code">22</field>
-        <field name="name">7. Doanh thu hoạt động tài chính</field>
+        <field name="name">7. Financial income</field>
         <field name="formula">NBAL(515)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -84,7 +84,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">80</field>
         <field name="code">23</field>
-        <field name="name">8. Chi phí tài chính</field>
+        <field name="name">8. Financial expenses</field>
         <field name="formula">BAL(635)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -94,7 +94,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">90</field>
         <field name="code">24</field>
-        <field name="name">- Trong đó: Chi phí đi vay</field>
+        <field name="name">- Of which: borrowing costs</field>
         <field name="formula">BAL(6351)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -104,7 +104,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">100</field>
         <field name="code">25</field>
-        <field name="name">9. Chi phí bán hàng</field>
+        <field name="name">9. Selling expenses</field>
         <field name="formula">BAL(641)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -114,7 +114,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">110</field>
         <field name="code">26</field>
-        <field name="name">10. Chi phí quản lý doanh nghiệp</field>
+        <field name="name">10. General and administrative expenses</field>
         <field name="formula">BAL(642)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -124,7 +124,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">120</field>
         <field name="code">30</field>
-        <field name="name">11. Lợi nhuận thuần từ hoạt động kinh doanh</field>
+        <field name="name">11. Operating profit</field>
         <field name="formula">[20] + [21] + [22] - [23] - [25] - [26]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -134,7 +134,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">130</field>
         <field name="code">31</field>
-        <field name="name">12. Thu nhập khác</field>
+        <field name="name">12. Other income</field>
         <field name="formula">NBAL(711)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -144,7 +144,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">140</field>
         <field name="code">32</field>
-        <field name="name">13. Chi phí khác</field>
+        <field name="name">13. Other expenses</field>
         <field name="formula">BAL(811)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -154,7 +154,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">150</field>
         <field name="code">40</field>
-        <field name="name">14. Lợi nhuận khác</field>
+        <field name="name">14. Other profit</field>
         <field name="formula">[31] - [32]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -164,7 +164,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">160</field>
         <field name="code">50</field>
-        <field name="name">15. Tổng lợi nhuận kế toán trước thuế</field>
+        <field name="name">15. Accounting profit before tax</field>
         <field name="formula">[30] + [40]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -174,7 +174,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">170</field>
         <field name="code">51</field>
-        <field name="name">16. Chi phí thuế TNDN hiện hành</field>
+        <field name="name">16. Current corporate income tax expense</field>
         <field name="formula">BAL(8211)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -184,7 +184,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">180</field>
         <field name="code">52</field>
-        <field name="name">17. Chi phí thuế TNDN hoãn lại</field>
+        <field name="name">17. Deferred corporate income tax expense</field>
         <field name="formula">BAL(8212)</field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
@@ -194,7 +194,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">190</field>
         <field name="code">60</field>
-        <field name="name">18. Lợi nhuận sau thuế thu nhập doanh nghiệp</field>
+        <field name="name">18. Profit after corporate income tax</field>
         <field name="formula">[50] - [51] - [52]</field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -204,7 +204,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">200</field>
         <field name="code">70</field>
-        <field name="name">19. Lãi cơ bản trên cổ phiếu (*)</field>
+        <field name="name">19. Basic earnings per share (*)</field>
         <field name="formula"></field>
         <field name="level">1</field>
         <field name="bold" eval="True"/>
@@ -214,7 +214,7 @@
         <field name="report_id" ref="report_b02"/>
         <field name="sequence">210</field>
         <field name="code">71</field>
-        <field name="name">20. Lãi suy giảm trên cổ phiếu (*)</field>
+        <field name="name">20. Diluted earnings per share (*)</field>
         <field name="formula"></field>
         <field name="level">2</field>
         <field name="bold" eval="False"/>
